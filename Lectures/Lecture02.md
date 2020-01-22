@@ -1,5 +1,5 @@
 # Lecture 2 Notes 
-###### Based On Dt. Simon Wells Lectures at Napier university
+###### Theory and Images could be based on the Lecures materials provided by Dt. Simon Wells at Napier university
 
 ![Complexity](../images/complexity.png)
 ![bigOComplexity](../images/bigocomplexity.png)
