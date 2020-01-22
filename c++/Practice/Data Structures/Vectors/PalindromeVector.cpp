@@ -1,15 +1,11 @@
-// PalindromarrayApplication.cpp 
-/*
+/*      PalindromarrayApplication.cpp
 	Summary: Console Application that verify if a vector is Palindrome or Not. 
 	Author: Davide Pollicino
 	Date: 31/12/2019
 */
-
-
 #include <iostream>
 #include<vector>
 using namespace std; 
-
 
 bool isTheArrayPalindrome( vector<int> myDynamicArray); 
 void print_result(bool result);
@@ -46,11 +42,7 @@ bool isTheArrayPalindrome(vector<int> myDynamicArray)
 void print_result(bool result)
 {
 	if (result)
-	{
 		cout << "Palindrome" << endl; 
-	}
 	else
-	{
 		cout << "Not Palindrome" << endl; 
-	}
 }
