@@ -10,6 +10,20 @@ Many Data Structures & Algorithms are specified against an abstract machine and 
 
 * EDVAC machine : one of the earliest eletronic computers. 
 
+### Difference between program and algorithm 
+
+* Algorithm is just a collection of instructions to do something. But that's pretty abstract, it's not tied to the specific way its done. For example there's a maze solving algorithm that goes like this: "Whenever you reach an intersection in the maze, take an unmarked path at random if available, then mark it. If no unmarked paths are available, take a path with a single mark at random and give it a second mark. Do not follow any path marked twice." This is an algorithm, but its not a program, how you perform it, or how a machine performs it will be different, but you can still all perform it.
+
+However if you take that algorithm and you write it up in a programming language, to perform that algorithm on a piece of hardware, on a system that can execute that code, then you have a program.
+
+* Algorithm is the logic of the program.
+
+## C primtivies
+
+Each C variable has a primitve data type associaded with it. Each primitve can store a differnt range of values, and the actual size of the datatype can depend upon the system architecture.
+
+To know the max ranges of different datatypes, we can see the library ```limit.h``` , including as normal using ```#include <limit.h>```
+
 ### Von Neumann Architecture
 
 It's the design of a digital architecture made up of: central Processing Unit (CPU), Arithmetic Logic Unit(ALU), processor Registers, Control Unit (containing instruction register & program counter), Memory (storing data & instructions), mass storage, I/O Mechanism, all of them connected by a bus (communication pathways). 

@@ -5,6 +5,15 @@
 ![bigOComplexity](../images/bigocomplexity.png)
 Both pictures taken from bigocheatsheet.com
 
+
+Not every problem is solvable using a computr. Computer science is all about working out the characteristics and performance of problems that are (not) solvable by computers. 
+
+We have algorithm for:
+* Calculating result
+* Data processing
+* Solving programming problems 
+* Artificial Intelligence - (Path-finding , Machine Learning , Neural Nets). 
+
 * Algorithm: finite list of instructions that can be followed to solve a problem. 
 
 ### Complexity notations
