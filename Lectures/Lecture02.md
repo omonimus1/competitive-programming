@@ -16,6 +16,8 @@ We have algorithm for:
 
 * Algorithm: finite list of instructions that can be followed to solve a problem. 
 
+
+
 ### Complexity notations
 
 * Big Oh gives the upper bound
@@ -36,8 +38,8 @@ Each notation can be used to reason about the best, worst & average case of perf
 
 ### Big O notations
 
-Bit O referes to the order associatted with the performance of a specific algorith or dataStructure.
-O(n) is "In the order of n". 
+Big referes to the order associated wih the perfomance, (degree of complexity), so o(N) si read "The order of n". 
+A function Big O notation is generally determined by how it responds to different inputs. 
 
 ### Turing machine
 
