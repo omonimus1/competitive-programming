@@ -9,7 +9,6 @@ In python, it is possible to implement a stack using
 For our implementation, we have decided to implement a stack using a list
 
 ## Queue
-
 Queue in Python can be implemented by the following ways:
 
 * list
