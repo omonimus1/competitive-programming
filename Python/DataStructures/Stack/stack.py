@@ -9,11 +9,11 @@ Summary: Implement a stack in Python using a list
 stack = []
 
 # Add (push()) value inside our stack 
-stack.append('1')
-stack.append('2')
-stack.append('3')
-stack.append('4')
-stack.append('5')
+stack.append(1)
+stack.append(2)
+stack.append(3)
+stack.append(4)
+stack.append(5)
 
 # Print the content of the stack 
 print('\nStack: ')
