@@ -25,5 +25,6 @@ click on the following [link](https://github.com/omonimus1/competitive-programmi
 * [Hackerank/](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md) : Contains a link that will bring you in a dedicated repository where I will upload day by day Hackerank problems solution.
 * [Codechef/](https://github.com/omonimus1/competitive-programming/tree/master/codechef) : Contains all the problems that I have solved in Codechef. 
 * [algo_and_dataStructures/](https://github.com/omonimus1/competitive-programming/tree/master/algo_and_dataStructure) : Contains most of the exerices that I have implemented to learn how to use a specific data structures and how to use the buit-in methods of a datastructure.
+* [Geek For Geeks](https://github.com/omonimus1/competitive-programming/tree/master/Geekforgeeks): My solutions of Geek for Geeks exercises.
 * [Lectures/](https://github.com/omonimus1/competitive-programming/tree/master/Lectures) : Contains useful notes for review purposes.
 * [Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks extremely useful for C.P.
