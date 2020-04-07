@@ -23,8 +23,6 @@ int main()
     // Read number of test cases
     cin >>t;
     for(int i =0; i<t; i++)
-    {
         print_second_biggest();
-    }
     return 0;
 }
