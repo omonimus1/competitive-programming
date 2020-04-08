@@ -1,7 +1,7 @@
 # competitive-programming
 Welcome to my Competitie Programming guide. 
 
-## Whe did I start?
+## When did I start?
 My first approach to the C.P. (Competitive Programming) was during the 3rd year of the Secondary high school. 
 I have partecipated twice to the OIS Competitition in team (HBFS team) and we have qualified 1st in regional Ranking and 
 26th in the National Ranking. 
@@ -16,11 +16,11 @@ Trust me, everyone starts from the same level: 0.
 * [CodeForces](https://codeforces.com/)
 * [TopCoder](https://www.topcoder.com/)  
 
-
 ## Theory
 
 If you have some basics of programming, for example you know already what a variable or function is, check the reading folder or 
 click on the following [link](https://github.com/omonimus1/competitive-programming/tree/master/Reading).
+
 
 ## Structure of the Repo
 
