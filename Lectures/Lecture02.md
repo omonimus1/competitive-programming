@@ -1,53 +1,67 @@
-# Lecture 2 Notes 
-###### Theory and Images could be based on the Lecures materials provided by Dt. Simon Wells at Napier university
+#  Code settings , how to get you get your IDE ready 
 
-![Complexity](../images/complexity.png)
-![bigOComplexity](../images/bigocomplexity.png)
-Both pictures taken from bigocheatsheet.com
+## What IDE to I use?
 
+I use Visual studio Code, that allows me to code and compile from the built-in terminal. 
+The most important thing is that feel comfortable with your coding evironment, so if you are actually using something else, it's fine (as long you use at least a dark theme). 
 
-Not every problem is solvable using a computr. Computer science is all about working out the characteristics and performance of problems that are (not) solvable by computers. 
+## Code template
 
-We have algorithm for:
-* Calculating result
-* Data processing
-* Solving programming problems 
-* Artificial Intelligence - (Path-finding , Machine Learning , Neural Nets). 
+It is useless write the same lines of code more than once, so if you can, avoid to do it. 
+My template code for my training exercises:
+```
+#include <bits/stdc++.h>
+using namespace std; 
 
-* Algorithm: finite list of instructions that can be followed to solve a problem. 
+// Core of the program 
+void solve_test(); 
 
+int main()
+{
+    int t; // t: used to store the number of test cases  
+    cin >> t; 
+    while(t--)
+    {
+        solve_test();
+        cout <<'\n';
+    }
+        
+	return 0;
+}
+```
 
+#### #include <bits/stdc++.h>
 
-### Complexity notations
+Now, first line of code ```#include <bits/stdc++.h>```, it is used usually just with gcc / g++ compilers, so if you run this line of code with other compilers, as clang, you will probably get an error. 
 
-* Big Oh gives the upper bound
-* Big Ω (Omega) gives the lower bound
-* There is Big Ɵ (Theta) notation to asymptotically bound the growth to within constant factors above and below
+What does it do? It includes all the c++ library. In a contest is a good idea, but if the rank is time sensitive but it makes your program a bit slower. 
 
-Each notation can be used to reason about the best, worst & average case of performance. 
+#### \n vs endl; 
 
-### An algorithm can run in 
+```endl``` every time will flush the stream so use \n could make your compilation time potentially lower. 
 
-* Constant time ```O(1)```:  if it requires the same amount of time regardless of input size.
-* Linear time   ```O(n)```: if the time it takes to execute a specific set of instructins, is directly proportional to the size of the input. An example could be: check if our ArrayList, or Queue contains a specific element x. 
-* Quasilinear time ```O(n log n)```
-* Logarithmic time```O(logN)```: the time is proportuioanl to the logarithm of the input size. An example could be the Binary Search algorithm. 
-* Quadratic time  ```O(n^2)```: the execution time is proportional to the square of the input size. 
-* Exponential time ```O(2^n)```: 
-* Factorial time ```O(n!)```: for example: generate all the permutation of a list of elements. 
+## Types of input
 
-### Big O notations
+Sometimes, our input requires to be stored value by values, other times, we need to store all the input by line;
 
-Big referes to the order associated wih the perfomance, (degree of complexity), so o(N) si read "The order of n". 
-A function Big O notation is generally determined by how it responds to different inputs. 
+* Read two variables in the same line (separated by space):
+```
+int a, b;
+cin >> a >> b; 
+```
+* Store all the line(including spaces)
+```
+string str; 
+getline(cin , str);
+```
 
-### Turing machine
+## Numbers Management
 
-The turing's machine is a tape of infinite lenght (though like memory with each cell laid out next to the other in a long line),
-with a state register and a finite table of instructions to execute. 
+* floor() : round down to the smallest ingeter; 
+* ceil() : round up the biggest integer; 
+* trunc() : roun to smallest integer
+* round() : round to the nearest integer
+* [setprecision()](http://www.cplusplus.com/reference/iomanip/setprecision/) : set decimal precision
 
-The machine follows do the following  steps: read tape, decode information, execute any instructuons and repeat. 
-
-* Computability: a mathematical problem is computable if it can be solved in priciple by a computing device. 
 
 
