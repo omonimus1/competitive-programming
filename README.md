@@ -10,10 +10,12 @@ I have partecipated twice to the OIS Competitition in team (HBFS team) and we ha
 Trust me, everyone starts from the same level: 0. 
 
 ## Platform for training:
-* [CodeChef](https://www.codechef.com/)
+* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1)
+* [GeekForGeeks](https://practice.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+* [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus)
 * [CodeForces](https://codeforces.com/)
-* [TopCoder](https://www.topcoder.com/)
-* [HackerRank](https://www.hackerrank.com/)
+* [TopCoder](https://www.topcoder.com/)  
+
 
 ## Theory
 
