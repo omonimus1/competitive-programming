@@ -10,7 +10,7 @@ For memory optimization reasons considering that the length of the input can be 
 In mathemicatical terms, the sequence of Fibonaccia is created by the following relation:
 ```Fn = Fn-1 + Fn-2```, where F0 = 0 and F1 = 1; 
 
-![Fibonaccci GeeksForGeeks video](https://youtu.be/LwZRsM7qhrI)
+[![](http://img.youtube.com/vi/LwZRsM7qhrI/0.jpg)](http://www.youtube.com/watch?v=LwZRsM7qhrI "FibonacciVideo")
 ###### Source by GeekForGeeks
 
 ## XOR operation 
