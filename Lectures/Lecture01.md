@@ -13,8 +13,8 @@ If you are asking yourself which one is the best platform for training, the answ
 
 ## Structure of the Lectures
 
-I will not be here explaining you how do declare an integer or a string. 
-I will underline concepts and give you some times that you should use during the context
+I will not be here explaining you how do declare an integer or a string, instead, 
+I will underline key concepts and give you some tipes that you should use during the context.
 
 ## Who Am I?
 

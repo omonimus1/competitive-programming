@@ -34,7 +34,7 @@ int main()
 
 Now, first line of code ```#include <bits/stdc++.h>```, it is used usually just with gcc / g++ compilers, so if you run this line of code with other compilers, as clang, you will probably get an error. 
 
-What does it do? It includes all the c++ library. In a contest is a good idea, but if the rank is time sensitive but it makes your program a bit slower. 
+What does it do? It includes all the c++ library. In a contest is a good idea, but if you program must be particular fast and do lots of computation operation, use bits/stdc++ will makes your program a bit slower. 
 
 #### \n vs endl; 
 
