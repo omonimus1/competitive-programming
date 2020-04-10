@@ -8,13 +8,16 @@ The most important thing is that feel comfortable with your coding evironment, s
 ## Code template
 
 It is useless write the same lines of code more than once, so if you can, avoid to do it. 
-My template code for my training exercises:
+My template code for my training exercises is:
 ```
 #include <bits/stdc++.h>
 using namespace std; 
 
 // Core of the program 
-void solve_test(); 
+void solve_test()
+{
+    // Your code; 
+} 
 
 int main()
 {
@@ -23,16 +26,22 @@ int main()
     while(t--)
     {
         solve_test();
+        // If every test case out must to be printed in different lines
         cout <<'\n';
-    }
-        
+    }   
 	return 0;
 }
 ```
 
 #### #include <bits/stdc++.h>
 
-Now, first line of code ```#include <bits/stdc++.h>```, it is used usually just with gcc / g++ compilers, so if you run this line of code with other compilers, as clang, you will probably get an error. 
+Now, first line of code ```#include <bits/stdc++.h>```, it is used usually just with gcc / g++ compilers, so if you run this line of code with other compilers, you will probably get an error. This means that during a competition you shoud just use the standard g++ libraries as:
+ ```
+ #include <iostream>
+ #include <vector>
+ #include <utility> // Used for pairs
+ // And so on... 
+ ``` 
 
 What does it do? It includes all the c++ library. In a contest is a good idea, but if you program must be particular fast and do lots of computation operation, use bits/stdc++ will makes your program a bit slower. 
 

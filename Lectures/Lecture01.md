@@ -2,22 +2,33 @@
 
 Competitive Progranning (C.P.) is a mind sport or e.sport where all the partecipants are called competitive coders and their task iis to solve a specific number of exercises within a specific time. 
  
+## Where did I start
+
+I heard about competitive Programming for the first time when I have registered to the National [OIS](https://squadre.olinfo.it/).
+
+
+
 ## Platform for training:
+* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
 * [CodeChef](https://www.codechef.com/)
+* [Spoj.com](https://www.spoj.com/)
 * [CodeForces](https://codeforces.com/)
+* [Kattis](https://open.kattis.com/)
 * [TopCoder](https://www.topcoder.com/)
 * [HackerRank](https://www.hackerrank.com/)
 * [GeeksforGeeks](https://www.geeksforgeeks.org/)
 
-If you are asking yourself which one is the best platform for training, the answer is **all of them**.  Every platform has different exercises and different approach to the theory support.
+If you are asking yourself which one is the best platform for training, the answer is **all of them and all the platforms that you can find**.  Every platform has a different set of exercises, a different community and a different approach to the contests and theory. 
 
 ## Structure of the Lectures
 
 I will not be here explaining you how do declare an integer or a string, instead, 
-I will underline key concepts and give you some tipes that you should use during the context.
+I will underline key concepts and give you some tips that you should keep in mind during your learning process and during the competitions. 
 
 ## Who Am I?
 
-I am Davide Pollicino, Computer science student of the Edinburgh Napier university. 
-My passion for competitive programming started in 2016, during the secondary high school, where I have partecipated two times to the OIS(Olimpiadi di informatica a squadre / Competitive Programming OLimpics game in Team), arriving to the final national round. 
+I am Davide Pollicino, Computer science student at the Edinburgh Napier university. 
+My passion for competitive programming started in 2016, during the secondary high school, where I have partecipated two times to the OIS(Olimpiadi di informatica a squadre / Competitive Programming OLimpics game in Team), being part of the [Hbfs team, 21st position in Italy and 2nd in Sicily](https://squadre.olinfo.it/edition/9/team/sic20)  
+
+Later on, during the COVID19 quaranten, I have decided to publish my solutions and write these lectures for all the future Competitive Coders. 
 

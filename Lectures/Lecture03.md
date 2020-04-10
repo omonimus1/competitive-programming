@@ -31,6 +31,29 @@ int find_single(vector<int> vett)
 }
 ```
 
+###### We note about XOR in practice
+Having two numeber and needing to print out their sum without the same the sum, very often we print directly ```cout<<a+b;```.
+Well, if you will do ```cout << a^b;``` to print the result of XOR operation between a and b, you will get an error.
+
+For this reason, I would invite you to calculate and print the xor between two numbers in the following way:
+```
+#include <iostream>
+using namespace std;
+
+int get_xor(int a, int b)
+{
+	return a^b;
+}
+
+int main() {
+	int a, b;
+	// Read two numbers in input
+	cin >> a >> b;
+	cout <<get_xor(a,b)<<endl;
+}
+```
+
+
 ###### [Check out the GeekForGeeks bitwise operators](https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/)
 
 ## Binary Representation of a given number
@@ -41,8 +64,6 @@ void bin (unsigned int number)
         bin(number/2);
     cout<<number%2;
 }
-
-
 
 * [Brian Kerninghan's ALgorithm](https://www.geeksforgeeks.org/count-set-bits-in-an-integer/)
 * [Popular Cisco and Adove interview questions about count set bits of an integer ](https://www.geeksforgeeks.org/count-set-bits-integer-using-lookup-table/)
