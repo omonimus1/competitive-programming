@@ -12,8 +12,7 @@ Are you in Italy and you would like to start with a National competition between
 
 ## Are you a beginner?
 
-Success in something the biggest form of satisfaction, so let's practice and learn. There are millions of devs outside your door, the are spaghetti code writers and good devs. 
-The difference is in the practise. 
+Well, Everyone started from the same level : 0. 
 
 ## Structure of the Repository
 
