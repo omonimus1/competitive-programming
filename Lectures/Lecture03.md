@@ -1,8 +1,18 @@
-## Arrays or Vectors , which one to use?
+## Popular basic Patterns
 
-For memory optimization reasons considering that the length of the input can be different in any test case, and because vector has many built-in usefule methods (for example sort()) use [vectors](https://en.cppreference.com/w/cpp/container/vector) is better than use normal arrays.  
+When a started to do C.P. exercises, I found few patterns that were common to many exercises especially in in the basic and medium level. Plenty exercises required to know how to:
+* Use the XOR operator and how it works.
+* Check if a number is prime.
+* Check if a string is a Palindrome.
+* Print the reverse of a string
+* Find frequencies of an object(number, string, pair) in a list.
+* Use use the [Left and Right Shift Operators](https://docs.microsoft.com/en-us/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=vs-2019)
+* Calculate the factorial of a number
+* Represent a given number in binary format
+* Use arrays, vectors, vectors of arrays, stack and queues.
 
- 
+##### Note: I am not saying that it is all you need to know to do C.P., what this will help you to don't be stuck after the solutions of 15 easiest exercises that you will find for C.P.
+
 ## Fibonacci numbers
 
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
@@ -12,6 +22,13 @@ In mathemicatical terms, the sequence of Fibonaccia is created by the following 
 
 [![](http://img.youtube.com/vi/LwZRsM7qhrI/0.jpg)](http://www.youtube.com/watch?v=LwZRsM7qhrI "FibonacciVideo")
 ###### Source by GeekForGeeks
+
+## Arrays or Vectors , which one to use?
+
+For memory optimization reasons considering that the length of the input can be different in any test case, and because vector has many built-in usefule methods (for example sort()) use [vectors](https://en.cppreference.com/w/cpp/container/vector) is better than use normal arrays.  
+
+ 
+
 
 ## XOR operation 
 
@@ -56,8 +73,8 @@ int main() {
 
 ###### [Check out the GeekForGeeks bitwise operators](https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/)
 
-## Binary Representation of a given number
 
+## Binary Representation of a given number
 void bin (unsigned int number)
 {
     if(number > 1)
@@ -95,6 +112,5 @@ Character aray is faster than string but, string contains useful built-in method
 * pop_back() : delete the last char
 * lenght() : return the leghth of the string
 * copy(Array of chars, length, position)
-* swap() : 
 
 
