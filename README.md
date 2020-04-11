@@ -1,13 +1,19 @@
 # Competitive-programming
 Welcome to my Competitie Programming guide. 
 
-## When did I start?
-My first approach to the C.P. (Competitive Programming) was during the 3rd year of the Secondary high school. 
-I have partecipated twice to the [OIS Competitition in team](https://sites.google.com/aldini.istruzioneer.it/olimpiadi-informatica-squadre/homepage), and we have qualified 1st in regional Ranking and 
-26th in the National Ranking. 
+## Who am I ,Where and When did I start
+
+I am Davide Pollicino, Computer science student at the Edinburgh Napier university. 
+My passion for competitive programming started in 2016, during the third year of Secondary High school, where I have partecipated two times to the OIS(Olimpiadi di informatica a squadre / Competitive Programming Olimpics game in Team), being part of the [Hbfs team, 21st position in Italy and 2nd in Sicily](https://squadre.olinfo.it/edition/9/team/sic20)  
+
+Later on, during the COVID19 lookdown, I have decided to publish my solutions write these lectures for all the future Competitive Coders and keep practicing. 
+
+Are you in Italy and you would like to start with a National competition between all the secondary high School? I have started from the [OIS](https://squadre.olinfo.it/).
 
 ## Are you a beginner?
-Trust me, everyone starts from the same level: 0. 
+
+Success in something the biggest form of satisfaction, so let's practice and learn. There are millions of devs outside your door, the are spaghetti code writers and good devs. 
+The difference is in the practise. 
 
 ## Structure of the Repository
 
@@ -19,21 +25,21 @@ Trust me, everyone starts from the same level: 0.
 * [Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks extremely useful for C.P.
 
 ## Platform for training:
-* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1)
-* [GeekForGeeks](https://practice.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
 * [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus)
+* [Spoj.com](https://www.spoj.com/)
 * [CodeForces](https://codeforces.com/)
-* [TopCoder](https://www.topcoder.com/)  
-
-## Attending the OIS?
-
-Visit the OIS [website](https://sites.google.com/aldini.istruzioneer.it/olimpiadi-informatica-squadre/homepage), to learn more about how to register a team and start. 
+* [Kattis](https://open.kattis.com/)
+* [TopCoder](https://www.topcoder.com/)
+* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
 
 ## Theory
 
-If you have some basics of programming, for example you know already what a variable or function is, check the reading folder or 
-click on the following [link](https://github.com/omonimus1/competitive-programming/tree/master/Reading).
+If you have some basics of programming, for example you know already what a variable or function is, check the[Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) and [Lectures/](https://github.com/omonimus1/competitive-programming/tree/master/Lectures) folders.
 
-## Contact Me
- * ```davidepollicino2015@gmail.com```
+## Let's connect
 
+* ```davidepollicino2015@gmail.com```
+* [Linkedin](https://www.linkedin.com/in/davidepollicino7/)
+* [Personal website](http://davidepollicino.com/)
