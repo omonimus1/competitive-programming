@@ -16,12 +16,14 @@ Well, Everyone started from the same level : 0.
 
 ## Structure of the Repository
 
-* [Hackerank/](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md) : Contains a link that will bring you in a dedicated repository where I will upload day by day Hackerank problems solution.
-* [Codechef/](https://github.com/omonimus1/competitive-programming/tree/master/codechef) : Contains all the problems that I have solved in Codechef. 
-* [algo_and_dataStructures/](https://github.com/omonimus1/competitive-programming/tree/master/algo_and_dataStructure) : Contains most of the exerices that I have implemented to learn how to use a specific data structures and how to use the buit-in methods of a datastructure.
-* [Geek For Geeks](https://github.com/omonimus1/competitive-programming/tree/master/Geekforgeeks): My solutions of Geek for Geeks exercises.
-* [Lectures/](https://github.com/omonimus1/competitive-programming/tree/master/Lectures) : Contains useful notes for review purposes.
+* [Lectures/](Lectures/): Contains useful notes for review purposes.
 * [Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks extremely useful for C.P.
+* [algo_and_dataStructures/](algo_and_dataStructure/): Contains most of the exerices that I have implemented to learn how to use a specific data structures and how to use their buit-in methods.
+* [Hackerank/](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md): Contains a link that will bring you in a dedicated repository where I will upload day by day Hackerank problems solution.
+* [Codechef/](codechef/): My Codechef exercises solutions.
+* [Geek For Geeks](geekforgeeks/):My Geek for Geeks exercises solutions.
+* [UVA](UVA/): My UVA solutions. 
+
 
 ## Platform for training:
 * [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
@@ -32,6 +34,7 @@ Well, Everyone started from the same level : 0.
 * [TopCoder](https://www.topcoder.com/)
 * [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1)
 * [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+* [UVA](https://onlinejudge.org/)
 
 ## Theory
 

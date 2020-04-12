@@ -26,10 +26,11 @@ Are you in Italy and you would like to start with a National competition between
 
 If you are asking yourself which one is the best platform for training, the answer is **all of them and all the platforms that you can find**.  Every platform has a different set of exercises, a different community and a different approach to the contests and theory. 
 
-## Structure of the Lectures
+## Structure of the Lectures 
 
-I will not be here explaining you how do declare an integer or a string, instead, 
-I will underline key concepts and give you some tips that you should keep in mind during your learning process and during the competitions. 
+I will not be here explaining you how do declare an integer or a string, or rewrite materials that you will be able to find online. 
+The problem is that when you start with Competitive Programming, nobody actually tells you what you need to study and practice on. 
+For this reason, I will indicate in the next lectures all the commmon patterns that I found during many competitions and provide you links to the material study, underlying key concepts and giving you many tips that will help you during your learning process and during the competitions.   
 
 
 

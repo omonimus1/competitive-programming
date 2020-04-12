@@ -8,8 +8,10 @@ When a started to do C.P. exercises, I found few patterns that were common to ma
 * Find frequencies of an object(number, string, pair) in a list.
 * Use use the [Left and Right Shift Operators](https://docs.microsoft.com/en-us/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=vs-2019)
 * Calculate the factorial of a number
-* Represent a given number in binary format
-* Use arrays, vectors, vectors of arrays, stack and queues.
+* Represent a given number in binary format.
+* [Infix to Postfix conversion](https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/)
+* [String Balancing](https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/)
+* Use arrays, vectors, vectors of arrays, [stack and queues](Lectures04.md).
 
 ##### Note: I am not saying that it is all you need to know to do C.P., what this will help you to don't be stuck after the solutions of 15 easiest exercises that you will find for C.P.
 
