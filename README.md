@@ -16,7 +16,7 @@ Well, Everyone started from the same level : 0.
 
 ## Structure of the Repository
 
-* [Lectures/](Lectures/): Contains useful notes for review purposes.
+* [Lectures/](Lectures/): Contains useful notes for algorithms, data structures and tips for your competitive Programming contests. 
 * [Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks extremely useful for C.P.
 * [algo_and_dataStructures/](algo_and_dataStructure/): Contains most of the exerices that I have implemented to learn how to use a specific data structures and how to use their buit-in methods.
 * [Hackerank/](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md): Contains a link that will bring you in a dedicated repository where I will upload day by day Hackerank problems solution.

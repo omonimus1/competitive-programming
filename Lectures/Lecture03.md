@@ -116,3 +116,4 @@ Character aray is faster than string but, string contains useful built-in method
 * copy(Array of chars, length, position)
 
 
+###### Images and lectures flow source: C++ reference, Geeks for Geeks, Tutorial Point, Algorithm and Data Structures Lectures at Napier University (created by Dt.Simon Powers, and Dt. Simon Wells).

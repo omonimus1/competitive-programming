@@ -34,5 +34,8 @@ For this reason, I will indicate in the next lectures all the commmon patterns t
 
 
 
+
+
+
  
 

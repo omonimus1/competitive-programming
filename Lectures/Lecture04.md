@@ -1,5 +1,5 @@
 
-## Stack(LIFO) and Queue(FIFO)
+## Stack(LIFO), Queue(FIFO), Binary Heap
 
 Even if you probably understimate the value of the se two Data structures, they are used in the daily life.
 
@@ -61,9 +61,107 @@ void print_stack(stack <int> stackArray)
 
 ```
 
-[Check the stack implementation with the Linked List](../algo_and_dataStructure/c++/data-structures/stack/stack-Linked-list.cpp)
+[Check the stack implementation with the Linked List](../algo_and_dataStructure/c++/data-structures/stack/stack-Linked-list.cpp)'
+
+## Application of the queue
+* CPU or Disk Scheduling (in general, wehn a resource is shared between multiple costumers / users).
+* When data is transferrred asynchrounsly (file IO, IO Buffers , pipe).
+
+Again, we can implement a queue using arrays, vectors or using the ```<queue>``` from the C++ STL. 
+In the queue STL, remember the following buit-in methods:
+* empty()
+* swap(): exchange the contens of the two queues, even if they have different size(they two queues must be of the type).
+* emplace(): insert a new element at the end of the queue
+* push() : **add** element at  thee ne dof the queue
+* pop(): **remove** the first element from the queue
+
+## Binary Heap
+
+Before to start to talk about Binary Heap, memorize the following definitions:
+* **Binary Tree:** data structure in which each node has at most two children, which are referred to as the left child and the right child. The left node is always smaller than the root and the right right node is always greater than root. 
+* **Complete Binary Tree:** all the level of the B..T are fillex expect possibly the last level and the last has level has all keyrs as left as possible. 
+
+Now,  A Binary Heap is a complete binary tree either Min Heap Or Max Heap. In a Min Binary Heap, the root must been the smallest value in all the Binary Heap(and this property must be recoursively true for all the nodes in Binary Tree).
 
 
+### Application of Heap
+* Use for the Heap sort 0(n lon n) time.
+* Heap sort can be used to implement priority queue  with insert, extractmax() and delete() peration in O(log n) time/
+* Used to implement the Dijkstra's shortest Pah and Prim's Minimum Spanning Tree
+* Sort an almost sorted array efficienty, K'th Larget Element in in array. 
 
+[Larn more about Binary Search Tree](https://www.geeksforgeeks.org/binary-search-tree-data-structure/)
+
+We can implement a Max Binary Heap using a Priority Queue. 
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+// Driver code
+int main ()
+{
+    // Creates a max heap
+    priority_queue <int> myHeap;
+    myHeap.push(17);
+    myHeap.push(1);
+    myHeap.push(10);
+    myHeap.push(30);
+    myHeap.push(15);
+
+    // One by one extract items from max heap
+    while (myHeap.empty() == false)
+    {
+        cout << myHeap.top() << " ";
+        myHeap.pop();
+    }
+
+    return 0;
+}
+```
+Output will be ```30 17 15 10 1```
+
+We can as well implement a Min Binary Heap 
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+// Driver code
+int main ()
+{
+    // Creates a min heap
+    priority_queue <int, vector<int>, greater<int> > myMinHeap;
+    myMinHeap.push(5);
+    myMinHeap.push(1);
+    myMinHeap.push(1033);
+    myMinHeap.push(12);
+    myMinHeap.push(20);
+
+    // One by one extract items from min heap
+    while (myMinHeap.empty() == false)
+    {
+        cout << myMinHeap.top() << " ";
+        myMinHeap.pop();
+    }
+
+    return 0;
+}
+```
+
+Output will be : ```1 5 12 20 1033```
+
+### Wee note about sorting
+
+In most of code you will see vectors instead traditional arrays for different reasons.
+Now, use the sort() method with vector is extremely easy; ```sort(myVector.begin(), myVector.end());```, this will sort **in place** your vector.
+
+What if you want to use the sort() method using a traditional array and doing the sorting in place? 
+```
+    int arr[] = {1, 1, 92, 6, 7,5, 4, 2, -1};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    sort(arr, arr+n);
+```
+
+###### Images and lectures flow source: C++ reference, Geeks for Geeks, Tutorial Point, Algorithm and Data Structures Lectures at Napier University (created by Dt.Simon Powers, and Dt. Simon Wells).
 
 

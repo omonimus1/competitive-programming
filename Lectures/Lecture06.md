@@ -93,3 +93,7 @@ LInked list is foundamental for the use of other D.S. as: tree or graph.
 
 
 ### Graph
+
+
+
+###### Images and lectures flow source: C++ reference, Geeks for Geeks, Tutorial Point, Algorithm and Data Structures Lectures at Napier University (created by Dt.Simon Powers, and Dt. Simon Wells).
