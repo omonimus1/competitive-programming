@@ -33,6 +33,14 @@ The problem is that when you start with Competitive Programming, nobody actually
 For this reason, I will indicate in the next lectures all the commmon patterns that I found during many competitions and provide you links to the material study, underlying key concepts and giving you many tips that will help you during your learning process and during the competitions.   
 
 
+## Remeber, there are two types of people:
+```
+int main(){                         int main()
+                                    {
+    return 0;                           return 0; 
+}                                   }
+```
+
 
 
 

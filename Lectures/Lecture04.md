@@ -75,6 +75,24 @@ In the queue STL, remember the following buit-in methods:
 * push() : **add** element at  thee ne dof the queue
 * pop(): **remove** the first element from the queue
 
+
+```
+// Create a queue of integers
+queue<int>queue_example;
+
+// Insert element inside the queue
+queue_example.push(10);
+queue_example(15);
+queue_example(33);
+
+// Print a the queue
+while(!queue_example.empty())
+{
+		cout<<" "<<queue_example.front();
+		queue_example.pop();
+}
+```
+
 ## Binary Heap
 
 Before to start to talk about Binary Heap, memorize the following definitions:
