@@ -23,7 +23,7 @@ Well, Everyone started from the same level : 0.
 * [Codechef/](codechef/): My Codechef exercises solutions.
 * [Geek For Geeks](geekforgeeks/):My Geek for Geeks exercises solutions.
 * [UVA](UVA/): My UVA solutions.
-* [Must-do-exercises/](must-do-exerices): Must do exercises solutions for Coding Interview Preparation for big tech Companies
+* [Must-do-exercises/](must-do-exerices/): Must do exercises solutions for Coding Interview Preparation for big tech Companies
 
 
 ## Platform for training:
