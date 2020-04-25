@@ -24,6 +24,7 @@ Well, Everyone started from the same level : 0.
 * [Geek For Geeks](geekforgeeks/):My Geek for Geeks exercises solutions.
 * [UVA](UVA/): My UVA solutions.
 * [Interview Training](geekforgeeks/must-to-do-interview-process) 
+* [Exercises for coding interviews](must-do-exerices)
 
 
 ## Platform for training:
