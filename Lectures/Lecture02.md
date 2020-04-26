@@ -2,8 +2,8 @@
 
 ## What IDE to I use?
 
-I use Visual studio Code, that allows me to code and compile from the built-in terminal. 
-The most important thing is that feel comfortable with your coding evironment, so if you are actually using something else, it's fine (as long you use at least a dark theme). 
+I use Visual studio Code but it does not really matter.  
+The most important thing is that you feel comfortable with your coding evironment, so if you are actually using something else, it's fine (as long you use at least a dark theme). 
 
 ## Code template
 
@@ -16,17 +16,20 @@ using namespace std;
 // Core of the program 
 void solve_test()
 {
-    // Your code; 
+    // My solution; 
 } 
 
 int main()
 {
-    int t; // t: used to store the number of test cases  
+    // To have low I/O operations time cost
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    unsigned int t; // t: used to store the number of test cases  
     cin >> t; 
     while(t--)
     {
         solve_test();
-        // If every test case out must to be printed in different lines
         cout <<'\n';
     }   
 	return 0;

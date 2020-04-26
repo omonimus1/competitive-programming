@@ -68,13 +68,13 @@ void print_stack(stack <int> stackArray)
 * When data is transferrred asynchrounsly (file IO, IO Buffers , pipe).
 
 Again, we can implement a queue using arrays, vectors or using the ```<queue>``` from the C++ STL. 
-In the queue STL, remember the following buit-in methods:
+
+In the queue STL, remember at least the following buit-in methods:
 * empty()
 * swap(): exchange the contens of the two queues, even if they have different size(they two queues must be of the type).
 * emplace(): insert a new element at the end of the queue
 * push() : **add** element at  thee ne dof the queue
 * pop(): **remove** the first element from the queue
-
 
 ```
 // Create a queue of integers

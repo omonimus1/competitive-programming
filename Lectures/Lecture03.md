@@ -25,13 +25,26 @@ In mathemicatical terms, the sequence of Fibonaccia is created by the following 
 [![](http://img.youtube.com/vi/LwZRsM7qhrI/0.jpg)](http://www.youtube.com/watch?v=LwZRsM7qhrI "FibonacciVideo")
 ###### Source by GeekForGeeks
 
+
+### Types of data structure
+
+* **Aggregates:** Structs, Unions
+* **Linear** (Sequential): Arrays, Linked Lists, Stacks, Queues, Deques.
+Sequential Linear data structures leads to two different forms:
+    Contigus: each element of the sequrnce is next to a neighbourhg until you get the end of the data structure (Ex: array). 
+    Non-contiguous: each element of the sequence stores bboth it own data & metadata about the location of the next & possibly also the previous element in the sequence. 
+* **Linear:** (Associative): Dictionaries
+* **Non-Linear:** (Binary) Trees, Graphs
+
+
 ## Arrays or Vectors , which one to use?
 
-For memory optimization reasons considering that the length of the input can be different in any test case, and because vector has many built-in usefule methods (for example sort()) use [vectors](https://en.cppreference.com/w/cpp/container/vector) is better than use normal arrays.  
+For memory optimization reasons considering that the length of the input can be different in any test case, and because vector has many built-in usefule methods (for example sort()) most of time I use [vectors](https://en.cppreference.com/w/cpp/container/vector) instead traditional arrays.
 
+##### ALERT
+
+It's good to know the a vector has many useful built-in methods as sort(), but you should be able to implement the same methods on your known and then you the built-in to show your knowledge about the language and save time avoiding to rewrite the same code several times. 
  
-
-
 ## XOR operation 
 
 * XOR of a numebr with itself is 0
@@ -50,7 +63,7 @@ int find_single(vector<int> vett)
 }
 ```
 
-###### We note about XOR in practice
+###### Wee note about XOR in practice
 Having two numeber and needing to print out their sum without the same the sum, very often we print directly ```cout<<a+b;```.
 Well, if you will do ```cout << a^b;``` to print the result of XOR operation between a and b, you will get an error.
 
@@ -67,7 +80,7 @@ int get_xor(int a, int b)
 int main() {
 	int a, b;
 	// Read two numbers in input
-	cin >> a >> b;
+	cin >> as >> b;
 	cout <<get_xor(a,b)<<endl;
 }
 ```

@@ -1,14 +1,4 @@
-# Lecture 3 Notes 
-###### Theory and Images could be based on the Lecures materials provided by Dt. Simon Wells at Napier university
 
-### Types of data structure
-* Aggregates: Structs, Unions
-* Linear (Sequential): Arrays, Linked Lists, Stacks, Queues, Deques.
-Sequential Linear data structures leads to two different forms:
-    Contigus: each element of the sequrnce is next to a neighbourhg until you get the end of the data structure (Ex: array). 
-    Non-contiguous: each element of the sequence stores bboth it own data & metadata about the location of the next & possibly also the previous element in the sequence. 
-* Linear (Associative): Dictionaries
-* Non-Linear: (Binary) Trees, Graphs
 
 ### Lists
 
@@ -16,33 +6,6 @@ In python, Java, Lists and Prolog, we have lists. List are used as Array,
 threat always as a sequential structure. It is dynamic, this means that we can change its size (adding or removing new elements).
 In c++, it will is called: vector.
 
-### Stack (LIFO)
-
-LIFO: last in First OUT
-
-It has the same structure of the array, and elements can be 
-* pulled or popped from the top of the stack (last element). 
-* peeked : similar to pop but it does not remove it from stack. 
-
-Stacks coule be implemented using linked lists or arrays. 
-
-Use of stack:
-* reverse a string (or any other collection )
-* Evaluate expression (Revers polish notation for arithmetics)
-* keep track user actions (to implement undo feature)
-
-### Queues (FIFO)
-
-FIFO: first in First Out
-
-Elements are enqueued (added at the back) and dequeued (removed from the front / head of the queue). 
-This leads to a natural order in how elements are dealt with. 
-
-Use of the queue: 
-* Scheduling: CPU
-* Buffer comunication 
-* Messaging and message queues. 
-* Job queues
 
 ### Circualr Queue pr Ring Buffer (LIFO)
 
