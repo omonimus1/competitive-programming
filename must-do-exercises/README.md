@@ -6,7 +6,7 @@ This section will contain solutions of many exercises suggest by [Geek for Geeks
 
 | Category|      Name       |  Solution|    
 |----------|:----------------:|----------:|
-| Array |  |  [ ]()|
+| Array |Sort arrays of 0's, 1's and 2s|[solution.cpp](arrays/sort-array-of-0-and-1.cpp)|
 | Array |  |  [ ]()|
 | Array |  |  [ ]()|
 | Array |  |  [ ]()|
