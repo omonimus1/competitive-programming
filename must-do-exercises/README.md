@@ -1,8 +1,9 @@
 ## Must do exercises
 
 This section will contain solutions of many exercises suggest by [Geek for Geeks](https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/?ref=leftbar) as msut to do exericises for coding interview preparation.
+    
 
-## Exercises solutions 
+## Coding Interview Preparation List from GeekForGeeks
 
 | Category|      Name       |  Solution|    
 |----------|:----------------:|----------:|
@@ -42,8 +43,8 @@ This section will contain solutions of many exercises suggest by [Geek for Geeks
 | String |  |  [ ]()|
 | String |  |  [ ]()|
 | String |  |  [ ]()|
-| Linkeded List |  |  [ ]()|
-| Linkeded List |  |  [ ]()|
+| Linkeded List |Find middle element in a linked list|[solution.cpp](linked-list/get-middle-element.cpp)|
+| Linkeded List |Nth node from end of linkedlist|[solution.cpp](linkedlist/nth-node-from-end.cpp)|
 | Linkeded List |  |  [ ]()|
 | Linkeded List |  |  [ ]()|
 | Linkeded List |  |  [ ]()|
