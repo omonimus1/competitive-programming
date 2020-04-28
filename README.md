@@ -27,14 +27,16 @@ Well, Everyone started from the same level : 0.
 
 
 ## Platform for training:
-* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
-* [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus)
-* [Spoj.com](https://www.spoj.com/)
+* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1) 
+* [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus) 
+* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+* [LeetCode](https://leetcode.com/) - [My Profile](https://leetcode.com/omonimus1) 
 * [CodeForces](https://codeforces.com/)
+* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
+* [Spoj.com](https://www.spoj.com/)
 * [Kattis](https://open.kattis.com/)
 * [TopCoder](https://www.topcoder.com/)
-* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1)
-* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+davidepollicino2015/practice/)
 * [UVA](https://onlinejudge.org/)
 
 
