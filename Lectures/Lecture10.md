@@ -93,6 +93,18 @@ while(!queue_example.empty())
 }
 ```
 
+### Deques
+
+A deques is a version of a queue in which elements can be added or removed from either end (front and back). 
+We cna think to, that a deque is a data structurre that joins the functionalities of the stack and queue. 
+
+A lists can usually support all the behaviours of a Deque (but generally has more feature than a deque should officialy support). 
+
+It could be usefull when we have a chain of items to model in our program where these can be processes at each end but not in the middle. 
+
+![Deque](../images/deuque.png)
+[Learn more about deques](https://www.geeksforgeeks.org/deque-cpp-stl/)
+
 ## Binary Heap
 
 Before to start to talk about Binary Heap, memorize the following definitions:
@@ -168,18 +180,6 @@ int main ()
 
 Output will be : ```1 5 12 20 1033```
 
-### Wee note about sorting
 
-In most of code you will see vectors instead traditional arrays for different reasons.
-Now, use the sort() method with vector is extremely easy; ```sort(myVector.begin(), myVector.end());```, this will sort **in place** your vector.
-
-What if you want to use the sort() method using a traditional array and doing the sorting in place? 
-```
-    int arr[] = {1, 1, 92, 6, 7,5, 4, 2, -1};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    sort(arr, arr+n);
-```
-
-###### Images and lectures flow source: C++ reference, Geeks for Geeks, Tutorial Point, Algorithm and Data Structures Lectures at Napier University (created by Dt.Simon Powers, and Dt. Simon Wells).
 
 
