@@ -1,80 +1,68 @@
-#  Code settings , how to get you get your IDE ready 
+## Time complexity analysis - some general rules
 
-## What IDE to I use?
+We analyzie time complexity for:
+1. Very large input-size
+2. Worst case scenario. 
 
-I use Visual studio Code but it does not really matter.  
-The most important thing is that you feel comfortable with your coding evironment, so if you are actually using something else, it's fine (as long you use at least a dark theme). 
+### Rule 1 : Analize polinomial expression of time complexities
+If we have a polinomial expressio, like ``` T(n) = 5n^3 + 3n^2 + 4n + 2```, we have to 
+* Drop all the lower order terms
+* Drop all the constant multipiers
+After applying these rules, the result of the polinomial expression above will be: ```T(n) = O(n^3)```
 
-## Code template
-
-It is useless write the same lines of code more than once, so if you can, avoid to do it. 
-My template code for my training exercises is:
+### Rule 2: Runnint time of all fragments
 ```
-#include <bits/stdc++.h>
-using namespace std; 
-
-// Core of the program 
-void solve_test()
+// O(1)
+int a;
+a = 5;
+a++;
+------------------------------
+// O(n)
+int a=0;
+for(int i =0; i < n; i++)
 {
-    // My solution; 
-} 
-
-int main()
+    cout<< a+1 << " "<<endl;
+}
+------------------------------
+// Nested loop - T(n) =  O(n^2)
+for(int i =0; i<n; i++)
 {
-    // To have low I/O operations time cost
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    unsigned int t; // t: used to store the number of test cases  
-    cin >> t; 
-    while(t--)
-    {
-        solve_test();
-        cout <<'\n';
-    }   
-	return 0;
+    for(int j=0; j<n; j++)
+        // Simple statemente
 }
 ```
+## Rule 3: Complexity in Conditional statement
 
-#### #include <bits/stdc++.h>
-
-Now, first line of code ```#include <bits/stdc++.h>```, it is used usually just with gcc / g++ compilers, so if you run this line of code with other compilers, you will probably get an error. This means that during a competition you shoud just use the standard g++ libraries as:
- ```
- #include <iostream>
- #include <vector>
- #include <utility> // Used for pairs
- // And so on... 
- ``` 
-
-What does it do? It includes all the c++ library. In a contest is a good idea, but if you program must be particular fast and do lots of computation operation, use bits/stdc++ will makes your program a bit slower. 
-
-#### \n vs endl; 
-
-```endl``` every time will flush the stream so use \n could make your compilation time potentially lower. 
-
-## Types of input
-
-Sometimes, our input requires to be stored value by values, other times, we need to store all the input by line;
-
-* Read two variables in the same line (separated by space):
+Having a block of code like a function, with multiple conditional statement, for rule, we assume that the time complexity of the program is going to be equal to the time complexituy of the worst case scanarion.
 ```
-int a, b;
-cin >> a >> b; 
+function()
+{
+    if(some condition)
+    {
+        // T(n) = O(n)
+        for(int i =0; i < n; i++)
+        {
+            // Some  simple statement
+        }  
+    }
+    else
+    {
+        T(n) = O(n^2)
+        for(int i =0; i<n; i++)
+        {
+            for(int j=0; j<n; j++)
+                // Simple statemente
+        }  
+    }
+}
 ```
-* Store all the line(including spaces)
+Becuase the preview example, the worst case scenario was to run the else statement, which has a O(n^2) time complexity, we will say that in this case, the time compleixity of my function is O(n^2).
+
+## Space complexity
+
+Space complexity is a mesure of how efficient your code is in in terms of memory used. 
 ```
-string str; 
-getline(cin , str);
+vector<int> vett;
+for (int i = 0; i < number_of_element; i++) vett.push_back(i);
 ```
-
-## Numbers Management
-
-* floor() : round down to the smallest ingeter; 
-* ceil() : round up the biggest integer; 
-* trunc() : roun to smallest integer
-* round() : round to the nearest integer
-* [setprecision()](http://www.cplusplus.com/reference/iomanip/setprecision/) : set decimal precision
-
-
-
-###### Images and lectures flow source: C++ reference, Geeks for Geeks, Tutorial Point, Algorithm and Data Structures Lectures at Napier University (created by Dt.Simon Powers, and Dt. Simon Wells).
+The space complexity of the above example is O(N). 
