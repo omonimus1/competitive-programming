@@ -27,8 +27,8 @@ If you have any questions about the solutions you can find here, feel free to co
 
 ## Structure of the Repository
 
-* [Lectures/](Lectures/): Contains useful notes for algorithms, data structures and tips for your competitive Programming contests. 
-* [Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks extremely useful for C.P.
+* [Lectures/](Lectures/README.md): Contains useful notes for algorithms, data structures and tips for your competitive Programming contests. 
+* [Readings/](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks.
 * [algo_and_dataStructures/](algo_and_dataStructure/): Contains most of the exerices that I have implemented to learn how to use a specific data structures and how to use their buit-in methods.
 * [Hackerank/](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md): Contains a link that will bring you in a dedicated repository where I will upload day by day Hackerank problems solution.
 * [Codechef/](codechef/): Contains my Codechef exercises solutions.
@@ -38,10 +38,11 @@ If you have any questions about the solutions you can find here, feel free to co
 
 
 ## Platform for training:
-* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1) 
-* [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus) 
-* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
-* [LeetCode](https://leetcode.com/) - [My Profile](https://leetcode.com/omonimus1) 
+* [HackerRank](https://www.hackerrank.com/) - [View My Profile](https://www.hackerrank.com/davidepollicino1) 
+* [CodeChef](https://www.codechef.com/) - [View My Profile](https://www.codechef.com/users/omonimus) 
+* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [View My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+* [LeetCode](https://leetcode.com/) - [View My Profile](https://leetcode.com/omonimus1) 
+* [Interviewbit](https://www.interviewbit.com/) - [View My Profile](https://www.interviewbit.com/profile/omonimus1)
 * [CodeForces](https://codeforces.com/)
 * [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
 * [Spoj.com](https://www.spoj.com/)

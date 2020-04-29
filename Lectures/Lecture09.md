@@ -48,7 +48,7 @@ It's good to know the a vector has many useful built-in methods as sort(), but y
 ## XOR operation 
 
 * XOR of a numebr with itself is 0
-* XOR of a numbr with 0 is number itself. 
+* XOR of a number with 0 is number itself. 
 
 Let's say that we need to check which number is repeated just once in an array, knowing that that
 all the other elements of the array are present twice. 

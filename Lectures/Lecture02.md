@@ -1,3 +1,7 @@
+## Comparison between two algorithm
+
+ We say that an algorithm X is asymptotically more efficient than Y when X will always be a better choise for large inputs
+
 ## Time complexity analysis - some general rules
 
 We analyzie time complexity for:
@@ -66,3 +70,40 @@ vector<int> vett;
 for (int i = 0; i < number_of_element; i++) vett.push_back(i);
 ```
 The space complexity of the above example is O(N). 
+
+```
+    // Assume that rand() is O(1) time, O(1) space function.
+    int a = 0, b = 0;    
+    for (i = 0; i < N; i++) {
+        a = a + rand();  
+    }
+    for (j = 0; j < M; j++) {
+        b = b + rand();
+    }
+    // T(n) = O(N + M) time, O(1) space
+```
+
+```
+    // Time complexity is: O(log N)
+    int a = 0, i = N;
+    while (i > 0) {
+        a += i;
+        i /= 2;
+    }
+```
+```
+// Time complexity in the worst case scenario: O(N)
+int searchNumOccurrence(vector<int> &V, int k, int start, int end) {
+    if (start > end) return 0;
+    int mid = (start + end) / 2;
+    if (V[mid] < k) return searchNumOccurrence(V, k, mid + 1, end);
+    if (V[mid] > k) return searchNumOccurrence(V, k, start, mid - 1);
+    return searchNumOccurrence(V, k, start, mid - 1) + 1 + searchNumOccurrence(V, k, mid + 1, end);
+}
+```
+
+## Space complexity
+
+If our algorithm does not uses extra memory space while performing an operation, it is said that it execute the operations ```in  place```. An example could be the sorting of an array using insertion sort, bubble sort etc.
+
+When the operation is executed in place, the Space complexity of the algorithm is: O(1)
