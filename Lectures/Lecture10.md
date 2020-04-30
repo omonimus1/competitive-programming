@@ -105,6 +105,17 @@ It could be usefull when we have a chain of items to model in our program where 
 ![Deque](../images/deuque.png)
 [Learn more about deques](https://www.geeksforgeeks.org/deque-cpp-stl/)
 
+## Priority Queue
+
+A priority queue is a container deisng such that its first elment is alway the greatest of the elment it contains. 
+Useful essentials built-in methods are:
+* empty()
+* size()
+* top() : access to the top element
+* push() : insert an element
+* pop() : remove top element
+
+
 ## Binary Heap
 
 Before to start to talk about Binary Heap, memorize the following definitions:

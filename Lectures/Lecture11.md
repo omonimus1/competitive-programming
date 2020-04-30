@@ -85,6 +85,9 @@ for (auto x : umap)
 
 ```
 
+## Unordered_map vs unordered_set 
+In unordered_set, we have only key, no value, these are mainly used to see presence/absence in a set. For example, consider the problem of counting frequencies of individual words. We can’t use unordered_set (or set) as we can’t store counts.
+
 The unordered map is implemend using Hash Table, the key provided to the map are hashed into indices of hashtable and this is why performance of data structured dependes on hash functions. 
 However, in most cases search, insert and delete operation from an hashtable are O(1).
 
