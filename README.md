@@ -3,9 +3,7 @@ Welcome to my Competitie Programming guide.
 
 ## What you can find in this repository
 
-You will find notes about compeititve programming, time and space analysis, algorithm and data structures and advices that I have matured during my experience and studies. 
-
-I have solved quite a number of problems from several topics. See the below table for further details.
+You will find notes about algorithms and Datastructures, time and space analysis,useful tips about Competitive Programming approach and many of my coding challenghes solutions from platforms like:  HackerRank, CodeChef, GeeksForGeeks, UVA and so on. Here you will find most of these solutions that have passed with 100/100. 
 
 ## How to contribute?
 1. Fork the repository
@@ -19,7 +17,7 @@ I have solved quite a number of problems from several topics. See the below tabl
 4. If you have another method of solving the problem which is asymptotically slower than the original method then, comment your solution in the main file and make a pull request.
 5. If you woukd like to make any positive change to the lectures content
 
-## Mind that
+## I appreciate any feedback
 Constructive criticisms or code reviews of any kind are very much welcome.
 
 If you have any questions about the solutions you can find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20GeeksForGeeks)
@@ -33,7 +31,7 @@ If you have any questions about the solutions you can find here, feel free to co
 * [Hackerank](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md): Hackerank challenges solutions.
 * [Codechef](codechef/): C++ Codechef solutions
 * [Geek For Geeks](geekforgeeks/README.md): Contains my Geek for Geeks exercises solutions.
-* [Interviewbit](interviewbit/README.md): My Interview challenges solutions.
+* [Interviewbit](interviewbit/README.md): My Interviewbit challenges solutions.
 * [UVA](UVA/): My UVA solutions.
 
 
@@ -51,32 +49,6 @@ If you have any questions about the solutions you can find here, feel free to co
 * [TopCoder](https://www.topcoder.com/)
 davidepollicino2015/practice/)
 * [UVA](https://onlinejudge.org/)
-
-
-## How to contribute?
-1. Fork the repository
-2. Do the desired changes (add/delete/modify)
-3. Make a pull request
-
-## When to contribute?
-1. If there is no solution to a problem in the main branch.
-2. If your solution is asymptotically faster than the one in the main branch.
-3. If your algorithm is of the same time complexity but with reduced code size. In this case, comment out the original solution and make a pull request with your solution.
-4. If you have another method of solving the problem which is asymptotically slower than the original method then, comment your solution in the main file and make a pull request.
-
-## Mind that
-Constructive criticisms or code reviews of any kind are very much welcome.
-
-If you have any questions about the solutions you can find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20CompetitiveProgrammigGuide)
-
-## Who am I ,Where and When did I start
-
-I am Davide Pollicino, Computer science student at the Edinburgh Napier university. 
-My passion for competitive programming started in 2016, during the third year of Secondary High school, where I have partecipated two times to the OIS(Olimpiadi di informatica a squadre / Competitive Programming Olimpics game in Team), being part of the [Hbfs team, 21st position in Italy and 2nd in Sicily](https://squadre.olinfo.it/edition/9/team/sic20)  
-
-Later on, during the COVID19 lookdown, I have decided to publish my solutions write these lectures for all the future Competitive Coders and keep practicing. 
-
-Are you in Italy and you would like to start with a National competition between all the secondary high School? I have started from the [OIS](https://squadre.olinfo.it/).
 
 ## Lets' connects
 
