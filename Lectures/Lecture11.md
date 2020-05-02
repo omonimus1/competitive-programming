@@ -3,11 +3,42 @@
 Is an associative container in which each element has to be unique because the value of the element identifies itself. 
 
 ```
-set <int, greater <int>> my_set;         
+//  https://practice.geeksforgeeks.org/problems/set-operations/1
+set<int> setInsert(int arr[],int n)
+{
+    set<int>s;
+    
+    for(int i=0; i< n; i++)
+        s.insert(arr[i]);
+    
+    return s;
+}
 
+void setDisplay(set<int>s)
+{
+    //Your code here to display elements of s
+    set <int> :: iterator itr;
+    for(itr = s.begin(); itr!= s.end(); itr++)
+        cout << *itr << " ";
+
+    cout<<endl;
+}
+
+void setErase(set<int>&s,int x)
+{
+   //write if condition here
+   if(s.erase(x))
+   {
+       s.erase(x);
+       cout<<"erased "<<x<<endl;
+
+   }
+    else
+        cout<<"not found"<<endl;
+}      
 ```
 
-Every time we add a new element in the set using the insert() method, the set will be sorted.
+Every time we add a new element in the set using the insert() method, the set will be sorted in asceding order (Es: 2,5,7,13,999...). If we want the the set will automaticcally order the elements in desceding order, we will need to declare our set in the following way: ``` set<int, greater<int>> set_name; ```
 
 As all the other STL Containers(vector, stack, queue, map etc), also the set has an emplace method, that allows to insert a new value.
 
@@ -43,29 +74,40 @@ An issue with the unordered set is that is not possible to store dupliace entrie
 
 TO handle any duplication, we can use instead unordered_multiset.
 
-```    unordered_multiset<int> ums1;
+```   
+    //  empty initialization 
+    unordered_multiset<int> ums1; 
+  
+    //  Initialization by intializer list 
+    unordered_multiset<int> ums2 ({1, 3, 1, 7, 2, 3, 
+                                   4, 1, 6}); 
+  
+    //  Initialization by assignment 
+    ums1 = {2, 7, 2, 5, 0, 3, 7, 5}; 
 ```
 
 ## Map
 
 Map is an associative container where every value is associated with ONE and just ONE key. 
 
-```map<int, int> my_map;```
-[!mapVideo](https://youtu.be/kDwXAmLz47w)
-[MAP - from GeekForGeeks](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)
-[MAP- c++ Reference](http://www.cplusplus.com/reference/map/map/)
+```
+map<int, int> my_map;
+```
+
+* [MAP - from GeekForGeeks](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)
+* [MAP- c++ Reference](http://www.cplusplus.com/reference/map/map/)
 
 
 Basic functions associated with Map:
-* begin() - Returns an iterator to the first element in the map
-end() - Returns an iterator to the theoretical element that follows last element in the map
-* size() - Returns the number of elements in the map
-* max_size() - Returns the maximum number of elements that the map can hold
-* empty() - Returns whether the map is empty
-* insert(keyvalue, mapvalue) - Adds a new element to the map
-* erase(iterator position) - R emoves the element at the position pointed by the iterator
-erase(const g)- Removes the key value 'g' from the map
-* clear() - Removes all the elements from the map
+* **begin()** - Returns an iterator to the first element in the map
+end()**  - Returns an iterator to the theoretical element that follows last element in the map
+* **size()**  - Returns the number of elements in the map
+* **max_size()**  - Returns the maximum number of elements that the map can hold
+* **empty()**  - Returns whether the map is empty
+* **insert(keyvalue, mapvalue)**  - Adds a new element to the map
+* **erase(iterator position)**  - R emoves the element at the position pointed by the iterator
+erase(const g)** - Removes the key value 'g' from the map
+* **clear()**  - Removes all the elements from the map
 
 
 ## Unordered map

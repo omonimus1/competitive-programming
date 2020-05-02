@@ -13,10 +13,6 @@ During my first approach to Tree, I swapped the meaning of Height and Depth.
 ![Depth vs Height BT](../images/tree-depth.png)
 ###### Source: Stackoverflow, the bible
 
-WAIT!
-
-Why do I was getting so confused?
-Well, the height and depth of a **tree** are equals but height and depth of a **node** is not equal because the height is calculated by traversing from the given node to the deepest possible leaf.
 
 ### Struct of a node
 ```
@@ -135,6 +131,7 @@ int maxDepth(struct node *root)
 
 * [Extra information: Tutorial 1](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
 * [Extra information: Tutorial 2](http://cslibrary.stanford.edu/110/BinaryTrees.html)
+
 
 
 ## Practice with Binary Tree

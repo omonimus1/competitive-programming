@@ -9,7 +9,7 @@
 |Stack, queue, Binary Heap, Heap|[Lecture 05](Lecture10.md)|
 |Set and Map|[Lecture 06](Lecture11.md)|
 |Linked List, Double Linked List|[Lecture 07](Lecture12.md)|
-|Binary Tree|[Lecture 08](Lecture13.md)|
+|Tree - Binary Tree|[Lecture 08](Lecture13.md)|
 
 
 
