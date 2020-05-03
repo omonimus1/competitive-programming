@@ -27,12 +27,13 @@ If you have any questions about the solutions you can find here, feel free to co
 
 * [Lectures](Lectures/README.md): Useful and essentials notes that I created while studying algorithms, data structures and tips for your competitive Programming contests. 
 * [Readings](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks.
-* [algo_and_dataStructures](algo_and_dataStructure/): **Basic / Medium** challenges assigned in a warm-up session of the Algorithm and data structures module at Napier university.
+* [CS97SISlides](): Algorithm and Datastructures Slides of the CS97 SI module at Standford University 
+* [Geek For Geeks](geekforgeeks/README.md): Contains my Geek for Geeks exercises solutions.
 * [Hackerank](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md): Hackerank challenges solutions.
 * [Codechef](codechef/): C++ Codechef solutions
-* [Geek For Geeks](geekforgeeks/README.md): Contains my Geek for Geeks exercises solutions.
 * [Interviewbit](interviewbit/README.md): My Interviewbit challenges solutions.
 * [UVA](UVA/): My UVA solutions.
+* [algo_and_dataStructures](algo_and_dataStructure/): **Basic** challenges assigned in a warm-up session of the Algorithm and data structures module at Napier university.
 
 
 
