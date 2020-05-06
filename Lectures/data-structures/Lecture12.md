@@ -51,6 +51,7 @@ struct node
 Doubly linked list allows us to to a reverse look-up but of course, a double linked will use extra memory to keep track of all the pointers to the preview node;
 
 ### Add new element on the front of the list
+```
 void push(Node **head, int elment_to_store)
 {
     Node *new_node = new Node();
@@ -59,7 +60,7 @@ void push(Node **head, int elment_to_store)
 
     *head = new_node;
 }
-
+```
 ### Delete a node
 
 1)Find previuos node of the node to be deleted
