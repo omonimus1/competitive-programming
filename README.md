@@ -23,27 +23,17 @@ You will find notes about algorithms and Datastructures, time and space analysis
 
 |Platform |My Profile |
 |-------|:------:|
-|[HackerRank ](https://www.hackerrank.com/)]|[My Profile](https://www.hackerrank.com/davidepollicino1)|
-|[CodeChef](https://www.codechef.com/)]|[My Profile](https://www.codechef.com/users/omonimus)|
-|[GeeksforGeeks](https://www.geeksforgeeks.org/)]|[ My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)|
-|[LeetCode](https://leetcode.com/)]|[ My Profile](  )|
-|[  ](   )]|[ My Profile](  )|
-|[](   )]|[ My Profile](  )|
-|[](   )]|[ My Profile](  )|
-|[](   )]|[ My Profile](  )|
-|[](   )]|[ My Profile](  )|
-
-* []() - [My Profile]()
-* []() - [My Profile](https://leetcode.com/omonimus1) 
-* [Interviewbit](https://www.interviewbit.com/) - [My Profile](https://www.interviewbit.com/profile/omonimus1)
-* [CodeForces](https://codeforces.com/)
-* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
-* [Spoj.com](https://www.spoj.com/)
-* [Kattis](https://open.kattis.com/)
-* [TopCoder](https://www.topcoder.com/)
-davidepollicino2015/practice/)
-* [UVA](https://onlinejudge.org/)
-
+|[HackerRank](https://www.hackerrank.com/)|[My Profile](https://www.hackerrank.com/davidepollicino1)|
+|[CodeChef](https://www.codechef.com/)|[My Profile](https://www.codechef.com/users/omonimus)|
+|[GeeksforGeeks](https://www.geeksforgeeks.org/)|[ My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)|
+|[LeetCode](https://leetcode.com/)|[ My Profile](https://leetcode.com/omonimus1)|
+|[Interviewbit](https://www.interviewbit.com/)|[ My Profile](https://www.interviewbit.com/profile/omonimus1)|
+|[Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)||
+|[Spoj.com](https://www.spoj.com/)| |
+|[Kattis](https://open.kattis.com/)||
+|[TopCoder](https://www.topcoder.com/)||
+|[UVA](https://onlinejudge.org/)||
+ 
 
 ## How to contribute?
 1. Fork the repository
