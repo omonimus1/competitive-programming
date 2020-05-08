@@ -5,6 +5,35 @@ Welcome to my Competitie Programming guide.
 
 You will find notes about algorithms and Datastructures, time and space analysis,useful tips about Competitive Programming approach and many of my coding challenghes solutions from platforms like:  HackerRank, CodeChef, GeeksForGeeks, UVA and so on. Here you will find most of these solutions that have passed with 100/100. 
 
+
+## Structure of the Repository
+
+|Folder|Content|
+|-------|:------:|
+|Lectures|[Notes about Algorithm And Data Structures](Lectures/README.md)|
+|Readings|[Free e-books about Competitive Programming](Reading/)|
+|Geeks For Geeks|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
+|HackerRank|[My own HackerRank coding solutions](HackerRank/README.md)|
+|CodeChef[My own Codechef coding solutions](codechef/)|
+|UVA|[My own UVA Online Judge solutions ](UVA/)|
+|InterviewBit|[My Interview Bit solutions ](interviewbit/README.md)|
+|learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
+
+## Platforms for training:
+* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1) 
+* [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus) 
+* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
+* [LeetCode](https://leetcode.com/) - [My Profile](https://leetcode.com/omonimus1) 
+* [Interviewbit](https://www.interviewbit.com/) - [My Profile](https://www.interviewbit.com/profile/omonimus1)
+* [CodeForces](https://codeforces.com/)
+* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
+* [Spoj.com](https://www.spoj.com/)
+* [Kattis](https://open.kattis.com/)
+* [TopCoder](https://www.topcoder.com/)
+davidepollicino2015/practice/)
+* [UVA](https://onlinejudge.org/)
+
+
 ## How to contribute?
 1. Fork the repository
 2. Do the desired changes (add/delete/modify)
@@ -22,33 +51,6 @@ Constructive criticisms or code reviews of any kind are very much welcome.
 
 If you have any questions about the solutions you can find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20GeeksForGeeks)
 
-
-## Structure of the Repository
-
-* [Lectures](Lectures/README.md): Useful and essentials notes that I created while studying algorithms, data structures and tips for your competitive Programming contests. 
-* [Readings](https://github.com/omonimus1/competitive-programming/tree/master/Reading) : Contains free ebooks.
-* [Geek For Geeks](geekforgeeks/README.md): Contains my Geek for Geeks exercises solutions.
-* [Hackerank](https://github.com/omonimus1/competitive-programming/blob/master/HackerRank/README.md): Hackerank challenges solutions.
-* [Codechef](codechef/): C++ Codechef solutions
-* [Interviewbit](interviewbit/README.md): My Interviewbit challenges solutions.
-* [UVA](UVA/): My UVA solutions.
-* [algo_and_dataStructures](algo_and_dataStructure/): **Basic** challenges assigned in a warm-up session of the Algorithm and data structures module at Napier university.
-
-
-
-## Platform for training:
-* [HackerRank](https://www.hackerrank.com/) - [View My Profile](https://www.hackerrank.com/davidepollicino1) 
-* [CodeChef](https://www.codechef.com/) - [View My Profile](https://www.codechef.com/users/omonimus) 
-* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [View My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
-* [LeetCode](https://leetcode.com/) - [View My Profile](https://leetcode.com/omonimus1) 
-* [Interviewbit](https://www.interviewbit.com/) - [View My Profile](https://www.interviewbit.com/profile/omonimus1)
-* [CodeForces](https://codeforces.com/)
-* [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
-* [Spoj.com](https://www.spoj.com/)
-* [Kattis](https://open.kattis.com/)
-* [TopCoder](https://www.topcoder.com/)
-davidepollicino2015/practice/)
-* [UVA](https://onlinejudge.org/)
 
 ## Lets' connects
 

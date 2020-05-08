@@ -1,4 +1,4 @@
-## Competitive Programming theory
+## Data Structures
 
 |Topic|Lecture|
 |-------|:------:|
@@ -11,6 +11,11 @@
 |Linked List, Double Linked List|[Lecture 07](data-structures/Lecture12.md)|
 |Tree - Binary Tree|[Lecture 08](data-structures/Lecture13.md)|
 
+## Algorithm
+
+|Topic|Lecture|
+|-------|:------:|
+|Bitwise algorithm|[Lecture 01](algorithm/Lecture01.md)|
 
 ## CS97SI Slides
 

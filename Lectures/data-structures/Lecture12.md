@@ -110,7 +110,7 @@ void printReverse(Node *head)
 }
 ```
 
-### Reverse linked list
+### Reverse single linked list
 1. Create three pointers, ```prev=NULL```, ```current = head``` and ```next=NULL```
 2. Iterate trough the linked list. In loop, do following.
     // Before changing next of current,
@@ -124,9 +124,10 @@ void printReverse(Node *head)
     prev = curr
     curr = next
 
-## Sort linked list
+## Sort singly  linked list
 
 Merge sort is the preferred algorithm for sorting linked list. Quicksort for example, cause the slow random-access, would result in poorer performance than merge sort. 
+
 
 
 

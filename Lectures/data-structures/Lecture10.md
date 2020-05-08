@@ -7,7 +7,7 @@ Even if you probably understimate the value of the se two Data structures, they 
 * Push: add in iteam in the stack (If the stack is full: Overflow condition)
 * Pop: removes an iteam from the stack. (If we pop without every pushed: Underflow condition) 
 * Peek or Top: returns the top element of the stack. 
-* isEmpty(): returns True if Stack is empty, false otherwise.
+* isEmpty(): returns True if Stack is empty, false.
 
 
 #### How to implement a stack
@@ -102,7 +102,7 @@ A lists can usually support all the behaviours of a Deque (but generally has mor
 
 It could be usefull when we have a chain of items to model in our program where these can be processes at each end but not in the middle. 
 
-![Deque](../images/deuque.png)
+![Deque](../../images/deuque.png)
 [Learn more about deques](https://www.geeksforgeeks.org/deque-cpp-stl/)
 
 ## Priority Queue
