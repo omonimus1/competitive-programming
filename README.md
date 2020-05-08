@@ -14,16 +14,27 @@ You will find notes about algorithms and Datastructures, time and space analysis
 |Readings|[Free e-books about Competitive Programming](Reading/)|
 |Geeks For Geeks|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
 |HackerRank|[My own HackerRank coding solutions](HackerRank/README.md)|
-|CodeChef[My own Codechef coding solutions](codechef/)|
+|CodeChef | [My own Codechef coding solutions](codechef/)|
 |UVA|[My own UVA Online Judge solutions ](UVA/)|
 |InterviewBit|[My Interview Bit solutions ](interviewbit/README.md)|
 |learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
 
 ## Platforms for training:
-* [HackerRank](https://www.hackerrank.com/) - [My Profile](https://www.hackerrank.com/davidepollicino1) 
-* [CodeChef](https://www.codechef.com/) - [My Profile](https://www.codechef.com/users/omonimus) 
-* [GeeksforGeeks](https://www.geeksforgeeks.org/) - [My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)
-* [LeetCode](https://leetcode.com/) - [My Profile](https://leetcode.com/omonimus1) 
+
+|Platform |My Profile |
+|-------|:------:|
+|[HackerRank ](https://www.hackerrank.com/)]|[My Profile](https://www.hackerrank.com/davidepollicino1)|
+|[CodeChef](https://www.codechef.com/)]|[My Profile](https://www.codechef.com/users/omonimus)|
+|[GeeksforGeeks](https://www.geeksforgeeks.org/)]|[ My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)|
+|[LeetCode](https://leetcode.com/)]|[ My Profile](  )|
+|[  ](   )]|[ My Profile](  )|
+|[](   )]|[ My Profile](  )|
+|[](   )]|[ My Profile](  )|
+|[](   )]|[ My Profile](  )|
+|[](   )]|[ My Profile](  )|
+
+* []() - [My Profile]()
+* []() - [My Profile](https://leetcode.com/omonimus1) 
 * [Interviewbit](https://www.interviewbit.com/) - [My Profile](https://www.interviewbit.com/profile/omonimus1)
 * [CodeForces](https://codeforces.com/)
 * [Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)
