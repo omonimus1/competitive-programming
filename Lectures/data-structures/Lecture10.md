@@ -1,4 +1,3 @@
-
 ## Stack(LIFO), Queue(FIFO), Binary Heap
 
 Even if you probably understimate the value of the se two Data structures, they are used in the daily life.

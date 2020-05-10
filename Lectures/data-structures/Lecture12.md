@@ -110,6 +110,32 @@ void printReverse(Node *head)
 }
 ```
 
+## Reverse a linked list 
+
+```
+/* Function to reverse the linked list */
+void reverse() 
+{ 
+    // Initialize current, previous and 
+    // next pointers 
+    Node* current = head; 
+    Node *prev = NULL, *next = NULL; 
+
+    while (current != NULL) { 
+        // Store next 
+        next = current->next; 
+
+        // Reverse current node's pointer 
+        current->next = prev; 
+
+        // Move pointers one position ahead. 
+        prev = current; 
+        current = next; 
+    } 
+    head = prev; 
+} 
+```
+
 ### Reverse single linked list
 1. Create three pointers, ```prev=NULL```, ```current = head``` and ```next=NULL```
 2. Iterate trough the linked list. In loop, do following.

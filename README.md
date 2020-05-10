@@ -5,7 +5,6 @@ Welcome to my Competitie Programming guide.
 
 You will find notes about algorithms and Datastructures, time and space analysis,useful tips about Competitive Programming approach and many of my coding challenghes solutions from platforms like:  HackerRank, CodeChef, GeeksForGeeks, UVA and so on. Here you will find most of these solutions that have passed with 100/100. 
 
-
 ## Structure of the Repository
 
 |Folder|Content|
@@ -17,6 +16,7 @@ You will find notes about algorithms and Datastructures, time and space analysis
 |CodeChef | [My own Codechef coding solutions](codechef/)|
 |UVA|[My own UVA Online Judge solutions ](UVA/)|
 |InterviewBit|[My Interview Bit solutions ](interviewbit/README.md)|
+|Leetcode|[My Leetcode solutions ](interviewbit/README.md)|
 |learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
 
 ## Platforms for training:
@@ -34,7 +34,6 @@ You will find notes about algorithms and Datastructures, time and space analysis
 |[TopCoder](https://www.topcoder.com/)||
 |[UVA](https://onlinejudge.org/)||
  
-
 ## How to contribute?
 1. Fork the repository
 2. Do the desired changes (add/delete/modify)

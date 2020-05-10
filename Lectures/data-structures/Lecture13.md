@@ -1,17 +1,12 @@
 ## Binary Tree
 
+In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
 ### Essentials about Binary Tree
 
 * **Binary Tree:** Each element in the Tree Has at most a left and right child.
 * **Applications:** Usually used when we store information that naturally forms a hierarchy or when we need to execute fast search operation.
 * **Size**: Number of nodes in the Binary Tree. 
 
-### Height vs Depth
-
-During my first approach to Tree, I swapped the meaning of Height and Depth. 
-
-![Depth vs Height BT](../images/tree-depth.png)
-###### Source: Stackoverflow, the bible
 
 
 ### Struct of a node
@@ -105,6 +100,12 @@ void inorder(struct Node *root)
 
 There is only one kind of breadth-first-traversal, the Breadth First or Level Order Traversal : 1 2 3 4 5
 
+### Height vs Depth
+
+During my first approach to Tree, I swapped the meaning of Height and Depth. 
+
+![Depth vs Height BT](../images/tree-depth.png)
+###### Source: Stackoverflow, the bible
 
 ### Max Depth
 
@@ -132,6 +133,42 @@ int maxDepth(struct node *root)
 * [Extra information: Tutorial 1](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
 * [Extra information: Tutorial 2](http://cslibrary.stanford.edu/110/BinaryTrees.html)
 
+## Print node at k distance from  root 
+
+```
+void print_level_k(node *root, int k)
+{
+    if(root == NULL)
+        return;
+    if( k == 0)
+    {
+        cout <<root->data<<endl;
+        return;
+    }
+    else
+    {
+        print_level_k(root->left, k-1);
+        print_level_k(root->right, k-1);
+    }
+}
+
+```
+
+## Height of a tree
+int height(node *root)
+{
+    if(height == NULL)
+        return 0; 
+    else
+    {
+     /* compute the height of each subtree */
+        int lHeight = height(node->left);  
+        int rHeight = height(node->right);  
+        /* use the larger one */
+          
+        return (lHeight > rHeight)? (lHeight + 1): (rHeight + 1);    
+    }
+}
 
 
 ## Practice with Binary Tree
