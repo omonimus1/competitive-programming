@@ -17,7 +17,7 @@ We classify the sorting algorithm considering five characteristics:
 5. **Nature of the algorithm:** Recursive or Non-recursive algorithm.  
 
 Time complexity of the most popular sorting algorithms:
-![time-complexity](../images/sorting-complexity.png)
+![time-complexity](../../images/sorting-complexity.png)
 ###### Source: interviewBit.com
 
 ## Insertion Sort

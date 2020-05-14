@@ -154,12 +154,75 @@ void reverse()
 
 Merge sort is the preferred algorithm for sorting linked list. Quicksort for example, cause the slow random-access, would result in poorer performance than merge sort. 
 
+## Detect a loop
+
+To remove any loop/cycle in a linked list or in a graph we need first to detect them.
+For loop detection we can use the Floyd Cycle detectin algorithm.
+
+There are different ways to find a loop but the concept is the same: we have
+to se the pointe to the loop_node ->next = NULL;
+
+We can:
+* Hash the adress of the Linked list nodes and ceck if te element already exists in the hashmap. If it does, we have reached a node which already exists by a cycle and we need to se the last node's next pointer to NULL. 
+* Use a support pointer for detect nodes.
+
+```
+bool detectloop(Node *head) {
+     if(head == NULL && head->next == NULL)
+        return false; 
+     Node *slow = head;
+     Node *fast = head;
+     while(slow && fast && fast->next)
+     {
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow == fast)
+            return true;
+     }
+     return false;
+}
+```
+
+```
+bool detect_and_remove_loop_if_exists(Node * head)
+{
+    Node *slow = head;
+    Node *fast = head;
+    // Search for loop using slow and 
+    // fast pointers 
+    while (fast && fast->next) { 
+        if (slow == fast) 
+            break; 
+        slow = slow->next; 
+        fast = fast->next->next; 
+    } 
+  
+    /* If loop exists */
+    if (slow == fast) 
+    { 
+         slow = head;
+         // Find loop point
+         while(slow->next != fast->next)
+         {
+             slow = slow->next;
+             fast = fast ->next;
+         }
+         // Because fast->next is the loop pint, we set it to NULL
+         fast->next = NULL;
+         // there was a loops and it has been remove
+         return true; 
+    }
+    else
+        // There were not loops
+        return false; 
+}
+```
 
 
-
-[Operations on a doubly linked list](https://www.interviewbit.com/tutorial/doubly-linked-list/)
-[Introduction to Linked List -  video-tutorial](https://www.interviewbit.com/tutorial/doubly-linked-list/)
+* [Operations on a doubly linked list](https://www.interviewbit.com/tutorial/doubly-linked-list/)
+* [Introduction to Linked List -  video-tutorial](https://www.interviewbit.com/tutorial/doubly-linked-list/)
 [Doubly Linked List - Implementation](https://www.youtube.com/watch?v=VOQNf1VxU3Q)
+* [Cycle detection](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare)
 ##### Source: Interviewbit and mycodeschool
 
 ### Extra Exercises

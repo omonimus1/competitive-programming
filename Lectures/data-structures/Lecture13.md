@@ -104,7 +104,7 @@ There is only one kind of breadth-first-traversal, the Breadth First or Level Or
 
 During my first approach to Tree, I swapped the meaning of Height and Depth. 
 
-![Depth vs Height BT](../images/tree-depth.png)
+![Depth vs Height BT](../../images/tree-depth.png)
 ###### Source: Stackoverflow, the bible
 
 ### Max Depth
@@ -170,6 +170,141 @@ int height(node *root)
     }
 }
 
+## Count Leaves in a Binary Tree
+
+* **Leaves:**
+
+## Diameter of a Binary Tree
+
+Diameter (also width): number of nodes on thelongest path between two end nodes.
+The diameter of a tree T is the largest of the following quantities:
+* The diameter of the left subtreee
+* Diameter of right subtree
+* Longest path between leaves that goes thourhg the root T (computed from the height of  a tree).
+![Diameter-of-tree](../../images/diameter_of_tree.png)
+```
+int height(Node *head)
+{
+    if(head == NULL)
+        return 0;
+    return 1 + max(height(node->left), height(node->right))
+}
+```
+```
+int diameter(Node *head)
+{
+    if(head == NULL)
+        return 0;
+    else
+    {
+        left_height = height(root->left);
+        right_height = height(root->right);
+
+        // Get the diameter of left and right sub-trees
+        left_diameter = diameter(root->left);
+        right_diameter = diameter(root->right)
+
+        return max(left_height + right_height +1, max(left_diameter, right_diameter));
+    }
+}
+```
+###### Image by Geeks for Geeks
+
+## Left or Right view of Binary Tree
+
+
+![Left View](../../media/left_view.png)
+###### Left view, images: Geeks for Geeks
+## Check if a tree is balanced
+
+## Ancestors 
+* [Print Ancestors of a given node](https://www.geeksforgeeks.org/print-ancestors-of-a-given-node-in-binary-tree/)
+* [Lowest common Ancestor of a given binary tree](https://www.geeksforgeeks.org/print-ancestors-of-a-given-node-in-binary-tree/)
+
+## Binary Tree (BT), convert it to a Doubly Linked List(DLL) In-Place.
+Recursively look for the node with no grandchildren and both left and right child in the left sub-tree. Then store node->right in temp and make node->right=node->left. Insert temp in first node NULL on right of node by node=node->right. Repeat until it is converted to linked list.
+
+Flatten operation: convert from BT to Linked list
+Inorder printing of the BT allws to have the flatted BT elements in increasing order
+
+```
+void flatten(Node * root)
+{
+    if(root == NULL || root->left == NULL && root->right == NULL)
+        return; 
+    if(root->left != NULL)
+    {
+        //Move the left subtree in the right subtree
+        if(root->left != NULL)
+        {
+            flatten(root->left);
+
+            Node * tempraryRight = root->right;
+            root->right = root->left;
+            root->left = NULL;
+
+            // Find the position to insert the new node
+            Node *t = root->right; 
+            while(t->right != NULL)
+                t = t->right;
+        
+            // Insert the value
+            t->right = temporaryRight;
+        }
+        // Call the same function for root->ight
+        flatten(root->right);
+
+    }
+}
+```
+## Vertical traversal of Binary Tree
+Traverse a Binary Tree vertically means ge the minimum and maximum horizontal distance with respect to root. 
+![Vertical Print](../../media/vertical_bt.png)
+###### Image provided by Geeks For Geeks
+```
+// min: min horizonal distance from root
+// max: max horizonal distance from root
+//  horizontal_distnace: horizonal distance of current from node from root
+void findMinMax(Node *root, *min, *max, horizontal_distance)
+{
+    if(root == NULL)
+        return;
+    if(horizontal_distance < min) *min = horizontal_distance;
+    else if( horizontal_distance > max) *max = horizontal_distance;
+
+    findMinMax(root ->left, min, max, horizontal_distance-1);
+    findMinMax(root -> right, min, max, horizontal_distance+1);
+}
+
+void printVerticalLine(Nod * root, line_number, horizontal_distance)
+{
+    if(root == NULL)
+        return; 
+    if(horizontal_distance == line_numnber)
+        cout << root -> data; <<endl;
+    printVerticalLine(root->left, line_number, horizontal_distance-1);
+    printVerticalLine(root->right, line_number, horizontal_distance+1);
+}
+// The main function that prints a given binary tree in 
+// vertical order
+void verticalOrder(Node *root)
+{
+    // Get min and max distance respect to the root
+    int min = 0,  max =0;
+    findMinMax(root, &min, &max, 0);
+
+    /* Iterate all possible vertical lines starting from the leftmost and print
+     line by line */
+     for(int line_number = min, line_number <= max; line_number++)
+     {
+         printVerticalLine(root, line_number, 0);
+         cout <<endl;
+     }
+}
+
+```
+
+[Find distance between root and a given node](https://www.youtube.com/watch?v=pavbfn1FHrs&feature=emb_rel_end)
 
 ## Practice with Binary Tree
 
