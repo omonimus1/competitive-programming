@@ -1,41 +1,54 @@
-#include <bits/stdc++.h>
-using namespace std; 
+// https://www.codechef.com/LRNDSA01/problems/LAPIN
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
-// Core of the program 
-void solve_test()
+bool is_lapindrome(string word)
 {
-    string word = "rotor";
-    cin >>  word;
-    unsigned long int word_size = word.size();
-    unsigned long int start_second_half = word_size/2;
-    unsigned long int end_first_half = start_second_half;
-    // We ignore the middle character if the string size is odd
-    if(word_size %2 !=0)
-       start_second_half++;
-       
-    for(int i =0; i < end_first_half; i++)
+
+    int half_size  = word.size()/2;
+    int second_half_start, end_first_half;
+    end_first_half = half_size-1;
+    if(word.size() % 2 == 0)
+        second_half_start = half_size;
+    else
+        second_half_start = half_size+1;
+  
+    string first_half,second_half;
+    int i;
+    for(i=0; i<= end_first_half; i++)
     {
-        if(word[i] != word[start_second_half])
-        {
-            cout<<"NO"<<endl;
-            return;
-        }
-        start_second_half++;
+        first_half.push_back(word[i]);
+        second_half.push_back(word[second_half_start]);
+        second_half_start++;
+    }   
+    
+    sort(first_half.begin(), first_half.end());
+    sort(second_half.begin(), second_half.end());
+    for(i =0; i< first_half.size(); i++)
+    {
+        if(first_half[i] != second_half[i])
+            return false;
     }
-    cout<<"YES"<<endl;
-} 
+    return true;
+}
 
 int main()
 {
-    // To have low I/O operations time cost
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    unsigned long int t; // t: used to store the number of test cases  
-    cin >> t; 
-    while(t--)
+    int test_cases;
+    string word;
+    cin >> test_cases;
+    while(test_cases--)
     {
-        solve_test();
-    }   
-	return 0;
+        cin >> word;
+        if(is_lapindrome(word))
+            cout<<"YES"<<endl;
+        else
+        {
+            cout <<"NO"<<endl;
+        }
+        
+    }
+    return 0; 
 }
