@@ -217,7 +217,34 @@ bool detect_and_remove_loop_if_exists(Node * head)
         return false; 
 }
 ```
+## Check if a Linked List is palindrome or not  O(N) time and O(1) Space
+1. Get Middle element of the Linked List
+2. Reverse the second half of the linked list
+3. Check if the first half and the second are identical
+4.  Construct the original linked list by reversing the second half again
+and attaching it back to thefirst half. 
+```
+bool isPalindrom(Node *head)
+{
+    Node *slow = head, *fast = head; 
+    Node * second_half, *prev_of_slow; 
+    Node *middle_node = NULL;
 
+    if(head!= NULL && head->next != NULL)
+    {
+        //reac middle node of the linked list
+        while(fast != NULL && fat->next != NULL)
+        {
+            fast = fast->next->next;
+
+            prev_of_slow = slow;
+            slow = slow->next; 
+        }
+
+        
+    }
+}
+```
 
 * [Operations on a doubly linked list](https://www.interviewbit.com/tutorial/doubly-linked-list/)
 * [Introduction to Linked List -  video-tutorial](https://www.interviewbit.com/tutorial/doubly-linked-list/)
