@@ -57,9 +57,26 @@ void print_stack(stack <int> stackArray)
       stackArray.pop();
   }
 }
-
 ```
 
+## Find Min element at every pop operation in O(1) time
+
+We use an additional stack where we store the min element of the stack in chronologica order. 
+The algorithm works in this way: 
+1. Create your stack and supporting stack
+1.1 if supporting stack and mainStack are both empty: add the same element to both
+2. Every time that you insert / **push** a new element in your stack:
+    2.1 if top(stack) < top (supporting stack)
+        2.2 Push in supporting stack
+
+3. Every time that you **pop** from the main stack, if popElement of the Main Stack  == top of supporting stack, pop element from the supporting stack (that will be your min element).
+
+* [Find Min element at every pop operaton in O(1) but with additional space](https://www.youtube.com/watch?time_continue=515&v=ufwPuyxkNVE&feature=emb_title)
+* [Find Min element at every pop operation in O(1) space and time](https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/)
+
+## Implement stack using Linked List
+
+```
 [Check the stack implementation with the Linked List](../algo_and_dataStructure/c++/data-structures/stack/stack-Linked-list.cpp)'
 
 ## Application of the queue

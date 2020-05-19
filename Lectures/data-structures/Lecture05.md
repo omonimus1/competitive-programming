@@ -28,9 +28,12 @@ Soemtimes we need to:
 * Check if two points are equals. 
 * Caculate distance between two points in a 2D space
 * Rotate a point by angle θ.
+
+Formula = d(P, Q) = √ (x2 − x1)2 + (y2 − y1)2 
+
 ```
-double distance(struct point1, struct poin2)
-    return sqrt(point1.x * point2.x + point1.y * point2.y);
+double distance(struct point1, struct point2)
+    return sqrt (point1.x-point2.x)^2+(point1.y-point2.y)^2)
 ```
 OR
 ```
@@ -78,7 +81,13 @@ Circle centered at coordinate(a,b) in a 2D Euclidean space with radius r is the 
 * Area: A = PI * radius^2;
 * Sector: 
 
-* How to check if a point is inside, outside or exactly on the border of a circle
+### How to check if a point is inside, outside or exactly on the border of a circle
+1. Check distance between center of the circle and the point
+2. Compare the distance between the two points with the radius
+    2.1. If Distance == radius: The point is on the perimeter
+    2.2  If distance < radius : The point is inside the circle
+    2.3. else : point is outside the circle.  
+
 * Having the center point of two circle and their radius, check if collide or not. 
 
 ### Triangles
@@ -88,8 +97,7 @@ Triangle: polygon with three vertices and three edges.
 * Isosceles: two side have same lenght and two interior angles are the same
 *& Scalene: all different sides.
 * Right: one fo its interior angle is 90 degree (or right angle)
-
-Area = (b * h) / 2;
+0
 Perimeter = a + b +c;
 SemiPerimeter = Perimeter / 2;
 
@@ -114,10 +122,6 @@ of three points a, b, and c
 Quadrilater or Quadrangle is a polygon with four edges and four vertices. 
 Rectangle is apygon with four edges, four vertices and four right angles. A = 2 * (base + height) 
 
-
-
-### Polygon Representation 
-
 ### Perimeter of a Polygon 
 
 Perimeter of a polying is the sum of the distance between all the points (length of the side). 
@@ -136,19 +140,55 @@ double area(const vector<point> &P) {
 }
 ```
 
-### Hpow to check if a polygon is convex or cancave
+## Calculate Perimeter of a Polygon
+```
+// Structure of the point coordinates
+struct point
+{
+    int a,b;
+};
 
-### How to check if a point is inside a polygon 
+// Store the coordinates 
+vector<point> p;
+p.push_back(point(1,3));
+p.push_back(point(3,3));
+p.push_back(point(4,5));
+p.push_back(point(0,2));
+p.push_back(P[0]); // important: loop back to connect the last vertex with the first
 
-### Area of a Polygon 
+// Calculate Perimeter
+double perimeter(const vector<point>)
+{
+    double result = 0.0;
+    for(int i =0; i < (int)p.size()-1; i++)
+        result += dist(p[i] + p[i+1]);
+    return result; 
+}
 
-### Checking if a Polygon is Convex 
+// Calculate area
+double are(const vector<point> &p)
+{
+    double result = 0.0, x1, y1, x2, y2;
+    for(int i=0; i< (int)p.size()-1; i++)
+    {
+        x1 = p[i].x; 
+        x2 = p[i+1].x;
+        y1 = p[i].y;
+        y2 = p[i+1].y;
+        result += (x1 * y2 - x2 * y1);
+    }
+    return fabs(result / 2.0; 
+}
+```
 
-### Checking if a Point is Inside a Polygon 
+### How to check if a polygon is convex or cancave
 
-### Cutting Polygon with a Straight Line
-
-### Find dimension of a rectangle having the coordinates of two points
+To test if a polygon is convex, there is an easier computational approach than
+“trying to check if all line segments can be drawn inside the polygon”. We can simply check
+whether all three consecutive vertices of the polygon form the same turns (all left turns/ccw
+if the vertices are listed in counter clockwise order or all right turn/cw if the vertices are
+listed in clockwise order). If we can find at least one triple where this is false, then the
+polygon is concave.
 
 ### Exercise
 

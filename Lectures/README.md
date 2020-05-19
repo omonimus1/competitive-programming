@@ -13,6 +13,7 @@
 |Set and Map|[Lecture 09](data-structures/Lecture11.md)|
 |Linked List, Double Linked List|[Lecture 10](data-structures/Lecture12.md)|
 |Tree - Binary Tree|[Lecture 11](data-structures/Lecture13.md)|
+|Graph|[Lecture 12](data-structures/Lecture14.md)|
 
 
 ## Algorithm
