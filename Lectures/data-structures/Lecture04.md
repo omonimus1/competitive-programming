@@ -39,6 +39,13 @@ int gcd(int a, int b) { return b==0 ? a : gdc(b, a%b); }
 int lcm(int a, int b) {  return a * (b/gcd(a,b)); }
 ```
 
+### Catalan Number
+
+
+### Fibonacci Number
+
+
+
 **Pollard’s rho algorithm**: used for the calculation of factorization of large numbers. 
 ###### Practice
 

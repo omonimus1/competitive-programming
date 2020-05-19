@@ -160,8 +160,20 @@ int main ()
 }
 ```
 Output will be ```30 17 15 10 1```
-
+## Complexity Time of the Binary Tree
+```
+Binary Heap
+Type	tree
+Time complexity in big O notation
+Algorithm		Average	Worst case
+Space		O(n)	O(n)
+Search		O(n)	O(n)
+Insert		O(1)	O(log n)
+Delete		O(log n)	O(log n)
+Peek		O(1)	O(1)
 We can as well implement a Min Binary Heap 
+```
+
 ```
 #include <bits/stdc++.h>
 using namespace std;
