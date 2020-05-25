@@ -7,6 +7,9 @@
 
 * **Sorting:** arranging the elements of a list or collection in creaseing or decreasing order of some property. 
 
+
+![Sorting Complexituy](../../images/complexity-sort.png)
+
 ##  Sorting Algorith classification
 We classify the sorting algorithm considering five characteristics:
 
@@ -19,6 +22,9 @@ We classify the sorting algorithm considering five characteristics:
 Time complexity of the most popular sorting algorithms:
 ![time-complexity](../../images/sorting-complexity.png)
 ###### Source: interviewBit.com
+
+* **Order stastics**: The ith order statistic of a set of n numbers is the ith smallest number in the set. 
+
 
 ## Insertion Sort
 
@@ -54,7 +60,7 @@ Merge sort is one of the most efficient sorting algorithms. It works on the prin
 
 ## Quick sort
 
-* Worst case: O(n^2)
+* worst-case time: O(n^2)
 * Best case: O(n log n)
 * [View the lesson](https://www.geeksforgeeks.org/quick-sort/)
 ![Quick sort](../images/quick-sort.gif)
@@ -86,4 +92,22 @@ void selectionSort(int arr[], int n)
 
 * [How to implement it](https://www.geeksforgeeks.org/bubble-sort/)
 ![Bubble sort](../images/bubble-sort.gif)
+
+
+## Heapsort
+
+Heapsort is a comparison based sorting technique baseed on Binary Heap data structure.
+It runs in O(n log n).
+
+Complete Binary Tree: binary tree with all the levels full, expect possibily the last and all nodes are as far left as possible. 
+
+Binary Heap: Complete Binary Tree where the root element can be the smallest (This is called Min Binary Heap) or the biggest one (Max Binary Heap).
+
+
+Viewing a heap as tree, we define the **height of a node** in a heap to be the number of edges on the longest simple downward path from the node to a lead.
+
+Height of an Heap: Height of the root element. 
+
+
+
 ###### Source: wikipedia.org

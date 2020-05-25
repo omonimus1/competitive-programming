@@ -74,9 +74,66 @@ The algorithm works in this way:
 * [Find Min element at every pop operaton in O(1) but with additional space](https://www.youtube.com/watch?time_continue=515&v=ufwPuyxkNVE&feature=emb_title)
 * [Find Min element at every pop operation in O(1) space and time](https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/)
 
-## Implement stack using Linked List
+
+```/* Return true if expression has balanced  
+       Parenthesis */
+    static boolean areParenthesisBalanced(char exp[]) 
+    { 
+       /* Declare an empty character stack */
+       stack st=new stack(); 
+       
+       /* Traverse the given expression to  
+          check matching parenthesis */
+       for(int i=0;i<exp.length;i++) 
+       { 
+            
+          /*If the exp[i] is a starting  
+            parenthesis then push it*/
+          if (exp[i] == '{' || exp[i] == '(' || exp[i] == '[') 
+            st.push(exp[i]); 
+       
+          /* If exp[i] is an ending parenthesis  
+             then pop from stack and check if the  
+             popped parenthesis is a matching pair*/
+          if (exp[i] == '}' || exp[i] == ')' || exp[i] == ']') 
+          { 
+                   
+              /* If we see an ending parenthesis without  
+                 a pair then return false*/
+             if (st.isEmpty()) 
+               { 
+                   return false; 
+               }  
+       
+             /* Pop the top element from stack, if  
+                it is not a pair parenthesis of character  
+                then there is a mismatch. This happens for  
+                expressions like {(}) */
+             else if ( !isMatchingPair(st.pop(), exp[i]) ) 
+               { 
+                   return false; 
+               } 
+          } 
+            
+       } 
+          
+       /* If there is something left in expression  
+          then there is a starting parenthesis without  
+          a closing parenthesis */
+        
+       if (st.isEmpty()) 
+         return true; /*balanced*/
+       else
+         {   /*not balanced*/
+             return false; 
+         }  
+    }  
 
 ```
+
+## Implement stack using Linked List
+
+
 [Check the stack implementation with the Linked List](../algo_and_dataStructure/c++/data-structures/stack/stack-Linked-list.cpp)'
 
 ## Application of the queue
@@ -112,7 +169,7 @@ while(!queue_example.empty())
 ### Deques
 
 A deques is a version of a queue in which elements can be added or removed from either end (front and back). 
-We cna think to, that a deque is a data structurre that joins the functionalities of the stack and queue. 
+We can think that a deque is a data structurre that joins the functionalities of the stack and queue. 
 
 A lists can usually support all the behaviours of a Deque (but generally has more feature than a deque should officialy support). 
 
@@ -147,6 +204,8 @@ Now,  A Binary Heap is a complete binary tree either Min Heap Or Max Heap. In a 
 * Used to implement the Dijkstra's shortest Pah and Prim's Minimum Spanning Tree
 * Sort an almost sorted array efficienty, K'th Larget Element in in array. 
 
+
+
 [Larn more about Binary Search Tree](https://www.geeksforgeeks.org/binary-search-tree-data-structure/)
 
 We can implement a Max Binary Heap using a Priority Queue. 
@@ -175,49 +234,46 @@ int main ()
 
     return 0;
 }
-```
+
 Output will be ```30 17 15 10 1```
-## Complexity Time of the Binary Tree
 ```
+
+## Fibonacci Heaps
+
+Fibonaccy Heap is a mergeable heap.
+A mergeable heap is any data structure that supports these 6 operations, in which element has a key:
+1. Make-Heap(): Create and return a new Heap continaiting no element
+2. Insert(H,x): insertet element x, whose key has been already been filled in, into heap H.
+3. Minuum(): return pointer to the smallest element
+4. Union(H1, H2): create and retrun a new Heap that contains all the element of heap H1 and H2 and H1 and H2 are destroyed by this operation.
+5. Decrease-key(H,x,k): assign to element x within heap H, the new key value K, which we assume to be no freater than
+6. Delete(H,x): Deletes elemet x from heap H. 
+
+![Fibonacci-heap-complexity](../../images/fibonacci-heap.png)
+
+## Practice and Questions
+1. Height of an Heap
+2. Min and Max elemenets in an heap of height H?
+3. Where in a Max-heap is the smallest element considering that all the elements are distinct?
+4. Is an Array that is sorted order a min-heap?
+5. Is the array with values h23; 17; 14; 6; 13; 10; 1; 5; 7; 12i a max-heap?
+6. How do we convert array in Heap?
+7. How do we apply the Heap sort in an array?
+
+
+
+## Complexity Time of the Binary Tree
+
 Binary Heap
 Type	tree
 Time complexity in big O notation
 Algorithm		Average	Worst case
-Space		O(n)	O(n)
-Search		O(n)	O(n)
-Insert		O(1)	O(log n)
-Delete		O(log n)	O(log n)
-Peek		O(1)	O(1)
-We can as well implement a Min Binary Heap 
-```
-
-```
-#include <bits/stdc++.h>
-using namespace std;
-
-// Driver code
-int main ()
-{
-    // Creates a min heap
-    priority_queue <int, vector<int>, greater<int> > myMinHeap;
-    myMinHeap.push(5);
-    myMinHeap.push(1);
-    myMinHeap.push(1033);
-    myMinHeap.push(12);
-    myMinHeap.push(20);
-
-    // One by one extract items from min heap
-    while (myMinHeap.empty() == false)
-    {
-        cout << myMinHeap.top() << " ";
-        myMinHeap.pop();
-    }
-
-    return 0;
-}
-```
-
-Output will be : ```1 5 12 20 1033```
+* Space		O(n)	O(n)
+* Search		O(n)	O(n)
+* Insert		O(1)	O(log n)
+* Delete		O(log n)	O(log n)
+* Peek		O(1)	O(1)
+* We can as well implement a Min Binary Heap 
 
 
 
