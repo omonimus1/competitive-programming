@@ -7,7 +7,7 @@ or arcs that connect any two nodes in the graph.
 A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
 ![grpah](../images/graph.png)
 
-### kind of Graphs
+### Types of graphs
 
 * **Undirected Graph** :order of the vertices in the pairs does not matter.
 * **Directed Graph**: order of the vertices matter. Graphically we use arrows for the arcs between vertices.
@@ -89,7 +89,7 @@ In a Graph we use the array of visited to avoid to process again the same node m
 
 In the mathematical theory of directed graphs, a graph is said to be strongly connected if every vertex is reachable from every other vertex. The strongly connected components of an arbitrary directed graph form a partition into subgraphs that are themselves strongly connected.
 
-Bipartite graph: is a graph whise vertices can be diided into two djoint and indepent sets U and V such that every dege connects a vertex in U t oone in V. Vertex set U and V are usually claled the parts of the graph. 
+Bipartite graph: is a graph whise vertices can be divided into two disjoint and indepent sets U and V such that every dege connects a vertex in U t oone in V. Vertex set U and V are usually claled the parts of the graph. 
 
 ## Depth First Seach or DFS
 
@@ -101,3 +101,63 @@ It is used for:
 4. Check if a graph is bipartirte.
 5. Find strongly connected components. 
 6. Solve puzzles with only one solution. 
+
+### DFS Depth First Search
+
+**DFS** is an algorith for traversing o searching in a tree or graph data structure. 
+The algorithm starts at the root node(select some arbitrary node as the root in case of the graph) and explores as far as possible along each branch before backtracking. 
+
+Mind that:
+* Unlne trees, a grepah may contains cycles. We use so boolean visited array.
+Applications of the DFS:
+* For weighted graph: produces the minimum spanning tree and all pair shortest path tree. 
+* Detecting cycle. 
+* Path finding: check if a path between vertices a and b exists. 
+* Topological Sorting: used for schedulng jobs from the givne dependencies among jobs. 
+* Test if a graph is bipartire
+
+Generally, with DFS we have :
+* Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+* Space Complexity: O(V).
+Since, an extra visited array is needed of size V
+
+* [Video-Turorial: How Depth First works](https://www.youtube.com/watch?v=Y40bRyPQQr0)
+
+## Breatdth First search
+
+BFS: it assignes two values to each vertex v; 
+* Distance, giving the minimum number of edges in any path from the source vertex to vertex v;
+* Predessor vertex of v along some shortest path from the source vertex. The source vertex's predeccessor is some specia value, such as null, indicating that it has not predecessor. 
+
+If there is no path from a to b, then b's distance is infinite. 
+
+[Video-Tutorial: How Breath First works](https://www.youtube.com/watch?v=0u78hx-66Xk&feature=youtu.be)
+
+## Spanning tree
+
+* Is a subset of a Graph G, which has all the vertices covered with minimum possible number of edges. 
+* It does not have cycles.
+* A complete undirected graph can have a max of n^n-2 number of spannig trees(where n is the number of vertices).  
+* Add one edge to the spanning tree will create a circut or loop.
+* Removing one degre from the S.T. will make the graph disconnected. 
+* All possible spanning trees have same number of edges and vertices.
+
+![Spanning-tree-by-tutorial-point](../../images/spanning-tree-tutorialpoint.png)
+###### Source: tutorial-point
+
+## Types of edges
+
+![types-of-edges](../../images/types-of-edges.png)
+###### Source: Wikipedia
+
+## Detect a cycle
+
+Algorithm:
+1. Build your graph
+2. Initialize recursively the current vertex, visited, and recursion stack.
+3. Mark the current node as visited and also mark the index in recursion stack.
+4. Find all the vertices which are not visited and are adjacent to the current node. Recursively call the function for those vertices, If the recursive function returns true, return true.
+5. If the adjacent vertices are already marked in the recursion stack then return true.
+6. Create a wrapper class, that calls the recursive function for all the vertices and if any function returns true return true. Else if for all vertices the function returns false return false.
+
+[Geeks for Geeks detect cycle lesson](https://www.geeksforgeeks.org/detect-cycle-in-a-graph/)

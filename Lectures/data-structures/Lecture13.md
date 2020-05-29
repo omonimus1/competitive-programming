@@ -174,6 +174,15 @@ int height(node *root)
 
 * **Leaves:**
 
+
+## Lowest Common Ancestor
+
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”
+
+![LCA tree](../../images/lca.png)
+
+###### Souce: Miss Deeksha Sharm - Medium
+
 ## Diameter of a Binary Tree
 
 Diameter (also width): number of nodes on thelongest path between two end nodes.

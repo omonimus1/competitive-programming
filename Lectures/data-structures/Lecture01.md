@@ -91,6 +91,41 @@ cin >> a >> b;
 string str; 
 getline(cin , str);
 ```
+ 
+## Merge two arrays
+
+In O(n1 + n2) Time and O(n1 + n2) Extra Space)
+The idea is to use Merge function of Merge sort.
+
+1. Create an array arr3[] of size n1 + n2.
+2. Simultaneously traverse arr1[] and arr2[].
+3. Pick smaller of current elements in arr1[] and arr2[], copy this smaller element to next position in arr3[] and move ahead in arr3[] and the array whose element is picked.
+
+```
+    int i = 0, j = 0, k = 0; 
+  
+    // Traverse both array 
+    while (i<n1 && j <n2) 
+    { 
+        // Check if current element of first 
+        // array is smaller than current element 
+        // of second array. If yes, store first 
+        // array element and increment first array 
+        // index. Otherwise do same with second array 
+        if (arr1[i] < arr2[j]) 
+            arr3[k++] = arr1[i++]; 
+        else
+            arr3[k++] = arr2[j++]; 
+    } 
+  
+    // Store remaining elements of first array 
+    while (i < n1) 
+        arr3[k++] = arr1[i++]; 
+  
+    // Store remaining elements of second array 
+    while (j < n2) 
+        arr3[k++] = arr2[j++];
+```
 
 ## Numbers Management
 
