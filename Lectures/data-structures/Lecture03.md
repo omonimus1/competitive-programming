@@ -107,7 +107,8 @@ Binary Heap: Complete Binary Tree where the root element can be the smallest (Th
 Viewing a heap as tree, we define the **height of a node** in a heap to be the number of edges on the longest simple downward path from the node to a lead.
 
 Height of an Heap: Height of the root element. 
-
-
-
 ###### Source: wikipedia.org
+
+## Merge two arrays having a third sorted array
+
+[Video-Tutorial](https://www.youtube.com/watch?v=xF3TU-QlhJQ&feature=youtu.be)

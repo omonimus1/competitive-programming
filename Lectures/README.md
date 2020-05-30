@@ -16,6 +16,7 @@
 |Tree - Binary Tree|[Lecture 11](data-structures/Lecture13.md)|
 |Graph|[Lecture 12](data-structures/Lecture14.md)|
 |Counting|[Lecture 13](data-structures/Lecture15.md)|
+|Dynamic Programming|[Lecture 14](data-structures/Lecture16.md)|
 |Bitwise algorithm|[Algo Lecture 01](algorithm/Lecture01.md)|
 
 ## CS97SI Slides
