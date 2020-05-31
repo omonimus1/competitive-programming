@@ -1,15 +1,20 @@
-# Competitive-programming
-Welcome to my Competitie Programming guide. 
+# Competitive-programming - What can you find
 
-## What you can find in this repository
+## Index of content
 
-You will find notes about algorithms and Datastructures, time and space analysis,useful tips about Competitive Programming approach and many of my coding challenghes solutions from platforms like:  HackerRank, CodeChef, GeeksForGeeks, UVA and so on. Here you will find most of these solutions that have passed with 100/100. 
+1. [Structure of the repository](#Structure-of-the-Repository)
+2. [Platforms for Training](#Platforms-for-training)
+3. [When contribute](#When-contribute)
+4. [How to contribute](#How-to-contribute)
+6. [Connect with me](#Connect-with-me)
+
 
 ## Structure of the Repository
 
 |Folder|Content|
 |-------|:------:|
 |Lectures|[Notes about Algorithm And Data Structures](Lectures/README.md)|
+|System Design|[System design interview preparation](system-design/README.md)|
 |Readings|[Free e-books about Competitive Programming](Reading/)|
 |Geeks For Geeks|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
 |HackerRank|[My own HackerRank coding solutions](HackerRank/README.md)|
@@ -19,7 +24,7 @@ You will find notes about algorithms and Datastructures, time and space analysis
 |Leetcode|[My Leetcode solutions ](interviewbit/README.md)|
 |learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
 
-## Platforms for training:
+## Platforms for training
 
 |Platform |My Profile |
 |-------|:------:|
@@ -35,12 +40,12 @@ You will find notes about algorithms and Datastructures, time and space analysis
 |[TopCoder](https://www.topcoder.com/)||
 |[UVA](https://onlinejudge.org/)||
  
-## How to contribute?
+## How to contribute
 1. Fork the repository
 2. Do the desired changes (add/delete/modify)
 3. Make a pull request
 
-## When to contribute?
+## When contribute
 1. If there is no solution to a problem in the main branch.
 2. If your solution is asymptotically faster than the one in the main branch.
 3. If your algorithm is of the same time complexity but with reduced code size. In this case, comment out the original solution and make a pull request with your solution.
@@ -53,7 +58,7 @@ Constructive criticisms or code reviews of any kind are very much welcome.
 If you have any questions about the solutions you can find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20GeeksForGeeks)
 
 
-## Lets' connects
+## Connect with me
 
 * [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20CompetitiveProgrammigGuide)
 * [Linkedin](https://www.linkedin.com/in/davidepollicino7/)
