@@ -1,27 +1,23 @@
 #include<iostream>
-
 using namespace std;
 
 
-void fill_array(int *array, int n)
-{
-    int number;
-    for(int i=0; i< n; i++)
-    {
-        cin >> number;
-        array[i] = number;
-    }
-}
-
 string solve_test()
 {
-    int NO,YES, I, n;
+    int NO,YES, I, n=4;
     NO = YES = I = 0;
     cin >> n;
-    int arr[n];
-    fill_array(arr, n); 
-    
-      
+    string signs;
+    cin >> signs;
+    for(int i =0; i < n; i++)
+    {
+        if(signs[i] == 'I')
+            return "INDIAN";
+        else if(signs[i] == 'Y')
+            return "NOT INDIAN";
+    }
+    // Corner case: There are just 'N'; 
+    return "NOT SURE";
 }
 
 
