@@ -1,4 +1,4 @@
-# Competitive-programming - What can you find
+# Competitive-programming
 
 ## Index of content
 
