@@ -154,25 +154,21 @@ void print_level_k(node *root, int k)
 
 ```
 
-## Height of a tree
-int height(node *root)
-{
-    if(height == NULL)
-        return 0; 
-    else
-    {
-     /* compute the height of each subtree */
-        int lHeight = height(node->left);  
-        int rHeight = height(node->right);  
-        /* use the larger one */
-          
-        return (lHeight > rHeight)? (lHeight + 1): (rHeight + 1);    
-    }
-}
-
 ## Count Leaves in a Binary Tree
 
-* **Leaves:**
+* **Leaf node**: It has both left and right child nodes NULL;
+```
+int countLeaves(Node* root)
+{
+    Node *node = root;
+    if(node == NULL)
+        return 0;
+    else if(node ->left == NULL && node ->right == NULL)
+        return 1; 
+    else
+        return countLeaves(node->left) + countLeaves(node->right);
+}
+```
 
 
 ## Lowest Common Ancestor
@@ -183,22 +179,25 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
 
 ###### Souce: Miss Deeksha Sharm - Medium
 
-## Diameter of a Binary Tree
 
+```
+// return the Height of the given Binary Tree
+int height(Node* root)
+{
+    Node *node = root;
+   if(node == NULL)
+    return 0;
+   return 1 + max(height(node->left), height(node->right));
+}
+```
+## Diameter of a Binary Tree
 Diameter (also width): number of nodes on thelongest path between two end nodes.
 The diameter of a tree T is the largest of the following quantities:
 * The diameter of the left subtreee
 * Diameter of right subtree
 * Longest path between leaves that goes thourhg the root T (computed from the height of  a tree).
 ![Diameter-of-tree](../../images/diameter_of_tree.png)
-```
-int height(Node *head)
-{
-    if(head == NULL)
-        return 0;
-    return 1 + max(height(node->left), height(node->right))
-}
-```
+
 ```
 int diameter(Node *head)
 {
@@ -314,6 +313,16 @@ void verticalOrder(Node *root)
 ```
 
 [Find distance between root and a given node](https://www.youtube.com/watch?v=pavbfn1FHrs&feature=emb_rel_end)
+
+
+## Delete node from BST
+
+If we have 3 cases:
+1. Node is a leaf node:  it does not violate any BST property if we delete it. 
+2. Node has 1 child: the child node must be moved in the parent node. 
+3. Node has 3 children: we need to move all the subtree.
+
+
 
 ## Practice with Binary Tree
 
