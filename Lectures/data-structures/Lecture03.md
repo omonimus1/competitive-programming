@@ -1,8 +1,3 @@
-## Pointers
-
-**Pointer:** variable that store  the memory address of another variable.
-[But how do we use them?](https://www.geeksforgeeks.org/pointers-c-examples/)
-
 ## Sorting
 
 * **Sorting:** arranging the elements of a list or collection in creaseing or decreasing order of some property. 
@@ -109,6 +104,56 @@ Viewing a heap as tree, we define the **height of a node** in a heap to be the n
 Height of an Heap: Height of the root element. 
 ###### Source: wikipedia.org
 
+
+## Sort a vector of pairs
+
+Suppose to have a vector of pairs: ```vector<pair<int, int>> vect;```
+
+When sorting a vector of pairs, we have 4 different cases:
+1. **Ascending** sorting in according to the **first** element of the pair.
+```sort(vect.begin(), vect.end()); ```
+2. **Ascending** sorting in according to the **second** element.
+``` 
+// Driver function to sort the vector elements 
+// by second element of pairs 
+bool sortbysec(const pair<int,int> &a, 
+              const pair<int,int> &b) 
+{ 
+    return (a.second < b.second); 
+}
+
+
+sort(vect.begin(), vect.end(), sortBySec);
+```
+3. **Descending** sorting in according to the **first** element.
+``` 
+bool inverseSorting(const pair<int, int> &a,
+					const pair<int, int > &b)
+{
+	return (a.first > b.first);
+}
+
+// using modified sort() function to sort 
+ sort(vect.begin(), vect.end(), inverseSorting);
+```
+4. **Descending** sorting in according to the **second** element.
+``` 
+bool sortbysecdesc(const pair<int,int> &a, 
+                   const pair<int,int> &b) 
+{ 
+    if(p1.second > p2.second)
+        return true;
+    else if(p1.second == p2.second && p1.first < p2.first)
+        return true;
+    return false;
+} 
+// using modified sort() function to sort 
+sort(vect.begin(), vect.end(), sortbysecdesc); 
+```
+
+###### Source: Geeks For Geeks 
+
 ## Merge two arrays having a third sorted array
 
-[Video-Tutorial](https://www.youtube.com/watch?v=xF3TU-QlhJQ&feature=youtu.be)
+* [Video-Tutorial](https://www.youtube.com/watch?v=xF3TU-QlhJQ&feature=youtu.be)
+
