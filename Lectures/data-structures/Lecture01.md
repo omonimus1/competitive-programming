@@ -25,10 +25,31 @@ int main(){                         int main()
 
 #  Code settings , how to get you get your IDE ready 
 
-## What IDE to I use?
+# FAQ
+
+## What IDE should I use?
 
 I use Visual studio Code but it does not really matter.  
 The most important thing is that you feel comfortable with your coding evironment, so if you are actually using something else, it's fine (as long you use at least a dark theme). 
+
+# Can you suggest me the best platform for start C.P.?
+
+Use all of them or even more if you know other good platforms for coding practice and interview preparation.
+
+
+|Platform |My Profile |
+|-------|:------:|
+|[HackerRank](https://www.hackerrank.com/)|[My Profile](https://www.hackerrank.com/davidepollicino1)|
+|[CodeChef](https://www.codechef.com/)|[My Profile](https://www.codechef.com/users/omonimus)|
+|[GeeksforGeeks](https://www.geeksforgeeks.org/)|[ My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)|
+|[LeetCode](https://leetcode.com/)|[ My Profile](https://leetcode.com/omonimus1)|
+|[Interviewbit](https://www.interviewbit.com/)|[ My Profile](https://www.interviewbit.com/profile/omonimus1)|
+|[Codebyte (35$ for MONTH!)](https://coderbyte.com/)|[ My Profile](https://coderbyte.com/profile/omonimus1)|
+|[Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)||
+|[Spoj.com](https://www.spoj.com/)| |
+|[Kattis](https://open.kattis.com/)||
+|[TopCoder](https://www.topcoder.com/)||
+|[UVA](https://onlinejudge.org/)||
 
 ## Code template
 
@@ -36,28 +57,16 @@ It is useless write the same lines of code more than once, so if you can, avoid 
 My template code for my training exercises is:
 ```
 #include <bits/stdc++.h>
-using namespace std; 
+using namespace std;
 
-// Core of the program 
-void solve_test()
-{
-    // My solution; 
-} 
-
-int main()
-{
+int main() {
     // To have low I/O operations time cost
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios::sync_with_stdio(0);
+    cin.tie(0);
 
-    unsigned int t; // t: used to store the number of test cases  
-    cin >> t; 
-    while(t--)
-    {
-        solve_test();
-        cout <<'\n';
-    }   
-	return 0;
+    // Solution
+
+    return 0;
 }
 ```
 
@@ -73,9 +82,11 @@ Now, first line of code ```#include <bits/stdc++.h>```, it is used usually just 
 
 What does it do? It includes all the c++ library. In a contest is a good idea, but if you program must be particular fast and do lots of computation operation, use bits/stdc++ will makes your program a bit slower. 
 
-#### \n vs endl; 
+#### "\n" vs endl; 
 
-```endl``` every time will flush the stream so use \n could make your compilation time potentially lower. 
+* ```endl``` every time will flush the stream so use \n could make your compilation time potentially lower. 
+
+* "\n" is faster that endl;
 
 ## Types of input
 
@@ -92,6 +103,90 @@ string str;
 getline(cin , str);
 ```
  
+## Working with Numbers
+
+Int is the most used data-type in CP.
+if we will have to manage integers that are not in the range -2*10^9 and 2*10^9, use the type ``` long long ```;
+
+```
+// − 9·10^18 ---  9 ·10^18
+long long x = 123456789123456789LL;
+```
+
+Usually a long long is enough if CP. Eventually, know that there is also a 128_bit integer.
+In according to [Stackoverflow](https://stackoverflow.com/questions/18439520/is-there-a-128-bit-integer-in-c), the 128_bit is supported by clang and g++.
+```
+#include <boost/multiprecision/cpp_int.hpp>
+
+using namespace boost::multiprecision;
+
+int128_t v = 1;
+```
+
+## Type less, be faster
+
+*  **typedef**: give a shorter name to a datatype.
+```
+typedef long long ll;
+// Use it also for more complex data types
+typedef pair<int, int> pi;
+
+ll a = 123456789; // Create and initialize a long long variable
+```
+
+Useful functions that you will definetely use are:
+
+* floor() : round down to the smallest ingeter; 
+* ceil() : round up the biggest integer; 
+* trunc() : roun to smallest integer
+* round() : round to the nearest integer
+* [setprecision()](http://www.cplusplus.com/reference/iomanip/setprecision/) : set decimal precision
+
+
+## Macros
+
+A macro is a certain string in the code that will be changed before the compilation.
+In c++, we create one with ```#define```
+
+```
+#typedef vector<int> vi;
+#define F first
+#define PB push_back
+
+// Create Vector of integers
+vi list_of_numbers;
+// Push back a value in my vector
+list_of_numbers.PB(45);
+````
+
+## Algorithms key concepts
+
+* **Algorithm:** set of step that toghether solve a problem.
+
+* **Space complexity:** how much memory does it take to wokr
+
+* **Time complexity:** how much time does it take to complete
+
+* **Exact: Algortihm:** gives an exact result
+
+* **Approximate:** try to find an anser that could be correct or partially correct (as face recognition algorithm).
+
+
+## Types of Algorithm
+* Search
+* Sorting
+* Computational: given one set of data calulcate another.
+* Collection algorithm
+
+
+## GCD of two numbers
+GCD, Greatest common diminator: is the biggest number that can be used to divide both numbers a and b where the reminder is 0.
+1. Fow two integer a and b, where a > b, divide a by b;
+2. If the remainder, r, is 0: the GCD is b;
+3. Otherwise, set a to b, b to r, and repeat at step 1 until r is 0; 
+
+
+
 ## Merge two arrays
 
 In O(n1 + n2) Time and O(n1 + n2) Extra Space)
@@ -126,17 +221,6 @@ The idea is to use Merge function of Merge sort.
     while (j < n2) 
         arr3[k++] = arr2[j++];
 ```
-
-## Numbers Management
-
-* floor() : round down to the smallest ingeter; 
-* ceil() : round up the biggest integer; 
-* trunc() : roun to smallest integer
-* round() : round to the nearest integer
-* [setprecision()](http://www.cplusplus.com/reference/iomanip/setprecision/) : set decimal precision
-
-
-
 
 
  

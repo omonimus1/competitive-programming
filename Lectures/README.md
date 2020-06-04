@@ -2,8 +2,7 @@
 
 |Topic|Lecture|
 |-------|:------:|
-|Algorithm Overview|[Lecture 00](data-structures/Lecture00.md)|
-|Introduction and warm-up|[Lecture 01](data-structures/Lecture01.md)|
+|Introduction, numbers and algorithms key-concepts|[Lecture 01](data-structures/Lecture01.md)|
 |Time complexity analysis|[Lecture 02](data-structures/Lecture02.md)|
 |Sorting Algorithms|[Lecture 03](data-structures/Lecture03.md)|
 |Math|[Lecture 04](data-structures/Lecture04.md)|
