@@ -20,8 +20,14 @@ void setDisplay(set<int>s)
     set <int> :: iterator itr;
     for(itr = s.begin(); itr!= s.end(); itr++)
         cout << *itr << " ";
-
     cout<<endl;
+
+    /*
+        Second version
+        for(auto x : s)
+            cotu << x << " ";
+        cout <<endl;
+    */
 }
 
 void setErase(set<int>&s,int x)
@@ -41,6 +47,12 @@ void setErase(set<int>&s,int x)
 Every time we add a new element in the set using the insert() method, the set will be sorted in asceding order (Es: 2,5,7,13,999...). If we want the the set will automaticcally order the elements in desceding order, we will need to declare our set in the following way: ``` set<int, greater<int>> set_name; ```
 
 As all the other STL Containers(vector, stack, queue, map etc), also the set has an emplace method, that allows to insert a new value.
+
+### Verify if an element exists in a set
+```
+    // count(): retrun 1 if x exists, 0 otherwise
+    mySet.count(x); 
+```
 
 ### Difference between emplace and insert in C++ STL
 
@@ -68,6 +80,18 @@ unordered_set <string> stringSet ;
 [Unordered Set in GeekForGeeks](https://www.geeksforgeeks.org/unordered_set-in-cpp-stl/)
 [Unordered Set in C++ reference](https://en.cppreference.com/w/cpp/container/unordered_set)
 
+## Multiset
+
+Is a set version that allows to have more than one time the same element. 
+```
+multiset<int>s;
+s.insert(5);
+s.insert(5);
+s.insert(5);
+cout << s.count(5) << "\n"; // 3
+s.erase(5); // Remove all the 5s present in the multiset
+```
+
 ## Unordered multiset
 
 An issue with the unordered set is that is not possible to store dupliace entries in that data structure.
@@ -92,6 +116,16 @@ Map is an associative container where every value is associated with ONE and jus
 
 ```
 map<int, int> my_map;
+
+my_map["monkey"] = 4;
+my_map["davide"] = 45;
+
+if(my_map.count("davide"))
+    cout << "davide is present"<<endl;
+
+for (auto x : my_map) 
+    cout << x.first << " " << x.second << "\n";
+
 ```
 
 * [MAP - from GeekForGeeks](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)

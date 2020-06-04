@@ -18,6 +18,9 @@ Time complexity of the most popular sorting algorithms:
 ![time-complexity](../../images/sorting-complexity.png)
 ###### Source: interviewBit.com
 
+
+* **Inversion**: Numbers of step necesesary to sort a list.
+
 * **Order stastics**: The ith order statistic of a set of n numbers is the ith smallest number in the set. 
 
 
@@ -44,11 +47,18 @@ INSERTION-SORT(A)
   End for 
 ```
 
-## Merge Sort
+## Merge Sort O(n log n)
 
 Merge sort is one of the most efficient sorting algorithms. It works on the principle of Divide and Conquer. Merge sort repeatedly breaks down a list into several sublists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.
 
-* Average case: O(n log n)
+Having a subarray [a..b]:
+1. If a==b , the subarray is already sorted.
+2. Get position of the middle element k [(a+b)/2]
+3. Recursively sort the subarray[a..k]
+4. Recursively sort the subarray [k+1..b]
+5. Merge the sorted subarrays [a..k] and [k+1..b] in a sorted array [a..b].
+
+
 * [How to implement it](https://www.geeksforgeeks.org/merge-sort/)
 ![Merge sort](../images/merge-sort.gif)
 ###### Source: wikipedia.org
@@ -83,7 +93,6 @@ void selectionSort(int arr[], int n)
 	}
 }
 ```
-* **Inversion**: Numbers of step necesesary to sort a list.
 
 ## Bubble sort
 
@@ -118,55 +127,65 @@ Height of an Heap: Height of the root element.
 ###### Source: wikipedia.org
 
 
-## Sort a vector of pairs
+## Binary search O(log n) 
 
-Suppose to have a vector of pairs: ```vector<pair<int, int>> vect;```
-
-When sorting a vector of pairs, we have 4 different cases:
-1. **Ascending** sorting in according to the **first** element of the pair.
-```sort(vect.begin(), vect.end()); ```
-2. **Ascending** sorting in according to the **second** element.
-``` 
-// Driver function to sort the vector elements 
-// by second element of pairs 
-bool sortbysec(const pair<int,int> &a, 
-              const pair<int,int> &b) 
-{ 
-    return (a.second < b.second); 
-}
-
-
-sort(vect.begin(), vect.end(), sortBySec);
 ```
-3. **Descending** sorting in according to the **first** element.
-``` 
-bool inverseSorting(const pair<int, int> &a,
-					const pair<int, int > &b)
+int a =0; , b = n-1;
+while(a <= b)
 {
-	return (a.first > b.first);
+	int k = (a/b)/2;
+	if(arr[k] == target)
+		return true; // We found the element
+	if(arr[k] > x) b = k-1;
+	else a = k+1;
 }
-
-// using modified sort() function to sort 
- sort(vect.begin(), vect.end(), inverseSorting);
-```
-4. **Descending** sorting in according to the **second** element.
-``` 
-bool sortbysecdesc(const pair<int,int> &a, 
-                   const pair<int,int> &b) 
-{ 
-    if(p1.second > p2.second)
-        return true;
-    else if(p1.second == p2.second && p1.first < p2.first)
-        return true;
-    return false;
-} 
-// using modified sort() function to sort 
-sort(vect.begin(), vect.end(), sortbysecdesc); 
+// The element does not exists
+return false;
 ```
 
-###### Source: Geeks For Geeks 
+## Sort using #include<algorithm>
+```
+// Sort string called s
+sort(s.begin(), s.end());
+// Sort vector called vect
+sort(vect.begin(), vect.end());
+// Sort array called vett, having it's size n
+sort(vect, vect+n);
+```
 
-## Merge two arrays having a third sorted array
+## Merge two to sorted arrays
 
 * [Video-Tutorial](https://www.youtube.com/watch?v=xF3TU-QlhJQ&feature=youtu.be)
+
+
+# Upper and Lower bounds
+
+**Note:** all the following functions are built in c++ language, they assume that the array is already sorted and all of them work in logarithmic time. 
+* lower_bound: return pointer to the first array element whose values is at least x.
+* upper_bound: returns pointer to the first array element whose vale is larger than x.
+* equal_range: returns both above pointer.
+
+
+### Find index of first occurrency of an element
+```
+// array: name of our array
+// n: size of the array
+// x: target (element to search)
+auto k = lower_bound(array, array+n, x)-array;
+if( k < n && array[k] == x)
+	return k; // Return index of the element found
+return -1;
+
+```
+### Find frequency of a value x
+```
+auto a = lower_bound(array, array+n, x);
+auto b = upper_bound(array, array+n, x);
+cout <<"Frequency of " << x << ": " << b-a << endl;
+```
+**OR**
+```
+auto r = equal_range(array, array+n, x);
+cout <<"Frequency of " << x << ": "  << r.second-r.first << "\n";
+```
 

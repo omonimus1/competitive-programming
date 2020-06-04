@@ -1,3 +1,24 @@
+# Warning:
+
+Before to start to read section, be familiar with the concept of 
+* Indexing 
+* array and vector (dynamic array).
+
+ 
+### Did you know...
+We have a shorter way to iterate thourgh an array / vector than traditional for loop?
+```
+// Traditional iteration of a vector
+for (int i = 0; i < v.size(); i++) {
+  cout << v[i] << "\n";
+}
+// Shorter way
+for (auto x : v) {
+  cout << x << "\n";
+}
+```
+
+
 ## Stack(LIFO), Queue(FIFO), Binary Heap
 
 Even if you probably understimate the value of the se two Data structures, they are used in the daily life.
