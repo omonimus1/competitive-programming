@@ -17,13 +17,15 @@ Each notation can be used to reason about the best, worst & average case of perf
 
 ### An algorithm can run in 
 
-* Constant time ```O(1)```:  if it requires the same amount of time regardless of input size.
-* Linear time   ```O(n)```: if the time it takes to execute a specific set of instructins, is directly proportional to the size of the input. An example could be: check if our ArrayList, or Queue contains a specific element x. 
-* Quasilinear time ```O(n log n)```
-* Logarithmic time```O(logN)```: the time is proportuioanl to the logarithm of the input size. An example could be the Binary Search algorithm. 
-* Quadratic time  ```O(n^2)```: the execution time is proportional to the square of the input size. 
-* Exponential time ```O(2^n)```: 
-* Factorial time ```O(n!)```: for example: generate all the permutation of a list of elements. 
+* **Constant time** ```O(1)```:  if it requires the same amount of time regardless of input size.
+* **Linear time** ```O(n)```: if the time it takes to execute a specific set of instructins, is directly proportional to the size of the input. An example could be: check if our ArrayList, or Queue contains a specific element x. 
+* **Quasilinear time** ```O(n log n)```
+* **Logarithmic time**```O(logN)```: the time is proportuioanl to the logarithm of the input size. An example could be the Binary Search algorithm. 
+* **Quadratic time**  ```O(n^2)```: the execution time is proportional to the square of the input size. 
+* **Cubic** ```O(n^3)```: we have 3 nested loop
+* **Exponential time** ```O(2^n)```: 
+* **Factorial time** ```O(n!)```: for example: generate all the permutation of a list of elements. 
+* **Polynomial time**:if its time complexity is at most O(n^k), where K is a constant. 
 
 ### Big O notations
 

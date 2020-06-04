@@ -83,7 +83,20 @@ void selectionSort(int arr[], int n)
 	}
 }
 ```
+* **Inversion**: Numbers of step necesesary to sort a list.
+
 ## Bubble sort
+
+```
+for(int i =0; i < n; i++)
+{
+	for(int j=0; j < n; j++)
+	{
+		if(arra[i] > arr[i+1])
+			swap(array[j], array[j+1]);
+	}
+}
+```
 
 * [How to implement it](https://www.geeksforgeeks.org/bubble-sort/)
 ![Bubble sort](../images/bubble-sort.gif)

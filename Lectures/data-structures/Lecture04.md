@@ -1,15 +1,28 @@
 ## Math 
 
+### Hottest topics
+
 1. Greatest Commond Divisor (GCD)
 2. Catalan Numbers
-3. Optimized Prine Testing
-4. Sieve of Eratosthenes: Generating List of Prime Numbers
-5. Larghest Prime Divisor
+3. Prime numbers: Optimized Prime checher, Sieve of Eratosthenes: Generating List of Prime Numbers, Larghest Prime Divisor.
+4. Fibonacci number(base exerices for dynamic programming).
 
-Numbeer theory: branch of math that studies integers. 
+
+### Key Concepts
+
+* **Number theory:** branch of math that studies integers. 
 A number 'a' is called factor or divisor of a number 'b' if a divides b. If a is a facotr of b, we write a|b. 
+* A number n >1 is  **prime** if it only positive factors are 1 and n.
+* Intersection between two sets: consists of elements that are both in A and B. 
+* **Union:** consistes of elements that are in A OR in B. 
+* **Complement:** Suppose to have the universal set = {1,2,3,4,5,6,7,8,9,10}, the complement A' of the set A={1,2,3,4,5}, will be {6,7,8,9,10} (The universal set without the elements of our original source set).
+* **Difference:** consts of elements that are in A but not in B and elements that are in B but in A. 
+* **Cartesian Product:** In mathematics, specifically set theory, the Cartesian product of two sets A and B, denoted A × B, is the set of all ordered pairs (a, b) where a is in A and b is in B.
 
-A number n >1 is  prime if it only positive factors are 1 and n. 
+### Fibonacci Numbers
+
+### Some code example
+
 An efficient way to check if a number is prie is to check all its factors from 2 to sqrt(n).
 ```
 bool prime(int n)
@@ -23,13 +36,6 @@ bool prime(int n)
 }
 ```
 
-
-```
-// Manage Big INteger in Java
-import java.math.BigInterger; 
-BigInteger sum = BigInteger.ZERO;
-```
-
 ### Greatest Commond Divisor (GCD) and Least Commond Multiple
 
 Greates commond divisor: the greates commond divisor of two or more integers which are not all zero, is the larghest posiibe integer that divides each integers. For example, the gcd fo 8 and 12 is 4. 
@@ -39,12 +45,12 @@ int gcd(int a, int b) { return b==0 ? a : gdc(b, a%b); }
 int lcm(int a, int b) {  return a * (b/gcd(a,b)); }
 ```
 
-### Catalan Number
-
 
 ### Fibonacci Number
 
-
+f(0) = 0 
+f(1) = 1
+f(n) = f(n-1) + f(n-2)
 
 **Pollard’s rho algorithm**: used for the calculation of factorization of large numbers. 
 ###### Practice
