@@ -102,19 +102,12 @@ It is used for:
 5. Find strongly connected components. 
 6. Solve puzzles with only one solution. 
 
-### DFS Depth First Search
-
 **DFS** is an algorith for traversing o searching in a tree or graph data structure. 
 The algorithm starts at the root node(select some arbitrary node as the root in case of the graph) and explores as far as possible along each branch before backtracking. 
 
 Mind that:
-* Unlne trees, a grepah may contains cycles. We use so boolean visited array.
-Applications of the DFS:
-* For weighted graph: produces the minimum spanning tree and all pair shortest path tree. 
-* Detecting cycle. 
-* Path finding: check if a path between vertices a and b exists. 
-* Topological Sorting: used for schedulng jobs from the givne dependencies among jobs. 
-* Test if a graph is bipartire
+* Unlne trees, a graph may contains cycles. We use so boolean visited array.
+
 
 Generally, with DFS we have :
 * Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
@@ -123,14 +116,25 @@ Since, an extra visited array is needed of size V
 
 * [Video-Turorial: How Depth First works](https://www.youtube.com/watch?v=Y40bRyPQQr0)
 
-## Breatdth First search
+## Breath First search
 
 BFS: it assignes two values to each vertex v; 
 * Distance, giving the minimum number of edges in any path from the source vertex to vertex v;
 * Predessor vertex of v along some shortest path from the source vertex. The source vertex's predeccessor is some specia value, such as null, indicating that it has not predecessor. 
 
-If there is no path from a to b, then b's distance is infinite. 
+If there is no path from a to b, then b's distance is infinite. Adn we can start to iterate the graph from any node. The starting node is called **root** node. 
+ 
+In BFS, we start with a node.
+1) Create a queue and enqueue source into it. 
+   Mark source as visited.
+2) While queue is not empty, do following
+    a) Dequeue a vertex from queue. Let this 
+       be f.
+    b) Print f
+    c) Enqueue all not yet visited adjacent
+       of f and mark them visited.
 
+[BFS for competitive Programing](https://www.geeksforgeeks.org/bfs-using-stl-competitive-coding/)
 [Video-Tutorial: How Breath First works](https://www.youtube.com/watch?v=0u78hx-66Xk&feature=youtu.be)
 
 ## Spanning tree

@@ -54,13 +54,11 @@ struct node *NewNode(int data)
 Rember that in BT is not allowed to have duplicate elements, for this reason for every insert operation, we need to check first if element exists using the [exists checker function](#Check-if-an-element-exists) and the [create node function](#Create-new-node)
 
 
-
-
 ### Traversal
-A traversal is a process that visits all the nodes in the tree. Since a tree is a nonlinear data structure, there is no unique traversal. We will consider several traversal algorithms with we group in the following two kinds:
 
-* depth-first traversal
-* breadth-first traversal
+* **Traversal** is a process that visits all the nodes in the tree. Since a tree is a nonlinear data structure, there is no unique traversal. We will consider several traversal algorithms with we group in the following two kinds:
+1. depth-first traversal
+2. breadth-first traversal
 
 
 There are Three types of depth -First-Traversals:
@@ -71,9 +69,9 @@ void inorder(struct Node *root)
 {
     if(root == NULL)
         return; 
-    search(root->left);
+    inorder(root->left);
     cout <<root->data << " ";
-    search(root->right);
+    inorder(root->right);
 }
 ```
 2. Preorder (Root, Left, Right) : 1 2 4 5 3
@@ -83,22 +81,133 @@ void preoder(struct Node *root)
     if(root == NULL)
         return; 
     cout <<root->data << " ";
-    search(root->left);
-    search(root->right);
+    preoder(root->left);
+    preoder(root->right);
 }
-
 ```
 3. Postorder (Left, Right, Root) : 4 5 2 3 1
-void inorder(struct Node *root)
+```
+void postorder(struct Node *root)
 {
     if(root == NULL)
         return; 
-    search(root->left);
-    search(root->right);
+    postorder(root->left);
+    postorder(root->right);
     cout <<root->data << " ";
 }
-
+```
 There is only one kind of breadth-first-traversal, the Breadth First or Level Order Traversal : 1 2 3 4 5
+
+### Breath First Search
+
+Breath first search is also used for level order traversal.
+
+
+Pseudo code of the algorithm:
+/*Function to print level order traversal of tree*/
+printLevelorder(tree)
+for d = 1 to height(tree)
+   printGivenLevel(tree, d);
+
+/*Function to print all nodes at a given level*/
+printGivenLevel(tree, level)
+if tree is NULL then return;
+if level is 1, then
+    print(tree->data);
+else if level greater than 1, then
+    printGivenLevel(tree->left, level-1);
+    printGivenLevel(tree->right, level-1);
+
+```
+// Recursive CPP program for level 
+// order traversal of Binary Tree  
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+class node  
+{  
+    public: 
+    int data;  
+    node* left, *right;  
+};  
+  
+void printGivenLevel(node* root, int level);  
+int height(node* node);  
+node* newNode(int data);  
+  
+/* Function to print level  
+order traversal a tree*/
+void printLevelOrder(node* root)  
+{  
+    int h = height(root);  
+    int i;  
+    for (i = 1; i <= h; i++)  
+        printGivenLevel(root, i);  
+}  
+  
+/* Print nodes at a given level */
+void printGivenLevel(node* root, int level)  
+{  
+    if (root == NULL)  
+        return;  
+    if (level == 1)  
+        cout << root->data << " ";  
+    // We are not in the root node of the BST.
+    else if (level > 1)  
+    {  
+        printGivenLevel(root->left, level-1);  
+        printGivenLevel(root->right, level-1);  
+    }  
+}  
+  
+/* Compute the "height" of a tree -- the number of  
+    nodes along the longest path from the root node  
+    down to the farthest leaf node.*/
+int height(node* node)  
+{  
+    if (node == NULL)  
+        return 0;  
+    else
+    {  
+        /* compute the height of each subtree */
+        int lheight = height(node->left);  
+        int rheight = height(node->right);  
+  
+        /* use the larger one */
+        if (lheight > rheight)  
+            return(lheight + 1);  
+        else return(rheight + 1);  
+    }  
+}  
+  
+/* Helper function that allocates  
+a new node with the given data and 
+NULL left and right pointers. */
+node* newNode(int data)  
+{  
+    node* Node = new node(); 
+    Node->data = data;  
+    Node->left = NULL;  
+    Node->right = NULL;  
+  
+    return(Node);  
+}  
+  
+/* Driver code*/
+int main()  
+{  
+    node *root = newNode(1);  
+    root->left = newNode(2);  
+    root->right = newNode(3);  
+    root->left->left = newNode(4);  
+    root->left->right = newNode(5);  
+  
+    cout << "Level Order traversal of binary tree is \n";  
+    printLevelOrder(root);  
+  
+    return 0;  
+}  
+```
 
 ### Height vs Depth
 
