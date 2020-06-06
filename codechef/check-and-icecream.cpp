@@ -5,8 +5,8 @@ string can_give_the_change()
 {
     int n;
     cin >> n;
-    int client[n];
-    //for (int i=0; i<n; i++) cin >> client[i];
+    int client[n]; // = {5,10, 5, 10, 5, 5, 5, 25};
+    for (int i=0; i<n; i++) cin >> client[i];
     int change = 0;
 
     int change_to_give=0;
@@ -14,6 +14,7 @@ string can_give_the_change()
     {
         change_to_give = client[i];
         change_to_give -=5;
+       // cout << "client node: "<< client[i] << " change to give: "<<change_to_give << " my change: "<< change<<endl;
         // We don't have enough money for change
         if(change_to_give > change)
             return "NO";        

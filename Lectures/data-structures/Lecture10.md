@@ -18,7 +18,6 @@ for (auto x : v) {
 }
 ```
 
-
 ## Stack(LIFO), Queue(FIFO), Binary Heap
 
 Even if you probably understimate the value of the se two Data structures, they are used in the daily life.
@@ -187,9 +186,19 @@ while(!queue_example.empty())
 }
 ```
 
-### Deques
+### Deque
 
-A deques is a version of a queue in which elements can be added or removed from either end (front and back). 
+* Is a dynamic array
+```
+deque<int> d;
+d.push_back(10); // [10]
+d.push_back(20); // [10,20]
+d.push_front(3); // [3,10,20]
+d.pop_back(); // [3,10]
+d.pop_front(); // [10]
+```
+
+A deque is a version of a queue in which elements can be added or removed from either end (front and back). 
 We can think that a deque is a data structurre that joins the functionalities of the stack and queue. 
 
 A lists can usually support all the behaviours of a Deque (but generally has more feature than a deque should officialy support). 
@@ -201,13 +210,24 @@ It could be usefull when we have a chain of items to model in our program where 
 
 ## Priority Queue
 
-A priority queue is a container deisng such that its first elment is alway the greatest of the elment it contains. 
+```
+// First element will be the biggest
+priority_queue<int>q;
+// First element will be the smallest
+priority_queue<int,greater<int>> ;
+q.push(10);
+q.push(6);
+q.top(); // 10
+q.pop(); // Remove   element
+```
+
+A priority queue is a container designed such that its first elment is alway the greatest of the elment it contains. 
 Useful essentials built-in methods are:
 * empty()
 * size()
 * top() : access to the top element
 * push() : insert an element
-* pop() : remove top element
+
 
 
 ## Binary Heap

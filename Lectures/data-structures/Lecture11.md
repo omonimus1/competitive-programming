@@ -1,3 +1,5 @@
+# Set, bitset, map
+
 ## Set
 
 Is an associative container in which each element has to be unique because the value of the element identifies itself. 
@@ -109,6 +111,35 @@ TO handle any duplication, we can use instead unordered_multiset.
     //  Initialization by assignment 
     ums1 = {2, 7, 2, 5, 0, 3, 7, 5}; 
 ```
+
+## Bitset
+
+* It is an array whose each values is either 0 or 1.
+* It requires less memory that ordinar arrays, because each element ina  bitset only uses one bit of memory. 
+```
+bitset<3>s;
+s[0] = 1;
+s[1] = 1;
+s[2] = 0;
+
+// It will store from left to right
+bitset<10>  myBitSet(string("0010011010"));
+cout << myBitSet[4]; // Will print 1
+cout << myBitSet[5];; // Will print 0
+
+// Print number of 1s.
+cout << "number of set bits: "<< myBitSet.count() <<endl;
+```
+
+Having two bitsets, I can directly do the and, or or xor operator between them;
+```
+bitset<10> a(string("0010110110"));
+bitset<10> b(string("1011011000"));
+cout << (a&b) << "\n"; // 0010010000
+cout << (a|b) << "\n"; // 1011111110
+cout << (a^b) << "\n"; // 1001101110
+```
+##### Source Competitive Programming Handbook
 
 ## Map
 

@@ -8,6 +8,8 @@
 4. Fibonacci number(base exerices for dynamic programming).
 
 
+[Math for Competitive Programming -> list created by a google competitive coder](https://www.quora.com/How-do-I-get-good-at-math-for-competitive-programming/answer/Sameer-Gulati-3?ch=10&share=e1c30b08&srid=oeMh)
+
 ### Key Concepts
 
 * **Number theory:** branch of math that studies integers. 
@@ -45,14 +47,69 @@ int gcd(int a, int b) { return b==0 ? a : gdc(b, a%b); }
 int lcm(int a, int b) {  return a * (b/gcd(a,b)); }
 ```
 
-
 ### Fibonacci Number
 
 f(0) = 0 
 f(1) = 1
 f(n) = f(n-1) + f(n-2)
 
+
+## Generate permutations#
+
+A permutation is each one fo the N! possible arrengements the elementws can take (where N is the number of elements in the range). Different permutation can be ordered according to how they compare lexicographicaly to each other; 
+
+```
+#include <algorithm>    // std::next_permutation, std::sort
+```
+
+Classical problem: generate all permutations of  aset of n elements.
+A = {1,2,3}  -- Permutations = [{0,1,2}, {0,2,1}, {1,0,2}, {1,2,0}, {2,0,1} , {2,1,0}].
+
+A simple way to genera permutation is to begin with the permutation {0,1... n-1} and use a function that construct the next permutation in increasing order. 
+
+```
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+// Function to display the array 
+void display(int a[], int n) 
+{ 
+    for (int i = 0; i < n; i++) { 
+        cout << a[i] << "  "; 
+    } 
+    cout << endl; 
+} 
+  
+// Function to find the permutations 
+void findPermutations(int a[], int n) 
+{ 
+    // Sort the given array 
+    sort(a, a + n); 
+    // Find all possible permutations 
+    cout << "Possible permutations are:\n"; 
+    do { 
+        display(a, n); 
+    } while (next_permutation(a, a + n)); 
+} 
+  
+// Driver code 
+int main() 
+{ 
+  
+    int a[] = { 10, 20, 30, 40 }; 
+  
+    int n = sizeof(a) / sizeof(a[0]); 
+  
+    findPermutations(a, n); 
+  
+    return 0; 
+} 
+```
+##### Source Geeks for Geeks
+
 **Pollard’s rho algorithm**: used for the calculation of factorization of large numbers. 
+
+
 ###### Practice
 
 The Simpler Ones

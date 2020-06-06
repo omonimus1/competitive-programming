@@ -105,6 +105,27 @@ There is only one kind of breadth-first-traversal, the Breadth First or Level Or
 During my first approach to Tree, I swapped the meaning of Height and Depth. 
 
 ![Depth vs Height BT](../../images/tree-depth.png)
+
+The height of a node is the largest number of edges in a path from that node to a leaf node.
+[Video Tutoral: find heaight of a BT](https://www.youtube.com/watch?v=AWIJwNf0ZQE)
+```
+int height(Node* root) {
+    if(root == NULL)
+        return -1;
+    int l = height(root->left);
+    int r = height(root->right);
+            // Return the biggest counter
+    return l > r ? l+1 : r+1; 
+}
+```
+The height of a binary tree is the largest number of edges in a path from the root node to a leaf node. Essentially, it is the height of the root node. Note that if a tree has only one node, then that node is at the same time the root node and the only leaf node, so the height of the tree is 0. On the other hand, if the tree has no nodes, it’s height is -1.
+
+The size of a binary tree is the total number of nodes in that tree.
+[Video-Tutorial: Find size of a tree](https://www.youtube.com/watch?v=C128SsWVLkc)
+The depth of a node is the number of edges in the path from the root node to that node.
+
+The depth of a binary tree is usually used to refer to the height of the tree.
+
 ###### Source: Stackoverflow, the bible
 
 ### Max Depth
@@ -314,6 +335,21 @@ void verticalOrder(Node *root)
 
 [Find distance between root and a given node](https://www.youtube.com/watch?v=pavbfn1FHrs&feature=emb_rel_end)
 
+## Binary Indexed Tree or Fenwick tre
+
+Binary Index Tree is repesents as an array. 
+Each node of the BIT stores the sum of some element of the input array and of course, the size of the BIT si equal to the size of the input array. 
+
+For find sum of first i elements & update value of a specific element, it takes 0(Log n).
+
+BI Tree for an arrays arr[] has the following operations:
+* update(): updates BI tree for operation arr[index] += val
+* getSum(): returns sum of arr[0..index]
+
+#### How to we create it?
+1. We first initialize all values in BITree[] as 0.
+2. We call update() operation for all indexes to insert values according to given array. 
+
 
 ## Delete node from BST
 
@@ -321,6 +357,8 @@ If we have 3 cases:
 1. Node is a leaf node:  it does not violate any BST property if we delete it. 
 2. Node has 1 child: the child node must be moved in the parent node. 
 3. Node has 3 children: we need to move all the subtree.
+
+
 
 
 
