@@ -1,9 +1,9 @@
-## Warm Up and data structures
+## Warm Up, Data structures and key concepts
 
 |Topic|Lecture|
 |-------|:------:|
 |Introduction, numbers and algorithms key-concepts|[Lecture 01](data-structures/Lecture01.md)|
-|Time complexity analysis|[Lecture 02](data-structures/Lecture02.md)|
+|Time complexity analysis array ,List, Iterators|[Lecture 02](data-structures/Lecture02.md)|
 |Sorting Algorithms|[Lecture 03](data-structures/Lecture03.md)|
 |Comparison functions, operators and lower/upper bounds|[Lecture 03.1](data-structures/Lecture07.md)|
 |Math|[Lecture 04](data-structures/Lecture04.md)|
@@ -20,11 +20,16 @@
 |Greedy Algorithm|[Lecture 15](data-structures/Lecture17.md)|
 |Bitwise algorithm|[Algo Lecture 01](algorithm/Lecture01.md)|
 
+## CS97SI Slides
+
+Contains all the slides used during the CS97 Algorithm and data structures at Standford University
+
+
 # Algorithms
 
 [Geeks for geeks full algorithm list](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 
-### Greedy Algorithms
+### Greedy Algorithms: NOT AVAILABLE 
 |Topic|Lecture|
 |-------|:------:|
 |Huffman Coding|[Know more](algorith/Lecture01.md)|
@@ -39,25 +44,5 @@
 |Find the minimum cost to reach destination using a train
  |[Know more](algorith/Lecture01.md)|
 
- ## Arrays and Linked list
-|Topic|Lecture|
-|-------|:------:|
-|Merge Sort for Doubly Linked list|[Know more](algorith/Lecture01.md)|
-|Given a sorted array and a number x, find the pair in array whose sum is closest to x |[Know more](algorith/Lecture01.md)|
 
-| |[Know more](algorith/Lecture01.md)|
-| |[Know more](algorith/Lecture01.md)|
-| |[Know more](algorith/Lecture01.md)|
-
-## Backtracking
-|Topic|Lecture|
-|-------|:------:|
-| Print all permutations of a given string|[Know more](algorith/Lecture01.md)|
-|Subset sum |[Know more](algorith/Lecture01.md)|
-|N Queen problem |[Know more](algorith/Lecture01.md)|
-| |[Know more](algorith/Lecture01.md)|
-
-## CS97SI Slides
-
-Contains all the slides used during the CS97 Algorithm and data structures at Standford University
 

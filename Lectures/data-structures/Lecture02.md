@@ -146,3 +146,191 @@ int searchNumOccurrence(vector<int> &V, int k, int start, int end) {
 If our algorithm does not uses extra memory space while performing an operation, it is said that it execute the operations ```in  place```. An example could be the sorting of an array using insertion sort, bubble sort etc.
 
 When the operation is executed in place, the Space complexity of the algorithm is: O(1)
+
+## Delete element from an array
+
+* idx: index of the element to remove and len the length of the array. 
+```
+// Remove index x from the array
+for(int i = idx+1; i< len; i++)
+    arr[i-1] = arr[i];
+len -= 1;
+```
+
+### Array rotation (rotate Array by K elements)
+
+* 1st method:
+Complexity: O(N), Auxiliary Space: O(K)
+1. Store first K elements in a temporary array.
+2. Shift rest of the array
+3. Push back temporary array in original one. 
+
+* 2nd method: 
+Time complexity: O(n*k) - Space complexity: O(1)
+* Suppose to rotate an array by 1 position to the left. 
+1. store first element in temporary variable 
+2. Left shift all the element from second element by 1 position.
+3. Initialize arr[N-1] with temp; 
+
+## We use C++, what how do we declare an array in Java
+```
+    // declares an Array of integers. 
+    int[] arr = new int[5]; 
+```
+
+ ## Reverse an array
+
+ In many coding solutions I have been using the  ```reverse()``` function.
+
+```
+int array[5];
+reverse(array, array+5);
+vector<int>myVect(3);
+reverse(myVect.begin(), myVect.end());
+```
+But can we implement the reverse() function?
+
+```
+int n=5;
+int array[n] = {1,2,3,4,5};
+int start = 0;
+int end = n-1;
+int temp;
+
+while(start != end)
+{
+    /* Swap first and last element, the second and last element and so on... */
+    temp = array[start];
+    array[start] = array[end];
+    array[end] = temp;
+    start++;
+    end--;
+}
+```
+## What about dynamic arrays?
+
+Checkout out my [Arrays and Vectos problem solutions](https://github.com/omonimus1/geeks-for-geeks-solutions#Array-or-Vector)
+
+## List
+
+* List: sequence containers that allow non-contiupus memory allocation.  
+* In C++ SL implments a doubly linked list and not arrays. 
+```
+#include <list>
+list<dataType> name_of_my_list;
+```
+
+
+```
+include <list> 
+#include <iterator> 
+using namespace std; 
+
+//function for printing the elements in a list 
+void showlist(list <int> g) 
+{ 
+    list <int> :: iterator it; 
+    for(it = g.begin(); it != g.end(); ++it) 
+        cout << '\t' << *it; 
+    cout << '\n'; 
+} 
+
+int main() 
+{ 
+    list <int> gqlist1; 
+
+    for (int i = 0; i < 10; ++i)  
+        gqlist1.push_back(i * 2); 
+    
+    cout << "\nList 1 (gqlist1) is : "; 
+    showlist(gqlist1); 
+
+    cout << "\ngqlist1.front() : " << gqlist1.front(); 
+    cout << "\ngqlist1.back() : " << gqlist1.back(); 
+
+    cout << "\ngqlist1.pop_front() : "; 
+    gqlist1.pop_front(); 
+    showlist(gqlist1); 
+
+    cout << "\ngqlist1.pop_back() : "; 
+    gqlist1.pop_back(); 
+    showlist(gqlist1); 
+
+    cout << "\ngqlist1.reverse() : "; 
+    gqlist1.reverse(); 
+    showlist(gqlist1); 
+    return 0; 
+
+} 
+```
+
+
+## Iterators
+
+* Iterator: pointer to a memory address of an STL containers.
+* begin(): returns the beginning position of a container
+* end(): returns the after end position of the container. 
+* inserter() :- This function is used to insert the elements at any position in the container. It accepts 2 arguments, the container and iterator to position where the elements have to be inserted.
+
+```
+    vector<int> ar = { 1, 2, 3, 4, 5 };
+    vector<int> ar1 = {10, 20, 30}; 
+
+    // copying 1 vector elements in other using inserter()
+    // inserts ar1 after 3rd position in ar
+    copy(ar1.begin(), ar1.end(), inserter(ar,ptr));
+    
+    // Displaying new vector elements
+    cout << "The new vector after inserting elements is : ";
+    for (int &x : ar) 
+        cout << x << " ";
+```
+
+
+
+## Vector in Java
+```
+// Java code to illustrate Vector 
+
+import java.util.*; 
+class Vector_demo { 
+    public static void main(String[] arg) 
+    { 
+        // Create a vector 
+        Vector<Integer> v = new Vector<Integer>(); 
+    
+        // Insert elements in the Vector
+        v.add(1); 
+        v.add(2); 
+        v.add(3); 
+        v.add(4); 
+        v.add(3); 
+    
+        // Print the Vector
+        System.out.println("Vector is " + v); 
+    } 
+}
+# GeeksForGeeks
+```
+
+## Larghest sum subarray
+Pseudocode:
+```
+//n : size of array
+int largestsum(arr, n)
+{
+    max_so_far = INT_MIN
+    max_ending_here = 0
+
+    for (i=0 to n-1)
+    {
+        max_ending_here += arr[i]
+        if max_so_far < max_ending_here :
+            max_so_far = max_ending_here
+
+        if max_ending_here < 0 :
+            max_ending_here = 0
+        return max_so_far
+    }
+}
+```
