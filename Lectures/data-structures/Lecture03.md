@@ -77,8 +77,52 @@ It picks an element as pivot and partitions the given array around the picked pi
 * Pick a random element as pivot.
 * Pick median as pivot.
 ###### Source: wikipedia.org
+```
+/* low  --> Starting index,  high  --> Ending index */
+quickSort(arr[], low, high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[pi] is now
+           at right place */
+        pi = partition(arr, low, high);
 
+        quickSort(arr, low, pi - 1);  // Before pi
+        quickSort(arr, pi + 1, high); // After pi
+    }
+}
+/* This function takes last element as pivot, places
+   the pivot element at its correct position in sorted
+   array, and places all smaller (smaller than pivot)
+   to left of pivot and all greater elements to right
+   of pivot */
+partition (arr[], low, high)
+{
+    // pivot (Element to be placed at right position)
+    pivot = arr[high];  
+ 
+    i = (low - 1)  // Index of smaller element
+
+    for (j = low; j <= high- 1; j++)
+    {
+        // If current element is smaller than or
+        // equal to pivot
+        if (arr[j] <= pivot)
+        {
+            i++;    // increment index of smaller element
+            swap arr[i] and arr[j]
+        }
+    }
+
+    swap arr[i + 1] and arr[high])
+    return (i + 1)
+}
+#### Source: Geeks for geeks
+```
 ## Selection Sort
+
+* It sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. 
+* The algorithm maintains two subarrays in a given array. The subarray which is already sorted. Remaining subarray which is unsorted.
 
 * Average time complexity: O(n^2)
 * [How to implement it](https://www.geeksforgeeks.org/selection-sort/)
@@ -102,20 +146,57 @@ void selectionSort(int arr[], int n)
 ```
 
 ## Bubble sort
+* The simplest in-place algorithm.
+* O(N^2)
 
 ```
-for(int i =0; i < n; i++)
-{
-	for(int j=0; j < n; j++)
-	{
-		if(arra[i] > arr[i+1])
-			swap(array[j], array[j+1]);
-	}
+void bubbleSort(int arr[], int n) 
+{ 
+   int i, j; 
+   for (i = 0; i < n-1; i++)       
+  
+       // Last i elements are already in place    
+       for (j = 0; j < n-i-1; j++)  
+           if (arr[j] > arr[j+1]) 
+              swap(&arr[j], &arr[j+1]); 
 }
 ```
 
 * [How to implement it](https://www.geeksforgeeks.org/bubble-sort/)
 ![Bubble sort](../images/bubble-sort.gif)
+
+## Ternary Search
+
+* Is a divide and Conque algorith,
+* It works on sorted array
+* Similar to Binary Search but instead two split the array in two, it splits it in three. 
+
+```
+int ternarySearch(int start, end, target, int arr[])
+{
+    if(end >= start)
+    {
+        // Find mid1 and mid2
+        int mid1 = start + (end - start) /3;
+        int mid2 = end - (end - start) / 3;
+
+        if(arr[mid1] == target)
+            return mid1;
+        if(arr[mid2] == target)
+            return mid2; 
+        // Target is not present, so repeat search process
+        if(target < arr[mid1])
+            return ternarySearch(mid2+1, end, target, arr);
+        else
+        {
+            // Target can be between mid1 and mid2.
+            return ternarySearch(mid1+1, mid2-1, target, array);
+        }                
+    }
+    // We did not find the target
+    return -1;
+}
+```
 
 
 ## Heapsort
@@ -137,17 +218,49 @@ Height of an Heap: Height of the root element.
 ## Binary search O(log n) 
 
 ```
-int a =0; , b = n-1;
-while(a <= b)
-{
-	int k = (a/b)/2;
-	if(arr[k] == target)
-		return true; // We found the element
-	if(arr[k] > x) b = k-1;
-	else a = k+1;
+// Initially,
+// l = 0, first index of arr[].
+// r = N-1, last index of arr[].
+int binarySearch(int arr[], int l, int r, int x) 
+{ 
+    while (l <= r) { 
+        int m = l + (r - l) / 2; 
+  
+        // Check if x is present at mid 
+        if (arr[m] == x) 
+            return m; 
+  
+        // If x greater, ignore left half 
+        if (arr[m] < x) 
+            l = m + 1; 
+  
+        // If x is smaller, ignore right half 
+        else
+            r = m - 1; 
+    } 
+  
+    // if we reach here, then element was 
+    // not present 
+    return -1; 
 }
-// The element does not exists
-return false;
+# Source GeeksForGeeks
+```
+```
+#include<bits/stdc++.h> 
+using namespace std; 
+
+int main() 
+{     // initializing vector of integers 
+    vector<int> vec = {7, 13, 18, 21, 44, 98}; 
+    
+    // using binary_search to check if 15 exists 
+    if (binary_search(vec.begin(), vec.end(), 21)) 
+        cout << "21 exists in vector"; 
+    else
+        cout << "21 does not exist"; 
+    
+    cout << endl; 
+} 
 ```
 
 ## Sort using #include<algorithm>
