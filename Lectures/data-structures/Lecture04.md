@@ -1,5 +1,91 @@
 ## Math 
 
+## Find number of digits in a number in O(1)
+
+Rule:  ```number of digits in N = log10(N) + 1.``
+
+* **floor()** function returns the largest possible integer value which is <= to the given argument.
+Es: floor(34.5) = 33
+eS: floor(-34.5) = 35
+```
+// C++ solutions
+#include <cmath>
+number_of_digits = floor(log10(N) + 1)
+```
+
+* **initial term**: first number of a arithmetic progresion
+* **Common difference**: vale by which consecutive terms increases or decrease is called the common difference. 
+
+Calculate directly nth element of the AP: 
+```
+// AP: {2,4,6,8,10}
+/*
+Suppose that we want to calculate the 5th element (10)
+a1 = 2 (first element of the list)
+d = 2 (constant different)
+an = will be 10 (value of the 5th element)
+*/
+an = a1 + (n-1) * d;
+```
+a: first element in the AP. 
+* nth term of an AP = a + (n-1)*d.
+* Arithmetic Mean = Sum of all terms in the AP / Number of terms in the AP.
+* Sum of ‘n’ terms of an AP = 0.5 n (first term + last term) = 0.5 n [ 2a + (n-1) d ].
+
+## Geometric Progression
+
+* Geomtric Progression: sequene of numbers where the ratio o fany two consecutive terms is always same. 
+* Initial term: first number of the G.P.
+* Common ration: The ratio between a term in the sequence and the term before
+
+The behaviour of a geometric sequence depends on the value of the common ratio. If the common ratio is:
+Positive, the terms will all be the same sign as the initial term.
+Negative, the terms will alternate between positive and negative.
+Greater than 1, there will be exponential growth towards positive or negative infinity (depending on the sign of the initial term).
+
+If ‘a’ is the first term and ‘r’ is the common ratio:
+nth term of a GP = a*rn-1.
+Geometric Mean = nth root of product of n terms in the GP.
+Sum of ‘n’ terms of a GP (r < 1) = [a (1 – rn)] / [1 – r].
+Sum of ‘n’ terms of a GP (r > 1) = [a (rn – 1)] / [r – 1].
+Sum of infinite terms of a GP (r < 1) = (a) / (1 – r).
+
+## Mean and Median
+
+* Mean: average of given set
+* Median is the middle value of a set of data. To determine the median value in a sequence of numbers, the numbers must first be arranged in an ascending order.
+
+
+### Sieve of Eratosthenes
+
+* Sieve of Eratosthenes: most efficient way of generating prime numbers upto a given number N; 
+```
+// Find Prime numbers from 0 to 50
+#include <iostream>
+const int len = 50;
+int main() {
+   int arr[len] = {0};
+   for (int i = 2; i < len; i++) {
+      for (int j = i * i; j < len; j+=i) {
+         arr[j - 1] = 1;
+      }
+   }
+   for (int i = 1; i < len; i++) {
+      if (arr[i - 1] == 0)
+         std::cout << i << "\t";
+   }
+}
+```
+
+
+## Arithmetic Progression
+
+* Sequence: is said Arithmetic Progression and the different between any of two consecutive terms is always the same. The next number in the series is calculated by adding a fixed number to the prevoups number in the series. 
+
+
+
+* **Arithmetic Progression**: difference bet
+
 ### Hottest topics
 
 1. Greatest Commond Divisor (GCD)
@@ -40,12 +126,23 @@ bool prime(int n)
 
 ### Greatest Commond Divisor (GCD) and Least Commond Multiple
 
-Greates commond divisor: the greates commond divisor of two or more integers which are not all zero, is the larghest posiibe integer that divides each integers. For example, the gcd fo 8 and 12 is 4. 
+* **Factors and Multiples** : All numbers that divide a number completely, i.e., without leaving any remainder, are called factors of that number.
+
+* **Greates commond divisor**: the greates commond divisor of two or more integers which are not all zero, is the larghest posiibe integer that divides each integers. For example, the gcd fo 8 and 12 is 4. 
 
 ```
 int gcd(int a, int b) { return b==0 ? a : gdc(b, a%b); }
 int lcm(int a, int b) {  return a * (b/gcd(a,b)); }
 ```
+
+## Modular Arithmetic and Modular inverse
+
+Modulari arithmetic rules:
+1. (a + b) mod M = ((a mod M) + (b mod M)) mod M.
+2. (a - b) mod M = ((a mod M) - (b mod M)) mod M.
+3. (a * b) mod M = ((a mod M) * (b mod M)) mod M.
+
+Modular inverse: 
 
 ### Fibonacci Number
 
@@ -57,6 +154,9 @@ f(n) = f(n-1) + f(n-2)
 ## Generate permutations#
 
 A permutation is each one fo the N! possible arrengements the elementws can take (where N is the number of elements in the range). Different permutation can be ordered according to how they compare lexicographicaly to each other; 
+
+### Important Rules
+* 0! =  1!  = 1;
 
 ```
 #include <algorithm>    // std::next_permutation, std::sort
