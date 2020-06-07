@@ -143,6 +143,16 @@ Useful functions that you will definetely use are:
 * [setprecision()](http://www.cplusplus.com/reference/iomanip/setprecision/) : set decimal precision
 
 
+## String to integer and reverse
+
+Does not matter which language you are using, make sure that you know how to convert a string to integer and an integer to string, it will be very useful. 
+* Int to string  
+```  
+int i =12;
+string conversion = to_string(i);
+```
+* String to int: 
+
 ## Macros
 
 A macro is a certain string in the code that will be changed before the compilation.

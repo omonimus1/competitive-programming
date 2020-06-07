@@ -114,7 +114,7 @@ void printReverse(Node *head)
 
 ```
 /* Function to reverse the linked list */
-void reverse() 
+void reverse(Node *head) 
 { 
     // Initialize current, previous and 
     // next pointers 
