@@ -18,7 +18,7 @@ struct node
 }; 
   
 // A utility function to create a new BST node 
-struct node *newNode(int item) 
+struct node *newNode( int item) 
 { 
     struct node *temp = new node; 
     temp->data = item; 
@@ -32,22 +32,20 @@ struct node * insert(struct node *root, int element)
     if(root == NULL)
         return newNode(element);
     if(root->data > element)
-        insert(root->left, element);
-    else
-        insert(root->right, element); 
+        root->left = insert(root->left, element);
+    else if (root->data < element)
+        root->right = insert(root->right, element); 
     return root;
 }
 
 
-bool exists(struct node *root, int element)
+bool search(struct node *root, int element)
 {
-    if (root == NULL)
-        return false;
-    if(root->data == element)
-        return true;
-    else if(root->data > element)
-        return exists(root->left, element);
-    return exists(root->right, element);
+    if (root == NULL || root->data = element)
+        return root;   
+    if(root->data > element)
+        return search(root->left, element);
+    return search(root->right, element);
 }
 
 
@@ -107,50 +105,45 @@ struct node* remove(struct node *root, int element)
     
 }
 
+// Driver Program to test above functions
 int main()
 {
-    struct node *root = NULL; 
-    int test, number;
-    char command;  
-    while(test--)
-    {
-        cin >> command >> number; 
-        if(command == 'i')
-        {
-            // Check if the element is not already present
-            if(!exists(root, number))
-            {
-                cout<<number<<endl;
-                insert(root, number);
-            }
-                
-        }
-        // Delete command
-        else if(command = 'd')
-        {
-            if(exists(root, number) )
-            {
-                cout << number<<endl;
-                remove(root, number);
-            }         
-        }
-    }
+    /* Let us create following BST
+          50
+        /     \
+       30     70
+      / \    / \
+     20 40  60 80 */
+    struct node *root = NULL;
+    root = insert(root, 50);
+    insert(root, 30);
+    insert(root, 20);
+    insert(root, 40);
+    insert(root, 70);
+    insert(root, 60);
+    insert(root, 80);
+
+    // print inoder traversal of the BST
+    inorder(root);
+
     return 0;
 }
-
 ```
 
 
-### Insert
+### Notes
 
 Rember that in BT is not allowed to have duplicate elements, for this reason for every insert operation, we need to check first if element exists using the [exists checker function](#Check-if-an-element-exists) and the [create node function](#Create-new-node)
+
+### Deletion in Binary Search Tree
+
 
 
 ### Traversal
 
 * **Traversal** is a process that visits all the nodes in the tree. Since a tree is a nonlinear data structure, there is no unique traversal. We will consider several traversal algorithms with we group in the following two kinds:
-1. depth-first traversal
-2. breadth-first traversal
+1. **depth-first traversal**.
+2. **breadth-first traversal**.
 
 
 There are Three types of depth -First-Traversals:
@@ -396,9 +389,31 @@ int countLeaves(Node* root)
 ## Lowest Common Ancestor
 
 According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”
-
 ![LCA tree](../../images/lca.png)
 
+
+The LCA or Lowest Common Ancestor of any two nodes N1 and N2 is defined as the common ancestor of both the nodes which is closest to them. That is the distance of the common ancestor from the nodes N1 and N2 should be least possible.
+
+```
+struct node *lca(struct node* root, int n1, int n2)
+{
+    while (root != NULL)
+    {
+        // If both n1 and n2 are smaller than root, 
+        // then LCA lies in left subtree
+        if (root->data > n1 && root->data > n2)
+           root = root->left;
+
+        // If both n1 and n2 are greater than root, 
+        // then LCA lies in the right subtree
+        else if (root->data < n1 && root->data < n2)
+           root = root->right;
+
+        else break;
+    }
+    return root;
+}
+```
 ###### Souce: Miss Deeksha Sharm - Medium
 
 
@@ -555,13 +570,70 @@ BI Tree for an arrays arr[] has the following operations:
 ## Delete node from BST
 
 If we have 3 cases:
-1. Node is a leaf node:  it does not violate any BST property if we delete it. 
-2. Node has 1 child: the child node must be moved in the parent node. 
-3. Node has 3 children: we need to move all the subtree.
+1. Node is a leaf node:  it does not violate any BST property if we delete it. Simply remove from the tree.
+2. Node has 1 child: the child node must be moved in the parent node.  We do so copying the child to the node and delete the child.
+3. Node has 3 children: we need to move all the subtree. 
+
+```
+struct node* deleteNode(struct node* root, int key)
+{
+    // base case
+    if (root == NULL) return root;
+
+    // If the key to be deleted is smaller than the root's key,
+    // then it lies in left subtree
+    if (key < root->key)
+        root->left = deleteNode(root->left, key);
+
+    // If the key to be deleted is greater than the root's key,
+    // then it lies in right subtree
+    else if (key > root->key)
+        root->right = deleteNode(root->right, key);
+
+    // if key is same as root's key, then This is the node
+    // to be deleted
+    else
+    {
+        // node with only one child or no child
+        if (root->left == NULL)
+        {
+            struct node *temp = root->right;
+            free(root);
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            struct node *temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        // node with two children: Get the inorder successor (smallest
+        // in the right subtree)
+        struct node* temp = minValueNode(root->right);
+
+        // Copy the inorder successor's content to this node
+        root->key = temp->key;
+
+        // Delete the inorder successor
+        root->right = deleteNode(root->right, temp->key);
+    }
+    
+    return root;
+}
+```
+### General notes
 
 
+* Number of BST = (2n)! / n! * (n+1)!
+* Average depth of Binary Search Tree: O(log n).  
 
+### AVL TREE
 
+* AVL TREE: is a self-balancing BST. 
+* The height of left and right ubtrees cannot be mores than one.
+* Search, Max, min, insert, delete operations takes O(H) time (h: height of BST).
+* If AVL Tree is balanced,height is O(Logn).
 
 ## Practice with Binary Tree
 
