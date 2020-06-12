@@ -81,7 +81,7 @@ for i in 0 to m-1
                 Cij += aik*bkj
 ```
 
-![Matrices multiplications](../../images/matrices-multiplication.png)
+![Matrices-multiplications](../../images/matrices-multiplication.png)
 ###### Source picture: mathisfun.com
 
 * Multiplication of matrices is non-commutative which means A*B ≠ B*A.

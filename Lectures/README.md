@@ -19,7 +19,7 @@
 |Counting|[Lecture 13](data-structures/Lecture15.md)|
 |Dynamic Programming|[Lecture 14](data-structures/Lecture16.md)|
 |Greedy Algorithm|[Lecture 15](data-structures/Lecture17.md)|
-|Bitwise algorithm|[Algo Lecture 01](algorithm/Lecture01.md)|
+|Bit Magic -- Bitwise Algorithm|[Lecture 20](data-structures/Lecture20.md)|
 
 ## CS97SI Slides
 
