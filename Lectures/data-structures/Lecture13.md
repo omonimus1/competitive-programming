@@ -12,11 +12,15 @@
 
 * **Leaf node**: node without children ```(node->right = NULL && node->left = NULL); ```
 
-* **Complete binary tree**: all levels are completely filles execept the last level and the last level hass all keys as left as possible. 
-![Complete tree](../../images/complete-tree.png)
+* **Complete binary tree**: all levels are completely filles execept the last level and the last level hass all keys as left as possible.
 
-* **Perfect Binary Tree**: all leaf nodes are at the same level
-![perfect-binary-tree](../../images/perfect-binary-tree.png)
+![Complete tree](../../images/complete-tree.jpeg)
+
+* **Perfect Binary Tree**: all leaf nodes are at the same level.
+
+
+<img align="center" width="100" height="100" src="../../images/perfect-binary-tree.png">
+
 
 * **Edge**: is a link connecting any two nodes in the three. 
 
