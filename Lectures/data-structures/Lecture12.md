@@ -86,7 +86,7 @@ void deteleNode(struct Node **head, int position)
     if(temp == NULL || temp->next == NULL)
         return;
     
-    // Store pointer to the next of the niode to be deleted;
+    // Store pointer to the next of the noode to be deleted;
     Struct Node *next = temp->next->next;
     free(temp->next);
     temp->next = next;

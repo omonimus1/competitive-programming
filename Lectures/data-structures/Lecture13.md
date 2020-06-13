@@ -1,11 +1,35 @@
-## Binary Tree
+## Tree and Binary Tree
 
-In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
-### Essentials about Binary Tree
+* **Tree**: non-linear data structure where each node is connected t a number of nodes using pointers or references. 
 
-* **Binary Tree:** Each element in the Tree Has at most a left and right child.
+* **Binary tree**: is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.Each element in the Tree Has at most a left and right child.
+
+* **Root**: first node of the three (it has no parent node). 
+
+* **Siglings**: children nodes of same parents are called siblings of each other. 
+
+* **Full binary tree**: everynode has 0 or  children. 
+
+* **Leaf node**: node without children ```(node->right = NULL && node->left = NULL); ```
+
+* **Complete binary tree**: all levels are completely filles execept the last level and the last level hass all keys as left as possible. 
+![Complete tree](../../images/complete-tree.png)
+
+* **Perfect Binary Tree**: all leaf nodes are at the same level
+![perfect-binary-tree](../../images/perfect-binary-tree.png)
+
+* **Edge**: is a link connecting any two nodes in the three. 
+
+* **Height of a Tree**: total numbers of level in the three or the path from the root node to the node present at the last level.
+
 * **Applications:** Usually used when we store information that naturally forms a hierarchy or when we need to execute fast search operation.
+
 * **Size**: Number of nodes in the Binary Tree. 
+
+* **Max number of nodes at level l**: 2^(l-1). Level of root is 1; 
+
+* **Maximum number of nodes** in a binary tree of **height** 'h' is (2h – 1).
+* **minimum possible height or min number of levels** of a tree with N nodes is Log2(N+1). 
 
 ```
 #include <iostream>
@@ -128,16 +152,10 @@ int main()
 
     return 0;
 }
+// Source: GeeksforGeeks
 ```
 
-
-### Notes
-
-Rember that in BT is not allowed to have duplicate elements, for this reason for every insert operation, we need to check first if element exists using the [exists checker function](#Check-if-an-element-exists) and the [create node function](#Create-new-node)
-
-### Deletion in Binary Search Tree
-
-
+Rember that in **BT** is not allowed to have duplicate elements, for this reason for every insert operation, we need to check first if element exists using the [exists checker function](#Check-if-an-element-exists) and the [create node function](#Create-new-node)
 
 ### Traversal
 
@@ -185,8 +203,55 @@ There is only one kind of breadth-first-traversal, the Breadth First or Level Or
 
 ### Breath First Search
 
-Breath first search is also used for level order traversal.
+Breath first search is also used for **level order traversal**.
 
+```
+    // Having this Binary Tree
+    //      1
+    //     / \
+    //    2   3
+    //   / \
+    //  4   5
+    // The level order traversal will be: 1 2 3 4 5
+```
+
+* Space complexity O(N);
+* Time complexity  O(N);
+
+1. Create empty queue
+2. Push root to the queue
+3. While queue is not empty:
+    3.1 Pop the top node form queue and print it
+    3.2 Enqeueu (insert) node's children (first left and then right)
+
+```
+void levelOrderTraverse(Node *root)
+{
+    if(root == NULL) return;
+
+    // Create queue (Point 1)
+    queue<Node *> myQueue;
+
+    // Insert root in the queue (point 2)
+    myQueue.push(root);
+
+    // While queue is not empty: pop front node and then psh left and right //child
+    Node *node;
+    while( !myQueue.empty() )
+    {
+        // Print fron of queue
+        node = myQueue.front();
+        cout << node -> data << " ";
+        q.pop();
+
+        // Enque left child
+        if(node->left != NULL)
+            myQueue.push(node->left);
+        if(node->right != NULL)
+            myQueue.push(node->right);
+    }
+}
+```
 
 Pseudo code of the algorithm:
 /*Function to print level order traversal of tree*/
@@ -206,19 +271,6 @@ else if level greater than 1, then
 ```
 // Recursive CPP program for level 
 // order traversal of Binary Tree  
-#include <bits/stdc++.h> 
-using namespace std; 
-  
-class node  
-{  
-    public: 
-    int data;  
-    node* left, *right;  
-};  
-  
-void printGivenLevel(node* root, int level);  
-int height(node* node);  
-node* newNode(int data);  
   
 /* Function to print level  
 order traversal a tree*/
@@ -264,35 +316,8 @@ int height(node* node)
         else return(rheight + 1);  
     }  
 }  
-  
-/* Helper function that allocates  
-a new node with the given data and 
-NULL left and right pointers. */
-node* newNode(int data)  
-{  
-    node* Node = new node(); 
-    Node->data = data;  
-    Node->left = NULL;  
-    Node->right = NULL;  
-  
-    return(Node);  
-}  
-  
-/* Driver code*/
-int main()  
-{  
-    node *root = newNode(1);  
-    root->left = newNode(2);  
-    root->right = newNode(3);  
-    root->left->left = newNode(4);  
-    root->left->right = newNode(5);  
-  
-    cout << "Level Order traversal of binary tree is \n";  
-    printLevelOrder(root);  
-  
-    return 0;  
-}  
 ```
+
 
 ### Height vs Depth
 
@@ -416,7 +441,6 @@ struct node *lca(struct node* root, int n1, int n2)
 ```
 ###### Souce: Miss Deeksha Sharm - Medium
 
-
 ```
 // return the Height of the given Binary Tree
 int height(Node* root)
@@ -436,6 +460,23 @@ The diameter of a tree T is the largest of the following quantities:
 ![Diameter-of-tree](../../images/diameter_of_tree.png)
 
 ```
+// Time complexity for finding the diameter: O(N^2);
+
+
+/* The function Compute the "height" of a tree. Height is the 
+    number f nodes along the longest path from the root node 
+    down to the farthest leaf node.*/
+int height(struct node* node)
+{
+    /* base case tree is empty */
+    if(node == NULL)
+        return 0;
+    
+    /* If tree is not empty then height = 1 + max of left 
+        height and right heights */
+    return 1 + max(height(node->left), height(node->right));
+} 
+
 int diameter(Node *head)
 {
     if(head == NULL)
@@ -465,6 +506,7 @@ int diameter(Node *head)
 ## Ancestors 
 * [Print Ancestors of a given node](https://www.geeksforgeeks.org/print-ancestors-of-a-given-node-in-binary-tree/)
 * [Lowest common Ancestor of a given binary tree](https://www.geeksforgeeks.org/print-ancestors-of-a-given-node-in-binary-tree/)
+
 
 ## Binary Tree (BT), convert it to a Doubly Linked List(DLL) In-Place.
 Recursively look for the node with no grandchildren and both left and right child in the left sub-tree. Then store node->right in temp and make node->right=node->left. Insert temp in first node NULL on right of node by node=node->right. Repeat until it is converted to linked list.
@@ -502,6 +544,7 @@ void flatten(Node * root)
     }
 }
 ```
+
 ## Vertical traversal of Binary Tree
 Traverse a Binary Tree vertically means ge the minimum and maximum horizontal distance with respect to root. 
 ![Vertical Print](../../media/vertical_bt.png)
@@ -561,6 +604,32 @@ For find sum of first i elements & update value of a specific element, it takes 
 BI Tree for an arrays arr[] has the following operations:
 * update(): updates BI tree for operation arr[index] += val
 * getSum(): returns sum of arr[0..index]
+
+### Convert BT into its Mirror Tree
+
+Example of Mirror Tree: Mirror of a Binary Tree T is another Binary Tree M(T) with left and right children of all non-leaf nodes interchanged.
+![mirror-tree](../../images/mirror-tree.jpeg)
+##### Source image: pinterest.ch
+
+```
+void mirror(Node *node)
+{
+    if(node == NULL)
+        return;
+    else
+    {
+        Node *temp;
+
+        mirror(node->left);
+        mirror(node->right);
+
+        // Swap pointer of the current node
+        temp = node->left;
+        node->left = node->right;
+        node->right = temp; 
+    }
+}
+```
 
 #### How to we create it?
 1. We first initialize all values in BITree[] as 0.
@@ -622,8 +691,75 @@ struct node* deleteNode(struct node* root, int key)
     return root;
 }
 ```
-### General notes
 
+### Left, right, Top and Bottom view of a Binary Tree
+
+![tree-views](../../images/tree-views.png)
+* Left view: set of nodes that can be viewed from the left hand side. Pratically, it is the first node of every level. [View the Video-Tutorial provided about Left view](https://www.geeksforgeeks.org/print-left-view-binary-tree/)
+```
+// left view  Time complexity:  O(N) | Space complexity: O(1)
+void leftViewHelper(Node * root, int level, int *max_level)
+{
+    // Once we have a leaf node, we return to the prev node
+    if(root == NULL)
+        return;
+
+    // Check if it is the first node of its level
+    if(*max_level < level) 
+    {
+        cout << root->data << " ";
+        *max_level = level;
+    }
+
+    // Recursively iterate left and right subtrees
+    leftViewHelper(root->left, level+1, max_level);
+    leftViewHelper(root->right, level+1, max_level);
+}
+
+void leftView(Node *root)
+{
+    int max_level = 0;
+    leftViewHelper(root, 1, &max_level);
+}
+```
+
+```
+// Recursive function to print 
+// right view of a binary tree. Time: O(N) - Space(1) 
+void rightViewHelper(Node *root,  
+                   int level, int *max_level) 
+{ 
+    // Base Case 
+    if (root == NULL) return; 
+  
+    // If this is the last Node of its level 
+    if (*max_level < level) 
+    { 
+        cout << root->data << " "; 
+        *max_level = level; 
+    } 
+  
+    // Recur for right subtree first,  
+    // then left subtree 
+    rightViewUtil(root->right, level + 1, max_level); 
+    rightViewUtil(root->left, level + 1, max_level); 
+} 
+  
+// A wrapper over rightViewUtil() 
+void rightView(struct Node *root) 
+{ 
+    int max_level = 0; 
+    rightViewHelper(root, 1, &max_level); 
+} 
+```
+## Threaded Binary Tree
+
+Threaded BT: used to make inorder traversal faster without stack and withot recursion. All right hand childs, instead to point to NULL, will point to the inrder success of the node (if it exists); 
+
+* Single Threaded: a NULL pointer is made to point to the inorder successor (if exists);
+* Double threaded: oth leaft and right children will point to the inorder prefecessor and inorder successor respectively. 
+
+### General notes
 
 * Number of BST = (2n)! / n! * (n+1)!
 * Average depth of Binary Search Tree: O(log n).  
