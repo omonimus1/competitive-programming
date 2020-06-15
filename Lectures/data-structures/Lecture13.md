@@ -12,7 +12,7 @@
 
 * **Leaf node**: node without children ```(node->right = NULL && node->left = NULL); ```
 
-* **Complete binary tree**: all levels are completely filles execept the last level and the last level hass all keys as left as possible.
+* **Complete binary tree**: all levels are completely filled execept the last level and the last level has all keys as left as possible.
 
 ![Complete tree](../../images/complete-tree.jpeg)
 
@@ -69,11 +69,13 @@ struct node * insert(struct node *root, int element)
 
 bool search(struct node *root, int element)
 {
-    if (root == NULL || root->data = element)
-        return root;   
+    if (root->data == element)
+        return true;   
     if(root->data > element)
         return search(root->left, element);
-    return search(root->right, element);
+    else if(root->data < element)
+        return search(root->right, element);
+    return false;
 }
 
 
@@ -239,7 +241,7 @@ void levelOrderTraverse(Node *root)
     // Insert root in the queue (point 2)
     myQueue.push(root);
 
-    // While queue is not empty: pop front node and then psh left and right //child
+    // While queue is not empty: pop front node and then push left and right child
     Node *node;
     while( !myQueue.empty() )
     {
@@ -304,22 +306,14 @@ void printGivenLevel(node* root, int level)
 /* Compute the "height" of a tree -- the number of  
     nodes along the longest path from the root node  
     down to the farthest leaf node.*/
-int height(node* node)  
-{  
-    if (node == NULL)  
-        return 0;  
-    else
-    {  
-        /* compute the height of each subtree */
-        int lheight = height(node->left);  
-        int rheight = height(node->right);  
-  
-        /* use the larger one */
-        if (lheight > rheight)  
-            return(lheight + 1);  
-        else return(rheight + 1);  
-    }  
-}  
+int height(Node* root) {
+    if(root == NULL)
+        return 0;
+    int l = height(root->left);
+    int r = height(root->right);
+            // Return the biggest counter
+    return l > r ? l+1 : r+1; 
+} 
 ```
 
 
@@ -334,7 +328,7 @@ The height of a node is the largest number of edges in a path from that node to 
 ```
 int height(Node* root) {
     if(root == NULL)
-        return -1;
+        return 0;
     int l = height(root->left);
     int r = height(root->right);
             // Return the biggest counter
@@ -395,20 +389,22 @@ void print_level_k(node *root, int k)
         print_level_k(root->right, k-1);
     }
 }
-
 ```
 
-## Count Leaves in a Binary Tree
+## Count number of  Leaf nodes in a Binary Tree
 
 * **Leaf node**: It has both left and right child nodes NULL;
 ```
-int countLeaves(Node* root)
+int countLeaf(Node* root)
 {
     Node *node = root;
+    // Case 1: there are no nodes at all
     if(node == NULL)
         return 0;
+    // Case 2: There is just a root
     else if(node ->left == NULL && node ->right == NULL)
         return 1; 
+    // Case 3: We need to iterate recursively the three to count the leafnodes
     else
         return countLeaves(node->left) + countLeaves(node->right);
 }
@@ -426,22 +422,24 @@ The LCA or Lowest Common Ancestor of any two nodes N1 and N2 is defined as the c
 ```
 struct node *lca(struct node* root, int n1, int n2)
 {
-    while (root != NULL)
-    {
-        // If both n1 and n2 are smaller than root, 
-        // then LCA lies in left subtree
-        if (root->data > n1 && root->data > n2)
-           root = root->left;
 
-        // If both n1 and n2 are greater than root, 
-        // then LCA lies in the right subtree
-        else if (root->data < n1 && root->data < n2)
-           root = root->right;
+    if (root == NULL) 
+        return NULL;  
 
-        else break;
-    }
-    return root;
+    // If both n1 and n2 are smaller 
+    // than root, then LCA lies in left  
+    if (root->data > n1 && root->data > n2)  
+        return lca(root->left, n1, n2);  
+
+    // If both n1 and n2 are greater than  
+    // root, then LCA lies in right  
+    if (root->data < n1 && root->data < n2)  
+        return lca(root->right, n1, n2);  
+
+    return root; `
 }
+  
+
 ```
 ###### Souce: Miss Deeksha Sharm - Medium
 
@@ -503,7 +501,7 @@ int diameter(Node *head)
 ## Left or Right view of Binary Tree
 
 
-![Left View](../../media/left_view.png)
+![Left View](../../images/left_view.png)
 ###### Left view, images: Geeks for Geeks
 ## Check if a tree is balanced
 
@@ -551,7 +549,7 @@ void flatten(Node * root)
 
 ## Vertical traversal of Binary Tree
 Traverse a Binary Tree vertically means ge the minimum and maximum horizontal distance with respect to root. 
-![Vertical Print](../../media/vertical_bt.png)
+![Vertical Print](../../images/vertical_bt.png)
 ###### Image provided by Geeks For Geeks
 ```
 // min: min horizonal distance from root
