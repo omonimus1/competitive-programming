@@ -5,6 +5,7 @@
 |Introduction, numbers and algorithms key-concepts|[Lecture 01](data-structures/Lecture01.md)|
 |Time complexity analysis array,List, Iterators|[Lecture 02](data-structures/Lecture02.md)|
 |Matrix|[Lecture 02.1](data-structures/Lecture02-1.md)|
+|Recursion|[Recursion](data-structures/Lecture02-2.md)|
 |Sorting Algorithms|[Lecture 03](data-structures/Lecture03.md)|
 |Comparison functions, operators and lower/upper bounds|[Lecture 03.1](data-structures/Lecture07.md)|
 |Math|[Lecture 04](data-structures/Lecture04.md)|
