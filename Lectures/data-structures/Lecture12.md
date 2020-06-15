@@ -63,35 +63,38 @@ void push(Node **head, int elment_to_store)
 ```
 ### Delete a node
 
-1)Find previuos node of the node to be deleted
-2) Change the next of the orevius node
-3) Free the memory of node to be deleted.
-
-void deteleNode(struct Node **head, int position)
-{
-    if(*head == NULL )
-        return;
-    struct Node *temp = *head;
-
-    if(position == 0)
-    {
-        *head = temp->next;
-        free(temp);
-        return;
-    }
-
-    for(int i=0; temp !=NULL && i< position-1; i++)
-        temp = temp->next;
-    
-    if(temp == NULL || temp->next == NULL)
-        return;
-    
-    // Store pointer to the next of the noode to be deleted;
-    Struct Node *next = temp->next->next;
-    free(temp->next);
-    temp->next = next;
-}
-
+```
+void deleteNode(struct Node **head_ref, int key) 
+{ 
+    // Store head node 
+    struct Node* temp = *head_ref, *prev; 
+  
+    // If head node itself holds the key to be deleted 
+    if (temp != NULL && temp->data == key) 
+    { 
+        *head_ref = temp->next;   // Changed head 
+        free(temp);               // free old head 
+        return; 
+    } 
+  
+    // Search for the key to be deleted, keep track of the 
+    // previous node as we need to change 'prev->next' 
+    while (temp != NULL && temp->data != key) 
+    { 
+        prev = temp; 
+        temp = temp->next; 
+    } 
+  
+    // If key was not present in linked list 
+    if (temp == NULL) return; 
+  
+    // Unlink the node from linked list 
+    prev->next = temp->next; 
+  
+    free(temp);  // Free memory 
+} 
+## Source: Geeks for geeks
+```
 ### Print reverse of the Linked LIST Without reverse the list
 
 ```
@@ -245,6 +248,16 @@ bool isPalindrom(Node *head)
     }
 }
 ```
+
+## Find intersection Point of Two Linked List
+
+* **Naive Solution [Time O(m+n)]**:  We traverse the first list and mark all nodes as visited. Then we traverse the second list, if we see a visited node again, then there is an intersection point; 
+
+
+
+## XOR Linked List
+
+XOR Linked list: is an Memory Efficient Implementation of Doubly Linked Lists. This DDL can be created instead of storing actually memory addrress, every node stores the XOR of address of previus and next nodes. 
 
 * [Operations on a doubly linked list](https://www.interviewbit.com/tutorial/doubly-linked-list/)
 * [Introduction to Linked List -  video-tutorial](https://www.interviewbit.com/tutorial/doubly-linked-list/)
