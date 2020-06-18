@@ -21,6 +21,12 @@
 
 * Even: has first bit (from right hand side):set to 0;
 * Odd: has first bit (from right hand side): set to 1; 
+## Check if kth bit is set (with 0 base index)
+```
+bool checkKthBit(int n, int k){
+    return (n>>k)&1;
+}
+```
 
 ## Arithmetic operations:
 

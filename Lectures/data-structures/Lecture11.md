@@ -146,17 +146,19 @@ cout << (a^b) << "\n"; // 1001101110
 Map is an associative container where every value is associated with ONE and just ONE key. 
 
 ```
-map<int, int> my_map;
+map<string, int> my_map;
 
-my_map["monkey"] = 4;
-my_map["davide"] = 45;
+my_map.insert(pair<string, int>("Davide",45));
+my_map.insert(pair<string, int>("Giuseppe",45));
 
-if(my_map.count("davide"))
-    cout << "davide is present"<<endl;
+
+if(my_map.count("Davide"))
+    cout << "Davide is present"<<endl;
+else
+    cout<< "Davide is not present <<endl;
 
 for (auto x : my_map) 
     cout << x.first << " " << x.second << "\n";
-
 ```
 
 * [MAP - from GeekForGeeks](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)

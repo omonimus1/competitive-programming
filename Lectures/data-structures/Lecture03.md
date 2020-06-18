@@ -263,7 +263,7 @@ int main()
 } 
 ```
 
-## Sort using #include<algorithm>
+## Sort using built-in sort method
 ```
 // Sort string called s
 sort(s.begin(), s.end());

@@ -205,7 +205,10 @@ void postorder(struct Node *root)
     cout <<root->data << " ";
 }
 ```
-There is only one kind of breadth-first-traversal, the Breadth First or Level Order Traversal : 1 2 3 4 5
+
+There is only one kind of breadth-first-traversal, the **Breadth First or Level Order Traversal** : 1 2 3 4 5
+
+
 
 ### Breath First Search
 
