@@ -31,6 +31,12 @@ Insertion sort is a simple sorting algorithm that works the way we litterally so
 * Worst case time complexity: 0(N^2)
 * Space complexity: O(1)
 
+Applying binary search to calculate the position of the data to be inserted doesn't reduce the time complexity of insertion sort. This is because insertion of a data at an appropriate position involves two steps:
+1. Calculate the position.
+2. Shift the data from the position calculated in step #1 one step right to create a gap where the data will be inserted.
+
+Using binary search reduces the time complexity in step #1 from O(N) to O(logN). But, the time complexity in step #2 still remains O(N). So, overall complexity remains O(N^2).
+
 ![Insertion sort](../images/Insertion-sort-example.gif)
 [Insertion sort lecture](https://www.geeksforgeeks.org/insertion-sort/)
 ###### Source: wikipedia.org
@@ -148,6 +154,7 @@ void selectionSort(int arr[], int n)
 ## Bubble sort
 * The simplest in-place algorithm.
 * O(N^2)
+* Best time complexity: O(N)
 
 ```
 void bubbleSort(int arr[], int n) 
@@ -162,6 +169,29 @@ void bubbleSort(int arr[], int n)
 }
 ```
 
+
+```
+// Time complexity: O(N)
+int main()
+{   
+    int arr[] = {10, 20, 30, 40, 50}, i, j, isSwapped;
+    int n = sizeof(arr) / sizeof(*arr);
+    isSwapped = 1;
+    for(i = 0; i < n - 1 && isSwapped; ++i)
+    {
+        isSwapped = 0;
+        for(j = 0; j < n - i - 1; ++j)
+            if (arr[j] > arr[j + 1])
+            {
+                swap(&arr[j], &arr[j + 1]);
+                isSwapped = 1;
+            }
+    }
+    for(i = 0; i < n; ++i)
+        printf("%d ", arr[i]);
+    return 0;
+}
+```
 * [How to implement it](https://www.geeksforgeeks.org/bubble-sort/)
 ![Bubble sort](../images/bubble-sort.gif)
 

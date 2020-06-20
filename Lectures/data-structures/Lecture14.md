@@ -9,10 +9,8 @@ A Graph consists of a finite set of vertices(or nodes) and set of Edges which co
 
 ### Types of graphs
 
-* **Undirected Graph** :order of the vertices in the pairs does not matter.
-* **Directed Graph**: order of the vertices matter. Graphically we use arrows for the arcs between vertices.
-An arrow from u to v id drawn only if 
-(u,v) is in the Edge set.
+* **Undirected Graph** :order of the vertices in the pairs does not matter. Edges are directionless (also said bi-directional).
+* **Directed Graph**: edges are directed in a single direction.
 * **Cycling Graph**:A cyclic graph is a directed graph with at least one cycle. 
 A cycle is a path along the directed edges from a vertex to itself. The vertex labeled graph above as several cycles. One of them is 2 � 4 � 5 � 7 � 6 � 2
 * **Weighted Graph**: is a labelled graph where the label is usually used for arithmetic operators.
@@ -23,9 +21,10 @@ name suggest, it does not contains and cycle / loop.
 ### Graph representations
 
 Two are the most commonly used representations of a graph.
-1. Adjacency Matrix
-2. Adjacency List
+1. Adjacency Matrix: VxV matrix (V: number of vertices). If adj[i][j] = 1,means that there is an edge between vertex i and j. Adjacency matrix for undirected graph is always symmetric. If adj[i][j] = w, then there is an edge from edge from vertex i to vertex j with weight w.  Add a vertex takes O(V^2) time.
 
+2. Adjacency List: implements using an array of lists. 
+ 
 * [Source - Grpah representation Geeks for Geeks](https://www.geeksforgeeks.org/graph-and-its-representations/)
 ```
 // A utility function to add an edge in an 
@@ -91,6 +90,86 @@ In the mathematical theory of directed graphs, a graph is said to be strongly co
 
 Bipartite graph: is a graph whise vertices can be divided into two disjoint and indepent sets U and V such that every dege connects a vertex in U t oone in V. Vertex set U and V are usually claled the parts of the graph. 
 
+## Breadth First Traverse or BFS
+
+It traverse the graph in levels. It starts the traversal with a given vertex, visits al of the vertices adjancent to the initially given vertex and pushes them all to a queue in order of visiting. 
+
+**Traverse algorithm of Breath First Traverse:**
+1. Create a boolean array say visited[] of size V+1;
+2. Create a queue, root (vertex that works as starting point) in the queue and mark visited[s] =true (as visited);
+3. Until queue is not empty, loop:
+    3.1 Pop eleemnt from queue and print popped element
+    3.2 Traverse all of the vertices adjacent to the vertex poped from queue.
+    3.3. If any of the adjancent vertex is not already visited, mark it visited and push it to the queue. 
+
+```
+#include<bits/stdc++.h>
+using namespace std;
+
+void addEdge(vector<int> adj[], int u, int v)
+{
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+}
+
+void BFS(vector<int> adj[], int V)
+{
+    // Create array of boolean of size V+1
+    bool visited[V+1];
+
+    // Set all vertices as not visited
+    for(int i = 0; i < V; i++)
+        visited[i] = false;
+
+    // Create queue to perform BFS
+    queue<int>q;
+
+    // Suppose that the source vertex (root) is 1
+    int s = 1;
+
+    // Set root vertices as visited and push into the queue
+    visited[s] = true;
+    q.push(s);
+
+    // Start point 3 and perform 3.1, 3.2 and 3.3 until queue is not empty
+    while(!q.empty())
+    {
+        // Print front node and pop it from the queue
+        int node = q.front();
+        q.pop()l
+        cout <<node << " ";
+
+        // Traverse adjacent nodes to the current node
+        for(int i =0; i < adj[node].size(); i ++)
+        {
+            if(visited[adj[node[i]]] == false)
+                visited[adj[node][i]] = true;
+
+                // Push in queue
+                q.push(adj[node][i]);
+        }
+    }
+}
+
+int mai()
+{
+    int V = 4;
+    vector<int> adj[V+1];
+    addEdge(adj, 1, 2);
+    addEdge(adj, 1, 3);
+    addEdge(adj, 2, 4);
+
+    BFS(adj, V);
+
+    return 0;
+}
+
+```
+
+
+[BFS for competitive Programing](https://www.geeksforgeeks.org/bfs-using-stl-competitive-coding/)
+[Video-Tutorial: How Breath First works](https://www.youtube.com/watch?v=0u78hx-66Xk&feature=youtu.be)
+
 ## Depth First Seach or DFS
 
 Depth first Traversarst Traversal of  a tree. 
@@ -102,11 +181,13 @@ It is used for:
 5. Find strongly connected components. 
 6. Solve puzzles with only one solution. 
 
-**DFS** is an algorith for traversing o searching in a tree or graph data structure. 
+## DFS: Depth first search 
+
+It is an algorith for traversing o searching in a tree or graph data structure. 
 The algorithm starts at the root node(select some arbitrary node as the root in case of the graph) and explores as far as possible along each branch before backtracking. 
 
 Mind that:
-* Unlne trees, a graph may contains cycles. We use so boolean visited array.
+* Unlike trees, a graph may contains cycles. We use so boolean visited array.
 
 
 Generally, with DFS we have :
@@ -116,26 +197,9 @@ Since, an extra visited array is needed of size V
 
 * [Video-Turorial: How Depth First works](https://www.youtube.com/watch?v=Y40bRyPQQr0)
 
-## Breath First search
+With the Depth first Search, we use a stack for recursive calls and an array of booleans to keeptrck of visited vertices. 
 
-BFS: it assignes two values to each vertex v; 
-* Distance, giving the minimum number of edges in any path from the source vertex to vertex v;
-* Predessor vertex of v along some shortest path from the source vertex. The source vertex's predeccessor is some specia value, such as null, indicating that it has not predecessor. 
 
-If there is no path from a to b, then b's distance is infinite. Adn we can start to iterate the graph from any node. The starting node is called **root** node. 
- 
-In BFS, we start with a node.
-1) Create a queue and enqueue source into it. 
-   Mark source as visited.
-2) While queue is not empty, do following
-    a) Dequeue a vertex from queue. Let this 
-       be f.
-    b) Print f
-    c) Enqueue all not yet visited adjacent
-       of f and mark them visited.
-
-[BFS for competitive Programing](https://www.geeksforgeeks.org/bfs-using-stl-competitive-coding/)
-[Video-Tutorial: How Breath First works](https://www.youtube.com/watch?v=0u78hx-66Xk&feature=youtu.be)
 
 ## Spanning tree
 
@@ -156,6 +220,13 @@ In BFS, we start with a node.
 
 ## Detect a cycle
 
+
+* **forward edges**: which point from a node of the tree to one of its descendants.
+* **back edges**: which point from a node to one of its ancestors.
+* **cross edges**: which do neither.
+
+We can detect a cycle using Depth first Traversal. If we reach a vertex that is already in the recursion stack, there is a cycle. A cycle is created always from a back edge node.  
+
 Algorithm:
 1. Build your graph
 2. Initialize recursively the current vertex, visited, and recursion stack.
@@ -164,7 +235,64 @@ Algorithm:
 5. If the adjacent vertices are already marked in the recursion stack then return true.
 6. Create a wrapper class, that calls the recursive function for all the vertices and if any function returns true return true. Else if for all vertices the function returns false return false.
 
+**How to detect a cycle in both directed and undirected graphs:**
+
+```
+// Sorce Geeks for geeks
+bool isCyclic()
+{
+    bool *visited[V];
+    bool *recStaack[V];
+    for(int i =0; i <V; i++)
+    {
+        visited[i] = false;
+        recStack[i] = false;
+    }
+
+       // Call the recursive helper function to detect 
+    // cycle in different DFS trees
+    for(int i = 0; i < V; i++)
+        if (isCyclicUtil(i, visited, recStack))
+            return true;
+
+    return false;
+}
+
+// Utility function to detect cycle in a Graph
+bool isCyclicUtil(int v, bool visited[], bool *recStack)
+{
+    if(visited[v] == false)
+    {
+        // Mark the current node as visited and part of recursion stack
+        visited[v] = true;
+        recStack[v] = true;
+
+        // Recur for all the vertices adjacent to this vertex
+        list<int>::iterator i;
+        for(i = adj[v].begin(); i != adj[v].end(); ++i)
+        {
+            if ( !visited[*i] && isCyclicUtil(*i, visited, recStack) )
+                return true;
+            else if (recStack[*i])
+                return true;
+        }
+    }
+    recStack[v] = false;  // remove the vertex from recursion stack
+    return false;
+}
+
+
+```
+
 [Geeks for Geeks detect cycle lesson](https://www.geeksforgeeks.org/detect-cycle-in-a-graph/)
 
 * [Graph Tutorial and Exercises list](https://www.quora.com/How-can-I-be-good-at-graph-theory-based-programming-problems-in-competitive-programming/answer/Sameer-Gulati-3?ch=10&share=fed73688&srid=oeMh)
 * [LeetCode Graph core concepts and exercises](https://leetcode.com/discuss/general-discussion/655708/graph-problems-for-beginners-practice-problems-and-sample-solutions)
+
+## Bellman-Ford VS Dijkstra
+
+Both algorithms are used to find the shortest path.
+
+* **Bellman-Ford**: Complexity time: O(VE). It is simpler to implement compared to Dikstra and it works also for graph with negative weights. 
+
+* **Dijkstra**: for weighted graph, it works just if all the wights are positive. It time complexity is: O(VlogV), where V is the number of verteces. Dijkstra is particularly fast because it uses the Fibonacci Heap. 

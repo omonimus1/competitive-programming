@@ -25,7 +25,7 @@ Even if you probably understimate the value of the se two Data structures, they 
 ### Stack
 * Push: add in iteam in the stack (If the stack is full: Overflow condition)
 * Pop: removes an iteam from the stack. (If we pop without every pushed: Underflow condition) 
-* Peek or Top: returns the top element of the stack. 
+* Peek or Top: : Returns the element on the top of the stack, but does not remove it.
 * isEmpty(): returns True if Stack is empty, false.
 
 
@@ -77,6 +77,85 @@ void print_stack(stack <int> stackArray)
       stackArray.pop();
   }
 }
+```
+
+## Infix to Postfix conversion using Stack
+
+* **Infix expression:** operator is between every pair of operands: a + b;
+* **Postfix expression:** operator is folloed by the pair of operands. 
+
+The compiler scans the expression either from left to right or from right to left. 
+
+**Convert an infix expression to postfix**
+
+```
+int prec(char c)
+{
+  if(c == '^')
+    return 3;
+  else if(c == '*' || c == '/')
+    return 2;
+  else if(c== '+' || c == '-')
+    return 1;
+  return -1;
+}
+
+void infixToPostfix(string s)
+{
+  stack<char> s;
+  string ns = "";
+
+  for(int i=0; i < s.size(); i++)
+  {
+    // If a the character is an operands
+    if((s[i] >= 'a' && s[i] <= 'z')||
+          (s[i] >= 'A' && s[i] <= 'Z'))
+      ns+=s[i];
+
+    // If we have an open parenhesis '('
+    else if(s[i] == '(')
+      st.push('(');
+
+    // If we have a ')', pop and print until we do not get a '('
+    else if(s[i] == ')')
+    {
+      while(st.top() != 'N' && st.top() != '(')
+      {
+        char c = st.top();
+        st.pop();
+        ns += c;
+      }
+      if(st.top() == '(')
+      {
+        char c = st.top();
+        st.pop();
+      }
+    }
+
+    // The caracter is an operator
+    else
+    {
+      while(st.top() != 'N' && prec(s[i] <= prec(st.top()))
+      {
+        char c = st.top();
+        st.[op();
+        ns += c;
+      }
+      st.push(s[i]);
+    }
+  }
+
+  // Pop all elemetn from stack
+  while(st.top() != 'N')
+  {
+    char c = st.top();
+    st.pop();
+    ns +=c;
+  }
+  cout << ns;
+}
+
+// Source: Geeksforgeeks
 ```
 
 ## Find Min element at every pop operation in O(1) time
@@ -291,6 +370,51 @@ A mergeable heap is any data structure that supports these 6 operations, in whic
 6. Delete(H,x): Deletes elemet x from heap H. 
 
 ![Fibonacci-heap-complexity](../../images/fibonacci-heap.png)
+
+### Exercises with stack
+* Print reverse of a string using stack
+* Print reverse of linked list using stack
+* Check for balanced parentheses in an expression
+```
+  for i=0 to exp.size() {
+
+        if (expr[i]=='('||expr[i]=='['||expr[i]=='{') {
+            s.push(expr[i])
+            continue 
+        }
+        // stack can not be empty for closing bracket
+        if s.empty() 
+            return false
+  
+        switch (expr[i]) {
+            case ')':  {
+                x = s.top()
+                s.pop()
+                if (x=='{' || x=='[') 
+                    return false
+                break 
+            }
+            case '}':  {
+                x = s.top(); 
+                s.pop(); 
+                if (x=='(' || x=='[') 
+                    return false 
+                break
+            }
+            case ']':  {
+                x = s.top(); 
+                s.pop(); 
+                if (x =='(' || x == '{') 
+                    return false
+                break
+            }
+        }
+    }
+    // Check Empty Stack 
+    return (s.empty())
+```
+* Next greater Element
+* Get next min of a stack
 
 ## Practice and Questions
 1. Height of an Heap

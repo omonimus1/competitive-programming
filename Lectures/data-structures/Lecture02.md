@@ -146,7 +146,23 @@ int searchNumOccurrence(vector<int> &V, int k, int start, int end) {
 If our algorithm does not uses extra memory space while performing an operation, it is said that it execute the operations ```in  place```. An example could be the sorting of an array using insertion sort, bubble sort etc.
 
 When the operation is executed in place, the Space complexity of the algorithm is: O(1)
+```
+// Space complexity is: O(n) as there can be at most O(n) active functions(function call frames) at a time. 
+double foo (int n)
+{
+    int i;
+    double sum;
+    if (n = = 0) return 1.0;
+    else
+    {
+        sum = 0.0;
+        for (i = 0; i < n; i++)
+            sum += foo (i);
+        return sum;
+    }
+}
 
+```
 ## Delete element from an array
 
 * idx: index of the element to remove and len the length of the array. 
