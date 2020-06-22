@@ -311,11 +311,28 @@ Useful essentials built-in methods are:
 
 ## Binary Heap
 
+It is used to implement primary queue, heapsort algorithm and Haffman Coding.
+
+Min-heap: at the top we have the element with the minimum value.
+Max-heap: at the top there the max elements.
+**Remember, an Heap is always a complete binary treen**
+
 Before to start to talk about Binary Heap, memorize the following definitions:
 * **Binary Tree:** data structure in which each node has at most two children, which are referred to as the left child and the right child. The left node is always smaller than the root and the right right node is always greater than root. 
-* **Complete Binary Tree:** all the level of the B..T are fillex expect possibly the last level and the last has level has all keyrs as left as possible. 
+* **Complete Binary Tree:** all the level of the B.T are filled exept possibly the last level and the last has level has all keys as left as possible. 
 
-Now,  A Binary Heap is a complete binary tree either Min Heap Or Max Heap. In a Min Binary Heap, the root must been the smallest value in all the Binary Heap(and this property must be recoursively true for all the nodes in Binary Tree).
+Now,  A Binary Heap is a complete binary tree either Min Heap Or Max Heap. 
+
+Binary heap is usually implemented using an array, building always this parent child relationship inside the array. 
+We have iteams, in continuos allocation, it is cache friendly and it is min-heigth BT;
+
+Since a Binary Heap is a complete Binary Tree, it can be easily represented using Arrays.
+The root element will be at Arr[0].
+Below table shows indexes of other nodes for the ith node, i.e., Arr[i]:
+* arr[(i-1)/2]	Returns the parent node
+* arr[(2*i)+1]	Returns the left child node
+* arr[(2*i)+2]	Returns the right child node
+
 
 
 ### Application of Heap
@@ -323,7 +340,6 @@ Now,  A Binary Heap is a complete binary tree either Min Heap Or Max Heap. In a 
 * Heap sort can be used to implement priority queue  with insert, extractmax() and delete() peration in O(log n) time/
 * Used to implement the Dijkstra's shortest Pah and Prim's Minimum Spanning Tree
 * Sort an almost sorted array efficienty, K'th Larget Element in in array. 
-
 
 
 [Larn more about Binary Search Tree](https://www.geeksforgeeks.org/binary-search-tree-data-structure/)

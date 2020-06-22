@@ -82,6 +82,21 @@ unordered_set <string> stringSet ;
 [Unordered Set in GeekForGeeks](https://www.geeksforgeeks.org/unordered_set-in-cpp-stl/)
 [Unordered Set in C++ reference](https://en.cppreference.com/w/cpp/container/unordered_set)
 
+
+## HASHTABLES
+
+Hash table (or map) is on of the most used and useful data stucture. 
+Few of hashtables application :
+1. Create a  dictionary
+2. Compilers (for keep the mapping between a variable id and its memory address)
+3. Routers
+4. Browser cache
+5. Keep track of frequencency of elements of our input. 
+
+An Hastable has high performance for search, insert and delete operations, all of them in O(1) time.
+
+
+
 ## Multiset
 
 Is a set version that allows to have more than one time the same element. 
