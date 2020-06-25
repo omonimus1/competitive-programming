@@ -251,7 +251,7 @@ void levelOrderTraverse(Node *root)
         // Print fron of queue
         node = myQueue.front();
         cout << node -> data << " ";
-        q.pop();
+        myQueue.pop();
 
         // Enque left child
         if(node->left != NULL)

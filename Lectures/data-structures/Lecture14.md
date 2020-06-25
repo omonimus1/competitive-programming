@@ -18,13 +18,18 @@ A cycle is a path along the directed edges from a vertex to itself. The vertex l
 name suggest, it does not contains and cycle / loop.
 
 
+* Degree of a node: number of edges linked to the node; It is the sums of the indegree and outdegree. 
+
+
 ### Graph representations
 
 Two are the most commonly used representations of a graph.
-1. Adjacency Matrix: VxV matrix (V: number of vertices). If adj[i][j] = 1,means that there is an edge between vertex i and j. Adjacency matrix for undirected graph is always symmetric. If adj[i][j] = w, then there is an edge from edge from vertex i to vertex j with weight w.  Add a vertex takes O(V^2) time.
-
-2. Adjacency List: implements using an array of lists. 
+1. **Adjacency Matrix:** VxV matrix (V: number of vertices). If adj[i][j] = 1,means that there is an edge between vertex i and j. Adjacency matrix for undirected graph is always symmetric. If adj[i][j] = w, then there is an edge from edge from vertex i to vertex j with weight w.  Add a vertex takes O(V^2) time.
+2. **Adjacency List:** implements using an array of lists. 
  
+
+
+
 * [Source - Grpah representation Geeks for Geeks](https://www.geeksforgeeks.org/graph-and-its-representations/)
 ```
 // A utility function to add an edge in an 
@@ -36,16 +41,17 @@ void addEdge(vector<int> adj[], int u, int v)
   
 // A utility function to print the adjacency list 
 // representation of graph 
-void printGraph(vector<int> adj[], int V) 
-{ 
-    for (int i = 0; i < V; ++i) 
-    { 
-        cout << "\n Adjacency list of vertex "
-             << i << "\n head "; 
-        for (auto x : adj[v]) 
-           cout << "-> " << x; 
-        printf("\n"); 
-    } 
+void printGraph(vector<int> adj[], int n)
+{
+    for(int i=0;i<n;i++){
+        
+        cout<<i;
+        for(int j=0;j<adj[i].size();j++){
+            
+            cout<<"-> "<<adj[i][j];
+        }
+        cout<<endl;
+    }
 }
 
 int sum_of_depency(vector<int>adj[], int V)
