@@ -41,6 +41,18 @@ The machine follows do the following  steps: read tape, decode information, exec
 
 * **Computability:** a mathematical problem is computable if it can be solved in priciple by a computing device. 
 
+Big O notation is used to give the maximum upper bound for running time.This means that the algorithm will not take time greater than the binding function. Let's analyze each of these 
+Which of the following is not O(n^2)?
+A)  (15^10) * n + 12099   In this polynomial we can safely ignore the constant part 12099, this leaves us with (15^10)*n. Now here too we can ignore (15^10) because it also a constant. This gives us a bound of Theta(n).This Theta (n) will always be bound by O(n^2).
+
+B) n^1.8 will also always be bound by O(n^2).
+
+C) n^3/(sqrt(n))= n^3/ n^0.5= n^2.5, You can clearly see that n^2.5 cannot be bound by n^2. This will increase much faster than n^2. Hence this cannot be O(n^2).
+
+D) (2^20)*n, Similar to the first case this is linear in input as well. Hence it will also be bound by O(n^2).
+
+Answer is C because the order of growth of option c is n2.5 which is higher than n2.
+
 ## Time complexity analysis - some general rules
 
 We analyzie time complexity for:

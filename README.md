@@ -7,7 +7,7 @@
 3. [When contribute](#When-contribute)
 4. [How to contribute](#How-to-contribute)
 6. [Connect with me](#Connect-with-me)
-
+7. [Support me to get more](#Support)
 
 ## Structure of the Repository
 
@@ -63,3 +63,8 @@ If you have any questions about the solutions you can find here, feel free to co
 * [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20CompetitiveProgrammigGuide)
 * [Linkedin](https://www.linkedin.com/in/davidepollicino7/)
 * [www.davidepollicino.com](http://davidepollicino.com/)
+
+
+## Support
+
+[PAYPAL ME](https://paypal.me/davidepollicino7?locale.x=en_US)

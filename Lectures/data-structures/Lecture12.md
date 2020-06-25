@@ -265,6 +265,9 @@ XOR Linked list: is an Memory Efficient Implementation of Doubly Linked Lists. T
 * [Cycle detection](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare)
 ##### Source: Interviewbit and mycodeschool
 
+
+
+
 ### Extra Exercises
 1. [Interview bit - Linked List](https://www.interviewbit.com/courses/programming/topics/linked-lists/#problems)
 2. [Geeks For Geeks - Linked List](https://practice.geeksforgeeks.org/explore/?category%5B%5D=Linked%20List&page=1)
