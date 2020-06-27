@@ -18,22 +18,7 @@ for (auto x : v) {
 }
 ```
 
-## Stack(LIFO), Queue(FIFO), Binary Heap
-
-Even if you probably understimate the value of the se two Data structures, they are used in the daily life.
-
-### Stack
-* Push: add in iteam in the stack (If the stack is full: Overflow condition)
-* Pop: removes an iteam from the stack. (If we pop without every pushed: Underflow condition) 
-* Peek or Top: : Returns the element on the top of the stack, but does not remove it.
-* isEmpty(): returns True if Stack is empty, false.
-
-
-#### How to implement a stack
-We can use array, vectors or Linked List. In c++, we can also use the ```<stack>```from the STL. 
-
 ### Applications of the Strack
-
 * Infix to Postfix / Prefix conversion
 * Undo / redo operation
 * Topological sorting (for graph)
@@ -78,6 +63,80 @@ void print_stack(stack <int> stackArray)
   }
 }
 ```
+
+## Stack(LIFO), Queue(FIFO), Binary Heap
+
+Even if you probably understimate the value of the se two Data structures, they are used in the daily life.
+
+### Stack
+* Push: add in iteam in the stack (If the stack is full: Overflow condition)
+* Pop: removes an iteam from the stack. (If we pop without every pushed: Underflow condition) 
+* Peek or Top: : Returns the element on the top of the stack, but does not remove it.
+* isEmpty(): returns True if Stack is empty, false.
+
+
+## How to implement a stack using array or Linked list
+
+We can implement a stack using also an array, vector or Linked list (using ArrayList in Java and list in Python).
+Otherwise, we use the stack<typed> id_of_stack from the C++ STL  ```#include<stack>```.
+
+When implemetning a stack with an array, with maintain a top variable that points to the top of the array. The pop variable will just be an index of the array; 
+* If we do a push(): pop++;
+* If we do a pop(): pop--
+
+```
+// Define always top = -1;
+// Pay attention to underflow and overflow; 
+void push(int element)
+{
+  if(top == size_array-1)
+  {
+    cout<<"Array full, manage the stack with dynamic array next time";
+    return; 
+  }
+
+  top++;
+  stack[top] == element; 
+}
+
+int pop()
+{
+  if(pop == -1)
+  {
+    cout<< "Stack is empty";
+    return -1; 
+  }
+  int element_removed = stack[top];
+  top--;
+  return element_removed; 
+}
+```
+
+We can also implement a stack using a linked list;
+Most of the times, the stack is implemented using a single linked list. For this reason, we keep a referent to the head of the linked list; 
+```
+void push(int element, Node *head)
+{
+  Node *new_node = new Node(element);
+  new_node->next = head;
+  
+  head = new_node; 
+}
+
+Node* pop()
+{
+  if(head == NULL)
+    return; 
+
+  int result = head->data;
+  Node *old_head = head;
+  head = head->next;
+  free(old_head);
+
+  return head;
+}
+```
+
 
 ## Infix to Postfix conversion using Stack
 
@@ -230,11 +289,164 @@ The algorithm works in this way:
 
 ```
 
-## Implement stack using Linked List
+##  Evaluation of Prefix
+```
+Input: + * 10 2 3
+Output: 23 | because: [(10*2) +3]
+```
+
+**While  We iterate from right to left** 
+1. If character at P is an operand, push it to stack
+2. If the character at P is an operat, pop two element from the stack, and operate these element according to the operator, and push the result back to the stack.
+
+```
+  bool isOperand(char c)
+  {
+    // Returns true if it is a character
+    return isdigit(c);
+  }
+
+  double evaluatePrefix(string expression)
+  {
+    stack<double>s;
+
+    for(int i= expression.size()-1; i >=0; i--)
+    {   
+      // Push operand to the stack
+      if(isOperand(expression[j]))
+        s.push(expression[i] - '0');
+
+      else
+      {
+          // Because it is not an operand, get the two operands
+          double o1 = s.top();
+          s.pop();
+          double o2 = s.top();
+          s.pop();
+
+          switch(expression[i])
+          {
+            case '+':
+              s.push(o1+o2);
+            break;
+
+            case '-':
+              s.push(o1 - o2);
+            break;
+
+            case '*':
+              s.push(o1*o2);
+            break;
+
+            case '/':
+              s.push(o1/o2):
+            break;
+          }
+      }
+      return s.top();
+    }
+  }
+```
 
 
-[Check the stack implementation with the Linked List](../algo_and_dataStructure/c++/data-structures/stack/stack-Linked-list.cpp)'
+## Evaluatio of Postfix
 
+
+
+## Infix to Postfix 
+
+* Infix expression: operator is between pair of operands
+* postfix : operator is followed for every pair of operands 
+
+```
+
+/* C++ implementation to convert infix expression to postfix*/
+// Note that here we use std::stack  for Stack operations 
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+//Function to return precedence of operators 
+int prec(char c) 
+{ 
+    if(c == '^') 
+    return 3; 
+    else if(c == '*' || c == '/') 
+    return 2; 
+    else if(c == '+' || c == '-') 
+    return 1; 
+    else
+    return -1; 
+} 
+  
+// The main function to convert infix expression 
+//to postfix expression 
+void infixToPostfix(string s) 
+{ 
+    stack<char> st; 
+    st.push('N'); 
+    int l = s.length(); 
+    string ns; 
+    for(int i = 0; i < l; i++) 
+    { 
+        // If the scanned character is an operand, add it to output string. 
+        if((s[i] >= 'a' && s[i] <= 'z')||(s[i] >= 'A' && s[i] <= 'Z')) 
+        ns+=s[i]; 
+  
+        // If the scanned character is an ‘(‘, push it to the stack. 
+        else if(s[i] == '(') 
+          
+        st.push('('); 
+          
+        // If the scanned character is an ‘)’, pop and to output string from the stack 
+        // until an ‘(‘ is encountered. 
+        else if(s[i] == ')') 
+        { 
+            while(st.top() != 'N' && st.top() != '(') 
+            { 
+                char c = st.top(); 
+                st.pop(); 
+               ns += c; 
+            } 
+            if(st.top() == '(') 
+            { 
+                char c = st.top(); 
+                st.pop(); 
+            } 
+        } 
+          
+        //If an operator is scanned 
+        else{ 
+            while(st.top() != 'N' && prec(s[i]) <= prec(st.top())) 
+            { 
+                char c = st.top(); 
+                st.pop(); 
+                ns += c; 
+            } 
+            st.push(s[i]); 
+        } 
+  
+    } 
+    //Pop all the remaining elements from the stack 
+    while(st.top() != 'N') 
+    { 
+        char c = st.top(); 
+        st.pop(); 
+        ns += c; 
+    } 
+      
+    cout << ns << endl; 
+  
+} 
+  
+//Driver program to test above functions 
+int main() 
+{ 
+    string exp = "a+b*(c^d-e)^(f+g*h)-i"; 
+    infixToPostfix(exp); 
+    return 0; 
+} 
+// This code is contributed by Gautam Singh 
+```
 ## Application of the queue
 * CPU or Disk Scheduling (in general, wehn a resource is shared between multiple costumers / users).
 * When data is transferrred asynchrounsly (file IO, IO Buffers , pipe).
