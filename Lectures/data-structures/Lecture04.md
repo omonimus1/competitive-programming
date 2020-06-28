@@ -1,5 +1,17 @@
-## Math 
+# Math 
 
+## Find number of digits in a number in O(1)
+
+* **floor()** function returns the largest possible integer value 
+
+which is <= to the given argument.
+Es: floor(34.5) = 33
+eS: floor(-34.5) = 35
+```
+// C++ solutions
+#include <cmath>
+number_of_digits = floor(log10(N) + 1)
+```
 
 ## Reverse a given integer
 ```
@@ -63,18 +75,7 @@ public:
 };
 ```
 
-## Find number of digits in a number in O(1)
 
-Rule:  ```number of digits in N = log10(N) + 1.``
-
-* **floor()** function returns the largest possible integer value which is <= to the given argument.
-Es: floor(34.5) = 33
-eS: floor(-34.5) = 35
-```
-// C++ solutions
-#include <cmath>
-number_of_digits = floor(log10(N) + 1)
-```
 
 * **initial term**: first number of a arithmetic progresion
 * **Common difference**: vale by which consecutive terms increases or decrease is called the common difference. 
@@ -115,8 +116,8 @@ Sum of infinite terms of a GP (r < 1) = (a) / (1 – r).
 
 ## Mean and Median
 
-* Mean: average of given set
-* Median is the middle value of a set of data. To determine the median value in a sequence of numbers, the numbers must first be arranged in an ascending order.
+* **Mean:** average of given set
+* **Median:** is the middle value of a set of data. To determine the median value in a sequence of numbers, the numbers must first be arranged in an ascending order.
 
 
 ### Sieve of Eratosthenes
@@ -170,8 +171,6 @@ A number 'a' is called factor or divisor of a number 'b' if a divides b. If a is
 * **Difference:** consts of elements that are in A but not in B and elements that are in B but in A. 
 * **Cartesian Product:** In mathematics, specifically set theory, the Cartesian product of two sets A and B, denoted A × B, is the set of all ordered pairs (a, b) where a is in A and b is in B.
 
-### Fibonacci Numbers
-
 ### Some code example
 
 An efficient way to check if a number is prie is to check all its factors from 2 to sqrt(n).
@@ -198,6 +197,8 @@ int gcd(int a, int b) { return b==0 ? a : gdc(b, a%b); }
 int lcm(int a, int b) {  return a * (b/gcd(a,b)); }
 ```
 
+
+
 ## Modular Arithmetic and Modular inverse
 
 Modulari arithmetic rules:
@@ -205,16 +206,8 @@ Modulari arithmetic rules:
 2. (a - b) mod M = ((a mod M) - (b mod M)) mod M.
 3. (a * b) mod M = ((a mod M) * (b mod M)) mod M.
 
-Modular inverse: 
 
-### Fibonacci Number
-
-f(0) = 0 
-f(1) = 1
-f(n) = f(n-1) + f(n-2)
-
-
-## Generate permutations#
+## Generate permutations
 
 A permutation is each one fo the N! possible arrengements the elementws can take (where N is the number of elements in the range). Different permutation can be ordered according to how they compare lexicographicaly to each other; 
 

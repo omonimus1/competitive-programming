@@ -554,6 +554,19 @@ void flatten(Node * root)
 Traverse a Binary Tree vertically means ge the minimum and maximum horizontal distance with respect to root. 
 ![Vertical Print](../../images/vertical_bt.png)
 ###### Image provided by Geeks For Geeks
+How do a calculate the vertical sum of a given BST?
+
+## Vertical Zig-Zag Traversal of a Tree
+
+Vertical Zig-Zag traversal:
+1. Print eleemnt sof first level from right to left, then skip to next level;
+2. Print element of the last order from left to right, if there are no eleemnt left, skip to previuos level.
+3. Repeat step 1 and 2 until there are nodes left.
+
+
+![what-meme](../../images/what.jpeg)
+[Have a look to the lecture provided by Geeks for Geeks](https://www.geeksforgeeks.org/vertical-zig-zag-traversal-of-a-tree/?ref=rp)
+
 ```
 // min: min horizonal distance from root
 // max: max horizonal distance from root
