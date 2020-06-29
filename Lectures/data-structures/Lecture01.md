@@ -167,7 +167,7 @@ In c++, we create one with ```#define```
 vi list_of_numbers;
 // Push back a value in my vector
 list_of_numbers.PB(45);
-````
+```
 
 ## Algorithms key concepts
 
@@ -207,10 +207,15 @@ The idea is to use Merge function of Merge sort.
 3. Pick smaller of current elements in arr1[] and arr2[], copy this smaller element to next position in arr3[] and move ahead in arr3[] and the array whose element is picked.
 
 ```
+    // Time Complexity : O(m+n)   
+    // Auxiliary Space : O(m+n)
     int i = 0, j = 0, k = 0; 
-  
+    // m: size of arr1
+    // n: size of arr2
+    int arr3[m+n];
+    
     // Traverse both array 
-    while (i<n1 && j <n2) 
+    while (i<m && j <n) 
     { 
         // Check if current element of first 
         // array is smaller than current element 
@@ -224,14 +229,131 @@ The idea is to use Merge function of Merge sort.
     } 
   
     // Store remaining elements of first array 
-    while (i < n1) 
+    while (i < m) 
         arr3[k++] = arr1[i++]; 
   
     // Store remaining elements of second array 
-    while (j < n2) 
+    while (j < n) 
         arr3[k++] = arr2[j++];
 ```
 
-
+## Check if an array is sorted
  
+```
+bool is_sorted_in_increasing_order(int arr[], int n)
+{
+    // Start to iterate from second element
+    for(int i =1; i < n; i++)
+    {   
+        if(arr[i] < arr[i-1])
+            return false;
+    }
+    return true; 
+}
+
+bool is_sorted_in_decreasing_order(int arr[], int n)
+{
+    for(int i =1; i < n;i++)
+    {
+        if(arr[i] > arr[i-1])
+            return false;
+    }
+    return true; 
+}
+```
+
+## Larghest sum SubArray
+
+```
+//n : size of array
+int largestsum(arr, n)
+{
+    max_so_far = INT_MIN
+    max_ending_here = 0
+
+    for (i=0 to n-1)
+    {
+        max_ending_here += arr[i]
+        if max_so_far < max_ending_here :
+            max_so_far = max_ending_here
+
+        if max_ending_here < 0 :
+            max_ending_here = 0
+        return max_so_far
+    }
+}
+```
+
+## Remove duplicates from array;
+
+I have solved one this problem, where array given in input was sorted; 
+
+Most of the times you will not need to resize the array but just return the size of the new array that contains distinct element;
+
+Usign Approach O(N) time and 0(N) space:
+1. Create a set
+2. Push all the elements of the sorted array in the set (just distinct ones will be inserted).
+3. Copy the content of the set to the array, starting from the index 0;
+4. Return the size of the set.
+
+
+There is a second approach, where we can actually find the size of the new array with just distincts elements in O(N) time complexity and O(1) space; 
+
+```
+int removeDuplicates(int arr[], int n)
+{
+    // The fist element will be always part of the result
+    int result = 1;
+
+    for(int i =1; i < n; i++)
+    {
+        if(arr[i] != arr[result-1])
+        {
+            arr[result] = arr[i];
+            result++;
+        }
+    }
+    return result;
+}
+```
+
+## Having an array, moves all the zeros at the end
+
+You can think, easy! I just sort the array in decreasing order!
+
+I am sorry, all the elements that are not zeros must be in the same order of the given original array.
+```
+// Time: O(N^2)
+// Space: O(1)
+void moveToEnd(int arr[], int n)
+{
+    for(int i =0; i < n; i++)
+    {
+        // Once we see a 0
+        if(arr[i] == 0)
+        {
+            // Search for the arr next non 0 element
+            for(int j=i+1; j <n; j++)
+            {
+                if(arr[j] != 0)
+                    swap(a[i], arr[j];
+            } 
+        }
+    }
+}
+```
+
+## Left rotate of an Array by One (anticlock, from right to left)
+
+```
+void leftRotate(int arr[], int n)
+{
+    int temp = arr[0];
+    for(int i=1; i< n; i++)
+    {
+        arr[i-1] = arr[i];
+    }
+    arr[n-1] = temp;
+}
+```
 

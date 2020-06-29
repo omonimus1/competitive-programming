@@ -2,7 +2,7 @@
 
 |Topic|Lecture|
 |-------|:------:|
-|Introduction, numbers and algorithms key-concepts|[Lecture 01](data-structures/Lecture01.md)|
+|Introduction,key-concepts, and arrays|[Lecture 01](data-structures/Lecture01.md)|
 |Time complexity analysis array,List, Iterators|[Lecture 02](data-structures/Lecture02.md)|
 |Matrix|[Lecture 02.1](data-structures/Lecture02-1.md)|
 |Recursion|[Recursion](data-structures/Lecture02-2.md)|
