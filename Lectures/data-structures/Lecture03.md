@@ -53,9 +53,16 @@ INSERTION-SORT(A)
   End for 
 ```
 
+## Counting Sort
+
+It counts the number of elements having distinct key values. 
+
+
 ## Merge Sort O(n log n)
 
-Merge sort is one of the most efficient sorting algorithms. It works on the principle of Divide and Conquer. Merge sort repeatedly breaks down a list into several sublists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.
+It is a Divide and COnque algorithms. It divides the input array in two halves, calls itself for the two halves and then merges the two single sorted half.  
+
+Merge sort repeatedly breaks down a list into several sublists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.
 
 Having a subarray [a..b]:
 1. If a==b , the subarray is already sorted.
@@ -63,7 +70,76 @@ Having a subarray [a..b]:
 3. Recursively sort the subarray[a..k]
 4. Recursively sort the subarray [k+1..b]
 5. Merge the sorted subarrays [a..k] and [k+1..b] in a sorted array [a..b].
+```
+// Merges two subarrays of arr[].
+// First subarray is arr[l..m]
+// Second subarray is arr[m+1..r]
+void merge(int arr[], int left, int middle, int right)
+{
+    int i, j, k;
+    int n1 = middle -left + 1;
+    int n2= right - middle; 
 
+    // Creat temporary arrays
+    int L[n1] , R[n2];
+
+    // Copy data to temporary arrays L and R
+    for(i=0; i < n1; i++)
+        L[i] = arr[left+i];
+
+    for(j=0; j < n2; j++)
+        R[j] = arr[middle+1+j];
+
+    // Merge temporary arrays in the original one
+    i = j = 0;
+    k = left;
+
+    while(i < n1 && j < n2)
+    {
+        if(L[i] <= R[j])
+        {
+            arr[k] = L[i];
+            i++;
+        }
+        else
+        {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy remaining element of L in the array
+    while(i < n1)
+    {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while(j < n2)
+    {
+        arr[k] = R[j];
+        j++;
+        k++; 
+    }
+}
+
+
+void mergeSort(int arr[], int left, int right)
+{
+    if(left < right)
+    {
+        int middle = left + (right - left)/2;
+
+        mergeSort(arr, left, middle);
+        mergeSort(arr, middle+1, right);
+
+        merge(arr, left, middle, right);
+    }
+}
+
+```
 
 * [How to implement it](https://www.geeksforgeeks.org/merge-sort/)
 ![Merge sort](../images/merge-sort.gif)
@@ -229,20 +305,22 @@ int ternarySearch(int start, end, target, int arr[])
 ```
 
 
-## Heapsort
+## Heap sort O(N*LogN)
 
-Heapsort is a comparison based sorting technique baseed on Binary Heap data structure.
-It runs in O(n log n).
+**Heapsort** is a comparison based sorting technique baseed on Binary Heap data structure.
+* It runs in O(n log n).
+* O(1) space.
+
+
+
+**Binary Heap:** is a complete Binary Tree where the root element can be the smallest (This is called Min Binary Heap) or the biggest one (Max Binary Heap).
 
 Complete Binary Tree: binary tree with all the levels full, expect possibily the last and all nodes are as far left as possible. 
 
-Binary Heap: Complete Binary Tree where the root element can be the smallest (This is called Min Binary Heap) or the biggest one (Max Binary Heap).
-
-
 Viewing a heap as tree, we define the **height of a node** in a heap to be the number of edges on the longest simple downward path from the node to a lead.
 
-Height of an Heap: Height of the root element. 
-###### Source: wikipedia.org
+**Height of an Heap:** Height of the root element. 
+
 
 
 ## Binary search O(log n) 

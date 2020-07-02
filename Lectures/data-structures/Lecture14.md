@@ -27,32 +27,47 @@ Two are the most commonly used representations of a graph.
 1. **Adjacency Matrix:** VxV matrix (V: number of vertices). If adj[i][j] = 1,means that there is an edge between vertex i and j. Adjacency matrix for undirected graph is always symmetric. If adj[i][j] = w, then there is an edge from edge from vertex i to vertex j with weight w.  Add a vertex takes O(V^2) time.
 2. **Adjacency List:** implements using an array of lists. 
  
+## How to implement the Adjacency list
+
+ ```
+// Add a new node 
+void addEdge(vector<int>adj[], int u, int v)
+{
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+}
+
+printGraph(vector<int> adj, int v)
+{
+    for(int i =0; i < v; i++)
+    {
+        for(int x : adj[i])
+            cout << x << " ";
+    }
+    cout <<endl;
+}
+
+int main()
+{
+    int v = 4;
+    vector<int> adj[v];
+    addEdge(adj, 0, 1);
+    addEdge(adj, 0,2);
+    addEdge(adj, 1, 2);
+    addEdge(adj, 1, 3);
+
+    printGraph(adj, v);
+    return 0; 
+}
+
+```
+
+
 
 
 
 * [Source - Grpah representation Geeks for Geeks](https://www.geeksforgeeks.org/graph-and-its-representations/)
 ```
-// A utility function to add an edge in an 
-// undirected graph. 
-void addEdge(vector<int> adj[], int u, int v) 
-{ 
-    adj[u].push_back(v);  
-} 
-  
-// A utility function to print the adjacency list 
-// representation of graph 
-void printGraph(vector<int> adj[], int n)
-{
-    for(int i=0;i<n;i++){
-        
-        cout<<i;
-        for(int j=0;j<adj[i].size();j++){
-            
-            cout<<"-> "<<adj[i][j];
-        }
-        cout<<endl;
-    }
-}
 
 int sum_of_depency(vector<int>adj[], int V)
 {
@@ -98,7 +113,23 @@ Bipartite graph: is a graph whise vertices can be divided into two disjoint and 
 
 ## Breadth First Traverse or BFS
 
-It traverse the graph in levels. It starts the traversal with a given vertex, visits al of the vertices adjancent to the initially given vertex and pushes them all to a queue in order of visiting. 
+It is a traversal mechanism used in Trees, Binary Tree and Graph. 
+
+It basically print all the nodes reachable from our root node (or source node)
+
+Startin from a node, we print the nodes closest to the source node(root). After we print the roots "fiends", we keep going printing all the nodes closest to the current node.
+
+It is necessary to use a vector of bools for check that a node is visited just once.
+
+BFS can be used for:
+* Find shorted path between A and B.
+* Social Netowking Search
+* Shortest path in unweighted Graph
+* Cycle detection
+* Broadcasting
+* Crowler in Search Engine
+* Peer To Peer Networks
+* Garbage Collections
 
 **Traverse algorithm of Breath First Traverse:**
 1. Create a boolean array say visited[] of size V+1;
@@ -118,7 +149,7 @@ void addEdge(vector<int> adj[], int u, int v)
     adj[v].push_back(u);
 }
 
-void BFS(vector<int> adj[], int V)
+void BFS(vector<int> adj[], int V, int source)
 {
     // Create array of boolean of size V+1
     bool visited[V+1];
@@ -130,29 +161,25 @@ void BFS(vector<int> adj[], int V)
     // Create queue to perform BFS
     queue<int>q;
 
-    // Suppose that the source vertex (root) is 1
-    int s = 1;
-
     // Set root vertices as visited and push into the queue
-    visited[s] = true;
-    q.push(s);
+    visited[souce] = true;
+    q.push(source);
 
     // Start point 3 and perform 3.1, 3.2 and 3.3 until queue is not empty
     while(!q.empty())
     {
-        // Print front node and pop it from the queue
-        int node = q.front();
-        q.pop()l
-        cout <<node << " ";
+        int u = q.front();
+        q.pop();
 
-        // Traverse adjacent nodes to the current node
-        for(int i =0; i < adj[node].size(); i ++)
+        cout << u << " ";
+
+        for(int v : adj[u])
         {
-            if(visited[adj[node[i]]] == false)
-                visited[adj[node][i]] = true;
-
-                // Push in queue
-                q.push(adj[node][i]);
+            if(visited[v] == false)
+            {
+                visited[v] = true;
+                q.push(v);
+            }
         }
     }
 }
@@ -172,22 +199,23 @@ int mai()
 
 ```
 
+* [BFS for competitive Programing](https://www.geeksforgeeks.org/bfs-using-stl-competitive-coding/)
+* [Video-Tutorial: How Breath First works](https://www.youtube.com/watch?v=0u78hx-66Xk&feature=youtu.be)
 
-[BFS for competitive Programing](https://www.geeksforgeeks.org/bfs-using-stl-competitive-coding/)
-[Video-Tutorial: How Breath First works](https://www.youtube.com/watch?v=0u78hx-66Xk&feature=youtu.be)
+
 
 ## Depth First Seach or DFS
 
 Depth first Traversarst Traversal of  a tree. 
+It isa generally used for unconnected and undirected graph. 
+
 It is used for:
-1. FOr a weighted graph, DFS traverls poduces the minmum spanning tree and all pair shorted tree.
+1. For a weighted graph, DFS traverls poduces the minmum spanning tree and all pair shorted tree.
 2. Detect cycle in a graph
 3. Path finding: 
 4. Check if a graph is bipartirte.
 5. Find strongly connected components. 
 6. Solve puzzles with only one solution. 
-
-## DFS: Depth first search 
 
 It is an algorith for traversing o searching in a tree or graph data structure. 
 The algorithm starts at the root node(select some arbitrary node as the root in case of the graph) and explores as far as possible along each branch before backtracking. 
@@ -203,7 +231,13 @@ Since, an extra visited array is needed of size V
 
 * [Video-Turorial: How Depth First works](https://www.youtube.com/watch?v=Y40bRyPQQr0)
 
-With the Depth first Search, we use a stack for recursive calls and an array of booleans to keeptrck of visited vertices. 
+
+```
+
+
+```
+
+
 
 
 
