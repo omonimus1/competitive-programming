@@ -414,14 +414,68 @@ int countLeaf(Node* root)
 ```
 
 
-## Lowest Common Ancestor
+## Lowest Common Ancestor (LCA)
 
 According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”
 ![LCA tree](../../images/lca.png)
 
+A better definition could be: The LCA or Lowest Common Ancestor of any two nodes N1 and N2 is defined as the common ancestor of both the nodes which is closest to them. That is the distance of the common ancestor from the nodes N1 and N2 should be least possible.
 
-The LCA or Lowest Common Ancestor of any two nodes N1 and N2 is defined as the common ancestor of both the nodes which is closest to them. That is the distance of the common ancestor from the nodes N1 and N2 should be least possible.
 
+Algorithm:
+1. FInd path from root node to node n and store it in a vector / array
+2. FIdn pathfrom root node to n2 and store it in another vector / array
+3. Traverse both paths until the values in arrays are same and return the common element just before the mismatch. 
+
+
+```
+// k : Value of the node to find 
+bool findPath(Node *root, vector<int> &path, int k)
+{
+    if(root == NULL)
+        return false;
+    
+    // Store node in path vecotr and remove if if there is no path from root to k 
+    path.push_back(root->key);
+
+    // If k is equals to the root valu e
+    if(root->key == k)
+        return true; 
+    
+    // check if k is in left or right sub-treee
+    if(  (root->left && findPath(root->left, path, k))  || (root->right && findPath(root->right, path, k)))
+        return true; 
+
+    // If it is not presente in left or right subtreee
+    path.pop_back();
+
+    return false;  
+}
+
+
+int findLCA(Node *root, int n1, int n2)
+{
+    // Create vectors for storing possible paths
+    vector<int> path1, path2; 
+
+    // FInd possible path from root to n1 and root to n2, if one of the them do not exists, return -1;
+    if(!findPath(root, path1, n1) || !findPath(root, path2, n2))
+        return -1; 
+
+    int i;
+
+    // Iterate both vector until there is no a mismatch
+    for(i=0; i < path1.size(); && i < path2.size(); i++)
+    {
+        if(path1[i] != path2[i])
+            break;
+    }
+    // Retunrn prev element to the mismatch. 
+    return path1[i-1];
+}
+```
+
+A recursive approach could be
 ```
 struct node *lca(struct node* root, int n1, int n2)
 {
@@ -441,8 +495,6 @@ struct node *lca(struct node* root, int n1, int n2)
 
     return root; `
 }
-  
-
 ```
 ###### Souce: Miss Deeksha Sharm - Medium
 

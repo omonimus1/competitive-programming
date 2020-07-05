@@ -53,17 +53,21 @@ D) (2^20)*n, Similar to the first case this is linear in input as well. Hence it
 
 Answer is C because the order of growth of option c is n2.5 which is higher than n2.
 
-## Time complexity analysis - some general rules
+## Worst, average and best scenario
 
-We analyzie time complexity for:
-1. Very large input-size
-2. Worst case scenario. 
+While Analalizing the time complexity of an algorithm, you should be able to recognize its:
+* Worst case scenario(usually done): we calculate the upper bound on running time of an algoritm. 
+* Average case scenario(something done): we take all the possible inputs and calculate the computing time for all of them.
+* Best case scenario: we calculate the lower bound on running time of an algorithm. 
+
+Most of the times, we consider the worst case analysis to analyze an algoriths.
 
 ### Rule 1 : Analize polinomial expression of time complexities
 If we have a polinomial expressio, like ``` T(n) = 5n^3 + 3n^2 + 4n + 2```, we have to 
 * Drop all the lower order terms
 * Drop all the constant multipiers
 After applying these rules, the result of the polinomial expression above will be: ```T(n) = O(n^3)```
+
 
 ### Rule 2: Runnint time of all fragments
 ```
@@ -84,6 +88,22 @@ for(int i =0; i<n; i++)
 {
     for(int j=0; j<n; j++)
         // Simple statemente
+}
+------------------------------
+// O(Log N)
+for(int i =1; i<=n; i *=c)
+{
+// O(1) expressions
+}
+// OR
+for(int i =n; i >0; i /=c)
+{
+// O(1) expressions
+}
+----------------------------
+// O(LogLog N)
+for (int i = 2; i <=n; i = pow(i, c)) {
+    // some O(1) expressions
 }
 ```
 ## Rule 3: Complexity in Conditional statement
