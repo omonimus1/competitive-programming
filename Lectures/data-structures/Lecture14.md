@@ -41,8 +41,9 @@ printGraph(vector<int> adj, int v)
 {
     for(int i =0; i < v; i++)
     {
+        cout << i;
         for(int x : adj[i])
-            cout << x << " ";
+            cout << "-> "x << " ";
     }
     cout <<endl;
 }
@@ -206,8 +207,9 @@ int mai()
 
 ## Depth First Seach or DFS
 
-Depth first Traversarst Traversal of  a tree. 
-It isa generally used for unconnected and undirected graph. 
+* Depth first Traversarst Traversal of  a tree. 
+* Used for unconnected and undirected graph. 
+* The algorithm starts at the root node(select some arbitrary node as the root in case of the graph) and explores as far as possible along each branch before backtracking. 
 
 It is used for:
 1. For a weighted graph, DFS traverls poduces the minmum spanning tree and all pair shorted tree.
@@ -217,13 +219,33 @@ It is used for:
 5. Find strongly connected components. 
 6. Solve puzzles with only one solution. 
 
-It is an algorith for traversing o searching in a tree or graph data structure. 
-The algorithm starts at the root node(select some arbitrary node as the root in case of the graph) and explores as far as possible along each branch before backtracking. 
-
 Mind that:
 * Unlike trees, a graph may contains cycles. We use so boolean visited array.
 
+```
+void DFSUtil(int source, bool visited[])
+{
+    visited[source] = true;
+    cout << source << " ";
 
+    // For all the vertices adjance to the source vertex
+    list<int>::iterator i;
+    for(i = adj[source].begin(); i !=  adj[source].end(); ++i)
+    {
+        if(!visited[*i])
+            DFSUtil(*i, visited);
+    }
+}
+
+void DFS(int source)
+{
+    bool *visited = new bool[V];
+    for(int i =0; i < v; i++)
+        visited[i] = false;
+
+    DFSUtil(source, visited);
+}
+```
 Generally, with DFS we have :
 * Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
 * Space Complexity: O(V).
