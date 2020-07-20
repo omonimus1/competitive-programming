@@ -64,6 +64,9 @@ If you have any questions about the solutions you can find here, feel free to co
 * [Linkedin](https://www.linkedin.com/in/davidepollicino7/)
 * [www.davidepollicino.com](http://davidepollicino.com/)
 
+## Support me to get more free materials like this
+
+[PAYPAL ME](https://paypal.me/davidepollicino7?locale.x=en_US)
 
 ## Support
 
