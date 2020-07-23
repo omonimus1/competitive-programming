@@ -113,12 +113,43 @@ void printReverse(Node *head)
 }
 ```
 
-## Reverse a linked list 
+## Reverse Linked list (Iterative with O(N) space)
+
+The easyest but inefficient way to do it is to:
+1. iterate the linked list, storing all the data in a vector(in C++), or an arrayList(Java);
+2. Iterate again the linked list, storing the data provided by the vector, in reverse order. 
+
+```
+// Time complexity: O(N);
+// Space complexity: O(N);
+Node* reverse(Node* head)
+{
+    if(head == NULL || head ->next == NULL)
+        return head; 
+    
+    vector<int>s;
+    Node* current = head;
+    while(current != NULL)
+    {
+        s.push_back(current->data);
+        current = current->next;
+    }
+
+    for(current = head; current != NULL; current = current->next)
+    {
+        current->data = s.back();
+        s.pop_back();
+    }
+}
+```
+## Reverse Linked List (Iterative with O(1) space)
 
 ```
 /* Function to reverse the linked list */
 void reverse(Node *head) 
 { 
+    if(head == NULL || head ->next == NULL)
+        return head; 
     // Initialize current, previous and 
     // next pointers 
     Node* current = head; 
@@ -127,31 +158,17 @@ void reverse(Node *head)
     while (current != NULL) { 
         // Store next 
         next = current->next; 
-
         // Reverse current node's pointer 
         current->next = prev; 
-
         // Move pointers one position ahead. 
         prev = current; 
         current = next; 
     } 
-    head = prev; 
+    return prev; 
 } 
 ```
 
-### Reverse single linked list
-1. Create three pointers, ```prev=NULL```, ```current = head``` and ```next=NULL```
-2. Iterate trough the linked list. In loop, do following.
-    // Before changing next of current,
-    // store next node
-    next = curr->next
-    // Now change next of current
-    // This is where actual reversing happens
-    curr->next = prev
 
-    // Move prev and curr one step forward
-    prev = curr
-    curr = next
 
 ## Sort singly  linked list
 
@@ -185,7 +202,7 @@ bool detectloop(Node *head) {
      return false;
 }
 ```
-
+## Detect and remove loop if exists
 ```
 bool detect_and_remove_loop_if_exists(Node * head)
 {
@@ -249,8 +266,125 @@ bool isPalindrom(Node *head)
 }
 ```
 
-## Find intersection Point of Two Linked List
+## Pairwise swap nodes of a Linked list
 
+Suppose that the linked list is:
+1->2->3->4, the result will be: 2->1->4->3;
+
+If the total number of nodes is odd, we simply leave the last node at it is presented in the original position; 
+
+A first approach shown belowe will have a O(N) time complexity and
+will consist in simply swap the data between two consecutive nodes.
+The problem with this solution is that, swap many times complex data like objects, long strings and other data-types could be an high cost operation. 
+
+```
+Node* pairswap(Node *head)
+{
+    Node *current = head;
+    while(current != NULL && current->next != NULL)
+    {
+        swap(current->data, current->next->data);
+        current = current->next->next;
+    }
+
+    return head; 
+}
+```
+
+A second approach could be simply swap the pointers bewteen the pairs of nodes of a linked list, without phisically swap the data stored in these two nodes; 
+
+
+```
+Node *pairswap(Node *head)
+{
+    if(head == NULL || head->next == NULL)
+        return head;
+    
+    Node *current = head->next->next;
+    Node *prev = head;
+    head = head->next;
+    head->next = prev;
+
+    while(current != NULL && current->next != NULL)
+    {
+        prev->next = current->next;
+        prev = current;
+        current = current->next->next;
+    }
+
+    
+    prev->next  = current;
+    return head;
+}
+
+```
+
+## Clone Linked list using a random pointer
+
+This is a typical problem where, every node has two pointers, one the points to the next node and another node that points to a random node of the linked list. 
+
+## Merge two sorted linked list
+
+Suppose we have to linked list:
+```
+ll1 : 5->20
+ll2: 10->20->25->30
+Result linked list: 5->10->20->20->25->30;
+```
+
+What we do is:
+1. Maintain a  pointer to the two head of the linked list
+2. Maintain a pointer to the tail of the result linked list.
+3. Set at a first step the head and tail of the linked list to point to the node with the smallest value betweent the two head; 
+
+```
+// O(m+n)time and O(1) space
+Node *sortedMerge(Node *a, Node *b)
+{
+    if(a == NULL)
+        return b;
+    if(b == NULL)
+        return a;
+    
+    Node *head = NULL, *tail = NULL;
+
+    if(a->data <= b->data)
+    {
+        head = tail = a;
+        a = a->next;
+    }
+    else
+    {
+        head = tail = b;
+        b = b->next;
+    }
+
+    while(a!= NULL && b != NULL)
+    {
+        if(a->data <= b->data)
+        {
+            tail->next =  a;
+            tail = a;
+            a = a->next;
+        }
+        else
+        {
+            tail->next = b;
+            tail = b;
+            b = b->next;
+        }
+    }
+
+    if(a == NULL)
+        tail->next = b;
+    else
+        tail->next = a;
+
+    return head;
+}
+```
+
+## Find intersection Point of Two Linked List
 * **Naive Solution [Time O(m+n)]**:  We traverse the first list and mark all nodes as visited. Then we traverse the second list, if we see a visited node again, then there is an intersection point; 
 
 
