@@ -235,9 +235,6 @@ A number 'a' is called factor or divisor of a number 'b' if a divides b. If a is
 * **Difference:** consts of elements that are in A but not in B and elements that are in B but in A. 
 * **Cartesian Product:** In mathematics, specifically set theory, the Cartesian product of two sets A and B, denoted A × B, is the set of all ordered pairs (a, b) where a is in A and b is in B.
 
-### Some code example
-
-
 
 ### Greatest Commond Divisor (GCD) and Least Commond Multiple
 

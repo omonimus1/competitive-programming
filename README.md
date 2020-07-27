@@ -68,6 +68,3 @@ If you have any questions about the solutions you can find here, feel free to co
 
 [PAYPAL ME](https://paypal.me/davidepollicino7?locale.x=en_US)
 
-## Support
-
-[PAYPAL ME](https://paypal.me/davidepollicino7?locale.x=en_US)
