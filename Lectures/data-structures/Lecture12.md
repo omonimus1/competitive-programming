@@ -384,9 +384,21 @@ Node *sortedMerge(Node *a, Node *b)
 }
 ```
 
-## Find intersection Point of Two Linked List
+## Find intersection Point(intersaction node) of Two Linked List
 * **Naive Solution [Time O(m+n)]**:  We traverse the first list and mark all nodes as visited. Then we traverse the second list, if we see a visited node again, then there is an intersection point; 
 
+
+
+## LRU Cache Design
+
+What is the Cache? It is a memory phisically located close to the processor that has small availability in terms of quantity of data that it can stores but extremely high access time. 
+
+When the cache is full and we need to store something new in it, the cache will delete the last element of the cache(the less used one).
+
+A simple implementation can be done using an array. 
+* To search if an element exists we will have to iterate all the array, if it misses, we will positionated this new element in the first position; 
+
+The best Data-Structure that has fast search and insert operations is the Hash-Table / unordered_map. 
 
 
 ## XOR Linked List

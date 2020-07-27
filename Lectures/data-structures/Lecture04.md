@@ -1,5 +1,42 @@
 # Math 
 
+## Prime Number
+
+Is a number divisible just by 1 and itself. 
+Few prime numbers are: 2,3,5,7,11,13,17
+```
+bool isPrime(int n)
+{
+    for(int i =2; i < n; i++)
+    {
+        if(n% i == 0)
+            return false;
+    }
+    return true; 
+}
+```
+An efficient way to check if a number is prie is to check all its factors from 2 to sqrt(n).
+```
+bool prime(int n)
+{
+    if (n < 2) return false;
+    for(int i = 2; i*i <= n; i++)
+    {
+        if(n % i == o) return false; 
+    }
+    return true; 
+}
+```
+
+
+## Factorial
+
+The factorial of a number n, indicated by N!, is the prodct of all the positive numbers, less than or equals to N.
+
+4! = 4 * 3 * 2 * 1; 
+
+By definition, 0! = 1; 
+
 ## Find number of digits in a number in O(1)
 
 * **floor()** function returns the largest possible integer value 
@@ -7,10 +44,33 @@
 which is <= to the given argument.
 Es: floor(34.5) = 33
 eS: floor(-34.5) = 35
+**log solution:**
 ```
 // C++ solutions
 #include <cmath>
 number_of_digits = floor(log10(N) + 1)
+```
+**iterative solution:**
+```
+int countDigits(int n)
+{
+    int count = 0;
+    while(n != 0 )
+    {
+        n/=10;
+        ++count;
+    }
+    return count; 
+}
+```
+Using instead a **recursive solution:**
+```
+int countDigits(int n)
+{
+    if(n == 0)
+        return 0;
+    return 1 + countDitigs(n/10);
+}
 ```
 
 ## Reverse a given integer
@@ -34,6 +94,9 @@ public:
 };
 
 ```
+
+
+
 ## Get name of the day week using Sakamoto's methods 
 ```
 // https://leetcode.com/problems/day-of-the-week/submissions/
@@ -117,7 +180,8 @@ Sum of infinite terms of a GP (r < 1) = (a) / (1 – r).
 ## Mean and Median
 
 * **Mean:** average of given set
-* **Median:** is the middle value of a set of data. To determine the median value in a sequence of numbers, the numbers must first be arranged in an ascending order.
+* **Median:** is found by ordering all data pouints and picking out the one in the middle (or there if there are two median numbers, taking the mean of these two numbers).
+
 
 
 ### Sieve of Eratosthenes
@@ -173,22 +237,24 @@ A number 'a' is called factor or divisor of a number 'b' if a divides b. If a is
 
 ### Some code example
 
-An efficient way to check if a number is prie is to check all its factors from 2 to sqrt(n).
-```
-bool prime(int n)
-{
-    if (n < 2) return false;
-    for(int i = 2; i*i <= n; i++)
-    {
-        if(n % i == o) return false; 
-    }
-    return true; 
-}
-```
+
 
 ### Greatest Commond Divisor (GCD) and Least Commond Multiple
 
-* **Factors and Multiples** : All numbers that divide a number completely, i.e., without leaving any remainder, are called factors of that number.
+* **Factor or Mutiple**: all the nubers that divide a number completely, without leaving any remainder, are called factors of that number; 
+Example: 16 is completely divisible by 1,2,4,16
+Exampple: 32 is completely divisible by 1,2,4,8,16, 32.
+
+* **LCM Least Common Multiple:** the LCM of two or more numbers is the smallest number other than 0(zero), that' sa  multiple of each number.
+
+LCM of 4 and 6:
+Multiples of 4: 4,8,12,16,24...
+Multiple of 6: 6,12,18,24,30, 36...
+
+Two common multiples are 12 and 24, the smallest one is 12. 
+So 12 is the LCM between 4 and 6. 
+
+###### Source: GeeksForGeeks
 
 * **Greates commond divisor**: the greates commond divisor of two or more integers which are not all zero, is the larghest posiibe integer that divides each integers. For example, the gcd fo 8 and 12 is 4. 
 
@@ -197,7 +263,18 @@ int gcd(int a, int b) { return b==0 ? a : gdc(b, a%b); }
 int lcm(int a, int b) {  return a * (b/gcd(a,b)); }
 ```
 
+## HCF (Highest Common Factor)
 
+HCF of two or more numbers is the highest number which exacltly divides all the numbers. 
+HCF of 12 an 16
+
+Multiples of 12: 1,2,3,4,6,12
+Multiples of 16: 1,2,4,8,16
+
+Common factors are:1,2,4
+THe HCF is 4; 
+
+###### Source: GeeksForGeeks
 
 ## Modular Arithmetic and Modular inverse
 
