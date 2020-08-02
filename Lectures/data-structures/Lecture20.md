@@ -193,7 +193,11 @@ It can be done by a simple way, just simply subtract the number from the value o
 The most-significant bit in binary representation of a number is the highest ordered bit, that is it is the bit-position with highest value.
 
 
-* Given a number N, the task is to check whether the given number is a power of 2 or not
+## Power of two
+
+* Given a number N, the task is to check whether the given number is a power of 2 or not.
+All the powers oftwo have just a single bit set (1);
+
 ```
 // Function to check if x is power of 2 
 bool isPowerOfTwo(int number) 
@@ -209,7 +213,24 @@ OR
 /* Function to check if the given number is power of 2*/
 bool isPowerOfTwo (int number)  
 {  
-    
+    if(n == 0)
+        return false;
+    // We do the bitwise operation of N with N-1; 
     return number && (!(number&(number-1)));  
 } 
+```
+OR
+```
+bool isPowerOfTwo(int n)
+{
+    if(n==0)
+        return false;
+    while(n != 1)
+    {
+        if( n % 2 != 0 )
+            return false;
+        n /= 2;
+    }
+    return true; 
+}
 ```

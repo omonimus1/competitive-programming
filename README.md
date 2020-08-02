@@ -18,6 +18,7 @@
 |Readings|[Free e-books about Competitive Programming](Reading/)|
 |Geeks For Geeks|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
 |HackerRank|[My own HackerRank coding solutions](HackerRank/README.md)|
+|CoodeSignall|[My own CodeSignal Solutions](codesignal/README.md)|
 |CodeChef | [My own Codechef coding solutions](codechef/)|
 |UVA|[My own UVA Online Judge solutions ](UVA/)|
 |InterviewBit|[My Interview Bit solutions ](interviewbit/README.md)|
@@ -32,6 +33,7 @@
 |[CodeChef](https://www.codechef.com/)|[My Profile](https://www.codechef.com/users/omonimus)|
 |[GeeksforGeeks](https://www.geeksforgeeks.org/)|[ My Profile](https://auth.geeksforgeeks.org/user/davidepollicino2015/practice/)|
 |[LeetCode](https://leetcode.com/)|[ My Profile](https://leetcode.com/omonimus1)|
+|[CoodeSignal](https://app.codesignal.com/)|[ My Profile](https://app.codesignal.com/profile/davide_p7)|
 |[Interviewbit](https://www.interviewbit.com/)|[ My Profile](https://www.interviewbit.com/profile/omonimus1)|
 |[Codebyte (35$ for MONTH!)](https://coderbyte.com/)|[ My Profile](https://coderbyte.com/profile/omonimus1)|
 |[Italian Olympiads in Informatics training](https://training.olinfo.it/#/overview)||
