@@ -8,6 +8,7 @@
 |First duplicate|[C++](first-duplicate.cpp)|
 |Adjacency max product|[C++](adjacency-max-product.cpp)|
 |FIrst non repeating character|[C++](first-non-repeating-char.cpp)|
-| |[C++]( )|
+|Is Linkedlist palindrome|[C++](is_linked_list_palindrome.cpp)|
+|COntains duplicates|[C++](contains_duplicates.cpp)|
 | |[C++]( )|
 | |[C++]( )|
