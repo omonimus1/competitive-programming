@@ -10,5 +10,5 @@
 |FIrst non repeating character|[C++](first-non-repeating-char.cpp)|
 |Is Linkedlist palindrome|[C++](is_linked_list_palindrome.cpp)|
 |COntains duplicates|[C++](contains_duplicates.cpp)|
-| |[C++]( )|
+|Missing number|[C++](missing_number.cpp)|
 | |[C++]( )|
