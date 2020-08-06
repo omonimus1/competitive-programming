@@ -11,4 +11,5 @@
 |Is Linkedlist palindrome|[C++](is_linked_list_palindrome.cpp)|
 |COntains duplicates|[C++](contains_duplicates.cpp)|
 |Missing number|[C++](missing_number.cpp)|
+|Share Area|[C++](shareArea.cpp)|
 | |[C++]( )|
