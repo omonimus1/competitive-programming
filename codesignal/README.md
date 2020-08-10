@@ -12,4 +12,6 @@
 |COntains duplicates|[C++](contains_duplicates.cpp)|
 |Missing number|[C++](missing_number.cpp)|
 |Share Area|[C++](shareArea.cpp)|
+|Add border|[C++](add_border.cpp)|
+|Alternating sum|[C++](alternating-sum.cpp|
 | |[C++]( )|
