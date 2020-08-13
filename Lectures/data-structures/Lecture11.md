@@ -67,6 +67,21 @@ For primitive data types(int, char etc), it does not matter which one we use, bu
 [Set in GeekForGeeks](https://www.geeksforgeeks.org/set-in-cpp-stl/)
 [Set in C++ reference](https://en.cppreference.com/w/cpp/container/set)
 
+## Count number of distinct element in an array
+
+```
+int countDistictElements(int arr[], int n)
+{
+    unordered_set<int>s;
+    for(int i =0; i< n; i++)
+    {
+        s.inseert(arr[i]);
+    }
+
+    return s.size();
+}
+```
+
 ## Unordered set
 
 The unordered set is a  data-structure impkemented using an has table, where keys are hasjed into indiced of the hash table ot that the insertion is always randomized. 
@@ -81,19 +96,6 @@ unordered_set <string> stringSet ;
 ```
 [Unordered Set in GeekForGeeks](https://www.geeksforgeeks.org/unordered_set-in-cpp-stl/)
 [Unordered Set in C++ reference](https://en.cppreference.com/w/cpp/container/unordered_set)
-
-
-## HASHTABLES
-
-Hash table (or map) is on of the most used and useful data stucture. 
-Few of hashtables application :
-1. Create a  dictionary
-2. Compilers (for keep the mapping between a variable id and its memory address)
-3. Routers
-4. Browser cache
-5. Keep track of frequencency of elements of our input. 
-
-An Hastable has high performance for search, insert and delete operations, all of them in O(1) time.
 
 
 
@@ -156,15 +158,37 @@ cout << (a^b) << "\n"; // 1001101110
 ```
 ##### Source Competitive Programming Handbook
 
+## HASHTABLES / MAP
+
+Hash table (or map) is onE of the most used and useful data stucture in Computer Science. It works on the base of the key-value concept. 
+
+Few of hashtables application :
+1. Create a  dictionary
+2. Compilers (for keep the mapping between a variable id and its memory address).
+3. Routers
+4. Caches, especially browser cache. 
+5. Keep track of frequencency of elements of our input. 
+6. Database indexing
+7. Criptography.
+8. Retrieve data from a database. 
+
+
+An Hastable has high performance for search, insert and delete operations, all of them in O(1) time.
+
+Once we have both extremely small and extremely big values, O(log(N)) could be evens slower that O(1) time.
+#### source: algo and DS geeskforgeeks course
+
+
 ## Map
 
 Map is an associative container where every value is associated with ONE and just ONE key. 
 
 ```
+// create sorted_map
 map<string, int> my_map;
 
-my_map.insert(pair<string, int>("Davide",45));
-my_map.insert(pair<string, int>("Giuseppe",45));
+my_map.insert(pair<string, int>("Davide",15));
+my_map.insert(pair<string, int>("Giuseppe",16));
 
 
 if(my_map.count("Davide"))
@@ -172,8 +196,15 @@ if(my_map.count("Davide"))
 else
     cout<< "Davide is not present <<endl;
 
+// Print key and values stored in the map 
 for (auto x : my_map) 
     cout << x.first << " " << x.second << "\n";
+
+// Remove map element by key
+my_map.erase("Giuseppe);
+
+// using clear() to erase all elements in map 
+my_map.clear(); 
 ```
 
 * [MAP - from GeekForGeeks](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)
@@ -190,6 +221,69 @@ end()**  - Returns an iterator to the theoretical element that follows last elem
 * **erase(iterator position)**  - R emoves the element at the position pointed by the iterator
 erase(const g)** - Removes the key value 'g' from the map
 * **clear()**  - Removes all the elements from the map
+
+## Direct acess table
+
+We coud potentially reproduce the map using a direct access table.
+We could be an array of boolens, that indicates if a specifc key is present or not.
+Of couse, the direct acess table does not work with lots of data or big keys; 
+
+As well, it does not work where the key is a sting, because we will be using indexes of our boolean array as keys.
+
+## Collision Handling - Chaingin - Open Adressing
+
+Requirements for this section:
+* Know what the meaning of hashing.
+* Know what is an hash function.
+
+Birthday paradox says: if there are 23 people are in the same room, there is an high probability that two people will have the same birthday.
+If the number of people will go up to 70 people, the probability of having two people with same birthday is going to be 99%. 
+
+If we know in advanced all the keys of our dicitonaty, we can exploit the Perfect hashing rule, an advanced method that guarantees that there will not any collision with the keys stored in our dictionary, or map.
+
+Chaining and open addressing are two methods used in collision handling.
+In chaining, we chain of collating iteam, in open addressing, we use an array to manage the key-values relationship, if any slot is busy, we just store this pair somewherelse in the array (in a different slot).
+
+## Chaining
+
+The idea is that we maintain an array of linked list.
+Suppose that the hash function hash(key) is: key % 7, and the keys are {50, 21, 58, 17, 15, 49, 22, 23, 25 }.
+The size of array of linkest list is usually a prime number greater than N, where N is the operand of the modul operation (7 in this case), but close enough to N, to make sure that we have enough space to manage the possible collisions. 
+
+Why the hash function hash(key) is : key % 7, we can of course use any number instead 7, but in the specific, if the module operand (in this case 7), is a prime number, we can less change to have a collision. 
+
+When a collision happens, we insert a new iteam at the end of the linked list. 
+
+So, let's start to understand how thinks works here:
+* We have the first key, 50. 50 % 7 is 1 (remainder), I insert 50 at the index 1 of the array of linked list.
+* 21 % 7 is 0, so I put 21 at the index 0 of the array of linked list.
+* 58 % 7 is 2, so put 58 at index 2;
+* 17 % 7 is 3, so put 17 at index 3;
+* 15 % 7 has remainder 1, we see that the slot at index 1 is alrady budy, so we add another node at the linked list present at the index 1, with head 50 (first elemet added at index 1). 
+And so on...
+
+Let's analyze the chaining performances. Let's define:
+* a : number of slots (7 in this case, from 0 to 6).
+* b: number of keys to be inserted/
+
+* The load factor is defined as ``` b/a```; We always hope that the load factor is smaller as possible (this means that we will have just a small number of collisions).
+
+- The expected chain lenght is not predictible. It higly depends from the load factor.
+If, the number of slots (prime operand of the module operation) is equals to the number of keys to inders, in that case we could have the following performance:
+* Expected time to search: O(1)+ chain lenght (time used to traverse the chain).
+* Delete time: O(1 + chaing lenght)
+
+We could also use other datastructure for storing chains, these data-structures could be: linked listy, dynamic sized array (vector), self-balancing BST(AVL tree, RedBlock tree).
+
+###### Source: collision handling, GeeksForGeeks. 
+
+## Open Addressing
+
+Open Addressing, as chaining, a way to manage hashing collisions. 
+A pro of open addressing is that it is very chache friendly. 
+
+Open addressing could be implemented with linear proibing or double chaining/
+
 
 
 ## Unordered map
