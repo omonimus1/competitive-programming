@@ -18,6 +18,7 @@
 |Readings|[Free e-books about Competitive Programming](Reading/)|
 |Geeks For Geeks|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
 |HackerRank|[My own HackerRank coding solutions](HackerRank/README.md)|
+|Codingblock|[My own Codingblock coding solutions](codingblock/README.md)|
 |CoodeSignall|[My own CodeSignal Solutions](codesignal/README.md)|
 |CodeChef | [My own Codechef coding solutions](codechef/)|
 |UVA|[My own UVA Online Judge solutions ](UVA/)|
