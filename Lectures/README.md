@@ -22,6 +22,10 @@
 |Greedy Algorithm|[Lecture 15](data-structures/Lecture17.md)|
 |Bit Magic -- Bitwise Algorithm|[Lecture 20](data-structures/Lecture20.md)|
 
+# Amazon Possible interview questions
+
+[See here amazon possible interview questions](amazon.md)
+
 ## CS97SI Slides
 
 Contains all the slides used during the CS97 Algorithm and data structures at Standford University
