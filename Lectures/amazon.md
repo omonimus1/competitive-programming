@@ -61,8 +61,11 @@ Solution:
 * If the are both positive and integer values, there is a different approach, using the Kadane's algorithm. 
 
 Mind that, this solutions does not return the subarray with the max value but, the value of the max between all the possible contiguos subarray. 
+
+And, the Kadanes' algorithm do not work if all the numbers are negative, this means that if all the numbers are negative, the result will be 0. 
 ```
 // Source: GeeksForGeeks
+// It does not work when all the numbers are negative. 
 #include <iostream>
 using namespace std; 
 
@@ -96,3 +99,4 @@ int main()
 
 ```
 
+Let's see how to make it work when all numbers are negative. 
