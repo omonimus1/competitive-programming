@@ -4,6 +4,62 @@
 * string to int()
 * int / float to string: ```string word = to_string(variable_to_convert);```
 
+## Check for Anagram 
+
+Given two strings, check if these two strings are anagrams of each other. This means that nay characters present in the string1, with a frequency F, must be present also in the string string2 with the same frequency F. 
+
+```
+bool are_anagrams(string s1, string s2)
+{
+    if(s1.size() != s2.size())
+        return false;
+
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    return (s1==s2);
+}
+```
+
+## Leftmost repearting character
+
+```
+int index_leftmost_repeating_char(string s)
+{
+    unordered_map<char, int>mp;
+    int i, len = s.size();
+    for(i=0; i < len; i++)
+        mp[s[i]]++;
+
+    // Return index of the most left repating char 
+    for(i=0; i < s; i++)
+    {
+        if(mp[s[i] > 1])
+            return i; 
+    }
+    // All elements are unique
+    return -1; 
+}
+```
+
+## OR, NAIVE APPROACH
+```
+int index_leftmost_repeating_char(string s)
+{
+    int len = s.size();
+    for(int i=0; i < len-1; i++)
+    {
+        for(int j = i+1; j< len; j++)
+        {
+            if(s[i] == s[j])
+                return i; 
+        }
+    }
+    return -1; 
+}
+```
+
+
+
 * **Naive Pattern Searching:** we slide the pattern over text one by one and check for a match. If a match is found, then slides by 1 again to check for subsequent matches.
 
 ### How to search substring
