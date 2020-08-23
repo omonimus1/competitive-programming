@@ -58,51 +58,192 @@ int index_leftmost_repeating_char(string s)
 }
 ```
 
+## Check if two string are the rotation of each other
+
+```
+/* Function checks if passed strings (str1 
+   and str2) are rotations of each other */
+bool areRotations(string str1, string str2) 
+{ 
+   /* Check if sizes of two strings are same */
+   if (str1.length() != str2.length()) 
+        return false; 
+  
+   string temp = str1 + str1;  
+  return (temp.find(str2) != string::npos); 
+} 
+
+```
 
 
 * **Naive Pattern Searching:** we slide the pattern over text one by one and check for a match. If a match is found, then slides by 1 again to check for subsequent matches.
 
-### How to search substring
+
+## How to search substring - Target search approaches
+
+n: length of the biggest string
+m: length of the substring to search
+
+There are many algorithms for pattern search, few of them are:
+* Naive: O((n-m+1)*m). In Naive approach, there is no backtracking.
 ```
-void search(string word, string  subword)
+// The vector will contains the first index of where a valid pattern is found
+vector<int> search_with_naive(string word, string sub)
 {
-    int M = word.size();
-    int N = subword.size();
-    int frequency = 0;
-
-    /* A loop to slide pat[] one by one */
-    for (int i = 0; i <= N - M; i++) {
-        int j;
-
-        /* For current index i, check for pattern match */
-        for (j = 0; j < M; j++)
-            if (txt[i + j] != pat[j])
-                break;
-        // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
-        if (j == M)
+    int n = word.size();
+    int m = sub.sizea();
+    vector<int>solution; 
+    int j, i;
+    for(i =0; i  <= n-m; i++)
+    { 
+        for(j=0; j < m; j++)
         {
-            cout << "Pattern found at index "<< i << endl;
-            frequency++;
+            if(word[i+j] != sub[j])
+            { 
+                break; 
+            }
         }
+        if(j==m)
+            solution.push_back(i);
     }
-    cout << "We found the substring exatcly " << frequency << " times"<<endl;
+    return solution; 
+}
+```
+We can actually optimize the Native solution to O(N) int he follwing way:
+```
+// The vector will contains the first index of where a valid pattern is found
+
+// THIS IS PSEUDOCODE
+vector<int> search_with_naive(string word, string sub)
+{
+    int n = word.size();
+    int m = sub.sizea();
+    vector<int>solution; 
+    int j, i;
+    for(i =0; i  <= n-m; i++)
+    { 
+        // We manage the increment
+        for(j=0; j < m;)
+        {
+            if(word[i+j] != sub[j])
+            { 
+                break; 
+            }
+        }
+        if(j==m)
+            solution.push_back(i);
+        // We increment I in according with with the match ror non-match of the pattern
+        if(j==0)
+            i+=1;
+        else 
+            i += i+j; 
+    }
+    return solution; 
 }
 ```
 
+* Rabin karp: same time complexity of the Naive Pattern search, but easier to implement. It uses the idea or rolling hash to optimize the algorithm. 
 
-### Longest Common Subsequence
+It's worst case is N^2, but in general, Rabin Karp is faster than Naive search and allows us to save lots of tiem when we have a long sentence and a long substring to compare, too see if there  will be one or more occurrency of the same pattern.
+
+With Rabin Karp, we do not compare the characters one by one, we instead wait compare the has values betweent the currenct window(text slice) and the pattern. 
+
+ If the two hashes values matches, we compare the characteres otherwise, we simply skip to the next window. 
+
+ It actually looks like that it has the same time complexity of Naive but it doesn't, because we save up time to calculate the has of a window string using also the past hashes (this is the concept of roll hashing).
 
 
-### Hamming distance problem
+
+* KMP : O(n). It is one of the most popular algorithm in computer Science.
+* Suffix tree : O(m). Suffix tree is not an algorithms but a data-structure. 
+
+
+
+### Longest substring with all distinct characters
+
+* If the string is empty, the result is 0;
+* If all the characters are equals, the answer is going to be 1.
+
+For this problem, I will provide you different solutions with different time complexity but same Space complexity. 
+
+## Time complexity
+
+Considering that the longest_distinct function has a time complexity O(n^2), and it is calling the function are_distinct(), that has O(N) complexity, the total total time complexity of this Naive approach is: O(N^3). 
+```
+
+bool are_distinct(string word, int i, int j)
+{
+    // Create a visited vector of bools
+    vector<bool>visited(256);
+    for(int k = i; k <=j; k++)
+    {
+        if(visited[str[i] == true)
+            return false;
+         visited[str[i]] = true; 
+    }
+    return true; 
+}
+
+// Return the length of the longest substring with all differnt characters
+
+int longest_distinct(string word)
+{
+    int len = word.size();
+    int result = 0; 
+    // Iterate thought all the possible substrings
+    for(int i =0; i < len; i++)
+    {
+        for(int j=0; j < len; j++)
+        {
+            if(are_distinct(word, i, j))
+                result = max(result, j-i+1);
+        }
+    }
+
+    return result; 
+}
+
+```
+
+### Second Solution with Just O(N^2) complexity 
+
+Let's see a faster approach to search the lenght of the longest string with different characters.
+```
+int longestDistinct(string sentence)
+{
+    int i, j, result = 0;
+    int len = sentence.size();
+    for(int i =0; i < len ; i++)
+    {
+        vector<bool>visited(256);
+        for(int j=i; j < len; j++)
+        {
+            if(visited[sentence[j]] == true)
+                break; 
+            else
+            {
+                result = max(result, j-i+1);
+                visited[sentence[j]] = true;
+            }
+         }
+    }
+    return result; 
+}
+```
+## Lexicographic Rank of a string 
+
+
+
+## Hamming distance problem
 
 Find the number of different chars between equa-length strins.
 
 
 String Alignment  problem definition: 
 
-#### Needleman-Wunsch’s algorithm
+## Needleman-Wunsch’s algorithm
 
-### Longest Palindrome substring
+## Longest Palindrome substring
 
 
 ### Suffix Array
