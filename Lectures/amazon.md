@@ -97,6 +97,6 @@ int main()
     return 0; 
 }
 
-```
+```i`
 
 Let's see how to make it work when all numbers are negative. 
