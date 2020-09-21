@@ -1,4 +1,4 @@
-## Sorting
+## Sorting and Searching
 
 * **Sorting:** arranging the elements of a list or collection in creaseing or decreasing order of some property. 
 
@@ -405,6 +405,61 @@ if( k < n && array[k] == x)
 return -1;
 
 ```
+
+### Index of last Occurence in a Sorted array
+
+Suppose that we have a sorted array: ```arr[] = {1,1,2,3,3,3,3,5} ``` and that the target is 3. The index of the last frequency of 3 is 6 (0-based indexing);
+
+To find the index of last Occurence we can use binary Search, solving this problem in O(log N);
+
+```
+// Recurisive Solution
+int lastOccurrency (int arr[], int low, int high, int x, int n)
+{
+    if(low > high) return -1;
+    int mid = (low + high)/2;
+
+    if(arr[mid] > x)
+        return lastOccurency(arr, low, mid-1, n);
+    else if(arr[mid] < x)
+        return lastOccurency(arr, mid+1, high, n);
+    
+    else
+    {
+        // If the we are at the last element or we are at the last occurency of our target, return the index
+        if(mid == n-1 || arr[mid] != arr[mid+1])
+            return mid; 
+        else
+            return lastOccurency(arr, mid+1, high, n);
+    }
+}
+
+
+// Iterative solution
+int lastOccurrency(int arr[], int n, int x)
+{
+    int low = 0, high = n-1;
+    while(low <= high)
+    {
+        int mid = (low+high)/2;
+        if(arr[mid] <x)
+            low = mid+1;
+        else if(arr[mid] < x)
+            high = mid-1;
+
+        else
+        {
+            if(mid != n-1 || arr[mid] != arr[mid+1])
+                return mid; 
+            else
+                low = mid+1;
+        }
+    }
+    return -1; 
+
+}
+```
+
 ### Find frequency of a value x
 ```
 auto a = lower_bound(array, array+n, x);

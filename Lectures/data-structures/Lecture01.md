@@ -265,6 +265,19 @@ bool is_sorted_in_decreasing_order(int arr[], int n)
 }
 ```
 
+## Median of two sorted arrays
+
+A first approach could be merge the two arrays in a third sorted array. Once we will have the two arrays merged, we can simple store the length of the the final array (arr.size());
+Now, having the length of the final final array, it can be:
+* Odd: the median is the middle element. Median = arr[len/2];
+* Even: the median is the average between the two middle elements. Median = (arr[len/2] + arr[len/2-1]) /2;
+
+The first solution that I have suggested is a Naive solution: O((n1+n2) * log(n1+n2));
+
+There is a second solution for this problem, that works in O(log(n1)), where the dimension of the first array (arr1) is smaller or equal (<=) of the second array.
+
+
+
 ## Larghest sum SubArray
 
 ```
