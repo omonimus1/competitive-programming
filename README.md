@@ -47,7 +47,7 @@
 2. If your solution is asymptotically faster than the one in the main branch.
 3. If your algorithm is of the same time complexity but with reduced code size. In this case, comment out the original solution and make a pull request with your solution.
 4. If you have another method of solving the problem which is asymptotically slower than the original method then, comment your solution in the main file and make a pull request.
-5. If you woukd like to make any positive change to the lectures content
+5. If you would like to make any positive change to the lectures content
 
 ## I appreciate any feedback
 Constructive criticisms or code reviews of any kind are very much welcome.
@@ -55,7 +55,7 @@ Constructive criticisms or code reviews of any kind are very much welcome.
 If you have any questions about the solutions you can find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20CompetitiveProgramming)
 
 
-- 📫 How to reach me: **You can find me also on [Linkedln](https://www.linkedin.com/in/davidepollicino7/)** or 💌Mail me [davidepollicino2015@gmail.com]()
+- 📫 How to reach me: **You can find me also on [Linkedln](https://www.linkedin.com/in/davidepollicino7/)** or 💌Mail me at [davidepollicino2015@gmail.com]()
 
 
 # Social Media #
