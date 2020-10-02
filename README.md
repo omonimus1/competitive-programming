@@ -4,8 +4,8 @@
 
 1. [Structure of the repository](#Structure-of-the-Repository)
 2. [Platforms for Training](#Platforms-for-training)
-3. [When contribute](#When-contribute)
 4. [How to contribute](#How-to-contribute)
+3. [When to contribute](#When-contribute)
 6. [Connect with me](#Connect-with-me)
 7. [Support me to get more](#Support)
 
@@ -42,7 +42,7 @@
 2. Do the desired changes (add/delete/modify)
 3. Make a pull request
 
-## When contribute
+## When to contribute
 1. If there is no solution to a problem in the main branch.
 2. If your solution is asymptotically faster than the one in the main branch.
 3. If your algorithm is of the same time complexity but with reduced code size. In this case, comment out the original solution and make a pull request with your solution.
@@ -52,10 +52,10 @@
 ## I appreciate any feedback
 Constructive criticisms or code reviews of any kind are very much welcome.
 
-If you have any questions about the solutions you can find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20CompetitiveProgramming)
+If you have any questions about the solutions you find here, feel free to contact me at: [davidepollicino2015@gmail.com](mailto:davidepollicino2015@gmail.com?subject=[GitHub]%20CompetitiveProgramming)
 
 
-- 📫 How to reach me: **You can find me also on [Linkedln](https://www.linkedin.com/in/davidepollicino7/)** or 💌Mail me at [davidepollicino2015@gmail.com]()
+- 📫 How to reach me: **You can also find me on [Linkedln](https://www.linkedin.com/in/davidepollicino7/)** or 💌Mail me at [davidepollicino2015@gmail.com]()
 
 
 # Social Media #
