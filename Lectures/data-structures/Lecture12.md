@@ -61,6 +61,24 @@ void push(Node **head, int elment_to_store)
     *head = new_node;
 }
 ```
+
+## Clone list with next and random pointer
+
+```
+Node * Clone(Node *head)
+{
+    Node *current = head, *temp;
+    while(current != NULL)
+    {
+        current->next = new Node(current->data);
+        current->next->next = temp;
+        current = temp;
+    }
+
+    
+}
+```
+
 ### Delete a node
 
 ```
