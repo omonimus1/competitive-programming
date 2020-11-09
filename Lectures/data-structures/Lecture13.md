@@ -346,7 +346,56 @@ The depth of a node is the number of edges in the path from the root node to tha
 
 The depth of a binary tree is usually used to refer to the height of the tree.
 
-###### Source: Stackoverflow, the bible
+###### Source: Stackoverflow
+
+### Count Number of leaf nodes
+
+Leaf Node: a node that has both left and right child NULLS;
+```
+if(node->left == NULL && node->right)
+    cout<<"YES! It's a leaf node"<<endl;
+```
+We have to two different ways to actually count the number of leaf nodes, using a level order traversal approach or with recursion
+```
+int countLeaves(Node* root)
+{
+    Node *node = root;
+    if(node == NULL)
+        return 0;
+    else if(node ->left == NULL && node ->right == NULL)
+        return 1; 
+    else
+        return countLeaves(node->left) + countLeaves(node->right);
+}
+```
+As idnicated before we can also use the level order traversal
+```
+int CountNumberOfLeaves(Node * root)
+{
+    if(root == NULL)
+        return 0; 
+    int number_leaf_nodes = 0;
+    
+    Node * temp;
+    queu<Node *>q;
+    q.push(root); 
+    
+    while(!q.empty())
+    {
+        temp = q.front();
+        q.pop();
+        
+        if(temp->left != NULL)
+            q.push(temp->left);
+        if(temp->right != NULL )
+            q.push(temp->right);
+        if(temp->left == NULL && temp->right == NULL)
+            number_leaf_nodes++;
+    }
+    
+    return number_leaf_nodes;
+}
+```
 
 ### Max Depth
 
