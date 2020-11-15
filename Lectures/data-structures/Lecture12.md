@@ -179,18 +179,68 @@ Node * InsertInHead (Node *head, int x)
 
 ## Doubly Linked LIst: Remove Head
 ```
-
+Node * DeleteHeadFromDoublyLinkedList(Node *head)
+{
+    if(head == NULL)
+        return NULL; 
+    if(head->next == NULL)
+    {
+        delete(head);
+        return NULL; 
+    }
+    Node *original_head = head;
+    head = head->next;
+    head->prev = NULL; 
+    delete (original_head);
+    return head;
+}
 ```
 
 ## Doubly Linked LIst: Insert new Tail
 
 ```
+Node * RemoveTailFromDoublyLinkedList(Node *head, int x)
+{
+    Node *new_end = new Node(x);
+    if(head == NULL)
+        return new_end;
+    Node *current = head;
+    while(current->next != NUL)
+        current = current->next;
 
+    current->next = new_end;
+    new_end->prev = current;
+
+    return head;   
+}
 ```
 ## Doubly Linked LIst: Remove Tail
 
 ```
+Node * DeleteTailFromDoublyLinkedList(Node *head)
+{
+    if(head == NULL) return NULL;
+    if(head->next == NULL)
+    {
+        free(head);
+        return NULL; 
+    }
+    // There are at least 2 elements int he doubly linked list
+    else
+    {
+        Node *current = head;
 
+        // Reach end of the doubly linked list
+        while(current->next != NULL)
+        {
+            current = current->next; 
+        }
+        current->prev->next = NULL;
+        delete(current);
+        return head; 
+    }
+
+}
 ```
 
 ## Clone list with next and random pointer
