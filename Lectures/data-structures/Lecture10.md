@@ -517,6 +517,8 @@ avoid to double the size of the array everytime that we pontentially run out of 
 Using the pointer arrays, if we will run out of space in the pointer array, we will not copy ALL the data stored 
 in each dequeue element, we will simply copy the pointer to that element in  new array with more space. 
 
+* insert and erase have O(N) time complexity.
+* push and pop (for both front and back) are O(1) time. 
 
 Number of copy construnctor call has O(1) time space complexity.
 ```

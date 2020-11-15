@@ -35,18 +35,28 @@ We have constant time for insertion and deletion time because we don't need any 
 ### Create new node
 ```
 //Single Linked List node struct
-struct node
+struct Node
 {
     int data;
-    struct node *next;
-}
+    Node *next;
+    Node(int x)
+    {
+        data = x;
+        next = NULL; 
+    }
+};
 
 // Doubly linked list
-struct node
+struct Node
 {
     int data;
-    struct node *next, *prev;
-}
+    Node *next, *prev;
+    Node (int x)
+    {
+        data = x;
+        prev = next = NULL; 
+    }
+};
 ```
 Doubly linked list allows us to to a reverse look-up but of course, a double linked will use extra memory to keep track of all the pointers to the preview node;
 
@@ -61,6 +71,127 @@ void push(Node **head, int elment_to_store)
     *head = new_node;
 }
 ```
+### Insert at the end (tail) of the linked list
+```
+Node * InsertAtEnd(Node *head, int new_data)
+{
+    Node * new_tail = new Node(new_data);
+    if(head == NULL)
+        return new_tail;
+    else
+    {
+        Node *current = head; 
+        while(current-> next != NULL)
+            current = current->next;
+
+        current->next = new_tail;
+        return head; 
+    }
+}
+```
+
+### Delete head of the Single Linked List
+```
+Node * DeleteHead(Node * head)
+{
+    if(head == NULL)
+        return head;
+
+    Node *new_head = head->next;
+    free(head);
+    return new_head;
+}
+```
+
+### Delete last node of the linked list O(N) time complexity
+```
+Node * DeleteTail( Node *head)
+{
+    if(head == NULL) return NULL; 
+    if(head-> next == NULL)
+    {
+        delete(head);
+        return NULL; 
+    }
+    // There are at leazst 2 nodes in the linked list
+    Node *current = head;
+    while(current->next->next != NULL)
+        current = current->next;
+    // Remove last node
+    delete(current->next);
+    // Set next pointer to NULL (current->nexgt was before pointing to the old tail node that has been now deleted)
+    current->next = NULL;
+    return head;
+}
+```
+
+### Search in a linked list
+
+```
+// Iterative solution
+int GetPositionOfAElement (Node *head, int x)
+{
+    if(head == NULL)
+        return -1; 
+    Node *current = head;
+    int i=0; 
+    while(current != NULL)
+    {
+        i++;
+        if(current->data == x)
+        {
+            return i; 
+        }
+        current = current->next;
+    }
+    return -1; 
+}
+// Recursive function
+// O(N) time - O(N) space
+int SearchElement(Node *head, int x)
+{
+    if(head == NULL) return -1;
+    if(head ->data = x)
+        return 1; 
+    else
+    {
+        int result = search(head->next, x);
+        // used to return non-existing position when the elements DOES NOT exists in the linked list
+        if(result == -1) 
+            return -1;
+        else 
+            return (result+1);
+    }
+}
+```
+
+## Doubly Linked LIst: Insert new Head
+```
+Node * InsertInHead (Node *head, int x)
+{
+    Node *new_node = new Node(x);
+    new_node = head;
+    if(head != NULL)
+        head->prev = new_node;
+    return new_node;
+}
+```
+
+## Doubly Linked LIst: Remove Head
+```
+
+```
+
+## Doubly Linked LIst: Insert new Tail
+
+```
+
+```
+## Doubly Linked LIst: Remove Tail
+
+```
+
+```
 
 ## Clone list with next and random pointer
 
@@ -74,8 +205,6 @@ Node * Clone(Node *head)
         current->next->next = temp;
         current = temp;
     }
-
-    
 }
 ```
 
