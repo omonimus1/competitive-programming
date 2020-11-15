@@ -1,9 +1,10 @@
-# Warning:
+# Stack - Queue - Dequeue
+
+### Warning:
 
 Before to start to read section, be familiar with the concept of 
 * Indexing 
-* array and vector (dynamic array).
-
+* array and vectors.
  
 ### Did you know...
 We have a shorter way to iterate thourgh an array / vector than traditional for loop?
@@ -35,7 +36,7 @@ for (auto x : v) {
 using namespace std;
 
 void print_stack(stack <int> stackImplementation);
-
+  
 int main ()
 {
   stack <int> stackArray;
@@ -478,26 +479,174 @@ while(!queue_example.empty())
 ```
 
 ### Deque
-
-* Is a dynamic array
-```
-deque<int> d;
-d.push_back(10); // [10]
-d.push_back(20); // [10,20]
-d.push_front(3); // [3,10,20]
-d.pop_back(); // [3,10]
-d.pop_front(); // [10]
-```
-
-A deque is a version of a queue in which elements can be added or removed from either end (front and back). 
-We can think that a deque is a data structurre that joins the functionalities of the stack and queue. 
+* The deque standfs for double ended queue, because we have push and pop operations in both start
+and end of the queue. We can think that a deque is a data structurre that joins the functionalities of the stack and queue. 
 
 A lists can usually support all the behaviours of a Deque (but generally has more feature than a deque should officialy support). 
 
-It could be usefull when we have a chain of items to model in our program where these can be processes at each end but not in the middle. 
+* getFront()
+* insertFront()
+* insertRear()
+* deleteFront()
+* deleteRear()
+* getRear()
+* isFull()
+* isEmpty()
+* size()
+* Is a dynamic array
+
+Like the stack, we can implement a dequeue using a Linkedln list or an Array.
+If we use a linkedln list, it is going to be a Double linkedln list, having all types of operations in O(1) time (especially for the delete operation, critic using a normal linked list);
+
+When  implementing a dequeue with an array, we use a circular array, having references to the front and rear (end) indexes.
+
+### Application of the dequeue
+* A dequeue can be used as stack and Queue
+* Maintaining history of actions
+* Design data Structure with min and max operation
+* Get the maximum of all subarrays of size K; 
+* Process Schedulking algorithm 
+* Implement a priority queue with two types of prioprities (priority 1 and 2 for example and we need to operate ALL the iteams witha specific priority before or after the others iteam with another level of priority). For example: push to front all elements with priority 1, push to the read all iteams with priority 2.  
+
+In Java, a dequeue is built using a Doubly linked list; In C++ STL, thanks to <deque> library, we have an implementation of the dequeue using a vector. 
+
+### How does the queue is managed
+
+Internally, the deque in C++ STL use an array of pointers, to 
+avoid to double the size of the array everytime that we pontentially run out of space with a circuular array.
+Using the pointer arrays, if we will run out of space in the pointer array, we will not copy ALL the data stored 
+in each dequeue element, we will simply copy the pointer to that element in  new array with more space. 
+
+
+Number of copy construnctor call has O(1) time space complexity.
+```
+#include <iostream>
+#include <deque>
+using namespace std; 
+
+int main()
+{
+    deque<int> d;
+    d.push_back(10); // [10]
+    d.push_back(20); // [10,20]
+    for(auto x : d)
+        cout << x<< " ";
+    d.push_front(3); // [3,10,20]
+    cout << d.front(); // 3
+    cout << d.back(); // 20
+
+    auto it = d.begin();
+    it +=1;
+    d.insert(it, 33); [3,33,10]
+    d.pop_back(); // [3,10]
+    d.pop_front(); // [10]
+}
+```
+
+### Array implementation of Deque
+
+Front is always the index 0; Insert and delete has O(N)  complexity time;
+```
+bool isFull { return (size= )}
+```
 
 ![Deque](../../images/deuque.png)
 [Learn more about deques](https://www.geeksforgeeks.org/deque-cpp-stl/)
+
+### Data structure with Min/Max operations
+
+The perfect D.S. in this case is a dequeu.
+* Each min element that we insert must be smaller than any element present in the dequeue;
+* Each max element that we insert must be biggest than any element present in the D.S.
+
+```
+struct MyMinandMaxDD()
+{
+  deque<int>dq;
+
+  void InsertMin(int x)
+      dq.push_front(x);
+
+  void InsertMax (int x)
+      dq.push_back(x);
+
+  int GetMin()
+    return dq.front();
+
+  int GetMax()
+    return dq.back();
+
+  int Extractmin()
+    return dq.pop_front();
+
+  int ExtractMax()
+    return dq.pop_back();
+}
+```
+
+### Max of all subarrrays of size K
+Given an integer K, find all the subarrays of Length K and print the biggest value among these sub-arrays.
+
+If n is the size of the input array, we will have n-k+1 subarrays of size k. 
+Naive approach: O(N^2) time; 
+```
+void printMaxK(int arr[], int n, int k)
+{
+  for(int i =0; i < n-k+1; i++)
+  {
+      int biggest =  arr[i];
+      for(int j= i=1; j < i+k; j++)
+          biggest = max(arr[j], biggest);
+
+      cout << biggest << " ";
+  }
+}
+```
+Using a dequeu, we will have an O(N) space solution;
+The biggest value will be stored at the front of the deque and the smaller wil be inserted one by one at the rear.
+
+First for loop: processes the subarray of size k;
+The second process all subarryas, removing;
+Insert and removes witht he dequeue are O(1), overtime time complexity is O(N);
+```
+// n: length of the vector
+// front(): returns value of the front element - back() returns values of the rear/last elemeny
+void PrintMaxInK(vector<int> arr, int n, int k)
+{
+  // Create a dequue
+  deque<int> dq;
+  // we process the first windows, we check if the last item is smaller than the current value
+  // if it smaller, we just remove it because it's going to be useless. 
+  // Mind that we do not insert the values of the array but the index (see dq.push_back(i));
+
+  for(int i =0;  i< k; i++)
+  {
+    while( !dq.empty() && arr[i] >= arr[dq.back()])
+        dq.pop_back();
+
+    dq.push_back(i);
+  }
+  // All values are basically stored in decreasing order (thanks to the first loop)
+  // 
+  for(int i=k; i < n; i++)
+  {
+    // Print biggest value found in the windows (subarrays of size k)
+    cout << arr[dq.front()] << " ";
+    while(!dq.empty() && dq.front() <= i-k)
+      dq.pop_front();
+    while(!dq.empty() && arr[i] >= arr[dq.back()])
+      dq.pop_back();
+
+    dq.push_back(i);
+  }
+  cout << arr[dq.front()] << " ";
+}
+```
+
+### Circular Tour
+
+
+
 
 ## Priority Queue
 

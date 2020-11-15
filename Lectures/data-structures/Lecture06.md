@@ -4,11 +4,80 @@
 * string to int()
 * int / float to string: ```string word = to_string(variable_to_convert);```
 
+## Char in C/C++ vs Java
+* Char: is a single character
+* A char in C/C++ uses 8 bits in memory, because Cand C++ uses the ASCII value;
+* Java stores each char in UTF-16 encoding, usign 16 bits to store a single characters.
+
+Create and use a string in C:
+```
+// Create string in run-time; We cannot create the aeray of chars iwthout initialize and then assign the full string
+char str[] = "davide"
+cout << str;
+cout << sizeof(str); //Output wil be 6 and not 7, because in C, the compiler put a \0 at the end of the string;
+
+cout << strlen(str)<<endl;
+
+
+// Initialie string after char[] is created (without generate erros)
+char surname[10];
+strcpy(surname,"pollicino");
+```
+
+string in C++ is a class; where a class has a list of methods that are accessible by the '.' (dot) operator.\
+
+### Foundamentals methods adn foreach in strings
+* substr():
+* find():
+* getline() :   getline(cin, full_name); 
+Getline Allows to store all the string included whitespaces; We can also use a third optional parameter in the getline used to indicated when the line must be stopped to be read. Suppose that we want to read our line until we do not read the dollar sign '$'; getline(cin, full_name, '$'). By default, the third parameter is the new line. 
+
+for (char letter : full_name)
+    cout <<letter;
+
+In the english alphabet there are 26 letters (characters).
+
+## Print values ASCII value of a character
+cout << (int)'a';
+
+## Print frequency of each character in a string, in according to the alphabet order
+
+Everytime we heard the word frequency, we automatically think about hashmap. It is correct, 
+but in this case, we can simply exploit an array the ASCII value of each caracter to solve this 
+problem in O(N) time and O(1) space; We we will see that we will use always in this case a support array
+made by 26 elemements in any case, independently from the input size. For this reason we consider it as constant. 
+
+Suppose to have the string  "ddaviideee", the output will be:
+a : 1
+d : 2
+e : 3
+i : 2
+v : 1
+```
+string name = "ddaviideee";
+// Creat an array of 26 elements and set them to 0. 
+int count[26] = {0};
+for(int i=0; i < name.size(); i++)
+{
+    // A will be at the index 0, b at the index 1 and so on
+    count[name[i]-'a']++;
+}
+for(int  i=0; i< 26; i++)
+{
+    // If the character is present at least once in the string (so has frequency >0)
+    if(count[i] >0)
+        cout << char(i+'a') << " " << count[i]<<endl; 
+}
+```
+
+
+
 ## Check for Anagram 
 
 Given two strings, check if these two strings are anagrams of each other. This means that nay characters present in the string1, with a frequency F, must be present also in the string string2 with the same frequency F. 
 
 ```
+// O(NlogN) time (time required by the sort function)
 bool are_anagrams(string s1, string s2)
 {
     if(s1.size() != s2.size())
@@ -19,8 +88,57 @@ bool are_anagrams(string s1, string s2)
     return (s1==s2);
 }
 ```
+A secondf **better** solution is the standard counting character approach, comparing the frequencies of 
+each character in both string
 
-## Leftmost repearting character
+```
+const int CHAR = 256;
+bool areAnagram(string &word1, string &word2)
+{
+    int len1 = word1.size();
+    int len2 = word2.size();
+    if(len1 != len2)
+        return false; 
+
+    int count[CHAR] = {0};
+    for(int i =0; i< len1; i++)
+    {
+        count[word1[i]]++;
+        count[word2[i]]--;
+    }
+
+    for(int i =0; i < CHAR; i++)
+    {
+        if(count[i] != 0)
+           return false; 
+    }
+    return true; 
+}
+// Source: GeeksForGeeks
+```
+
+## Leftmost repeating character
+
+Efficient Solution:
+
+```
+const int CHAR =256;
+int IndexLeftMostRepeatingChar(string word)
+{
+    bool visite[CHAR] = {false};
+    // Default result values is -1: means that there are NO repeating chars;
+    int result = -1;
+    // we traverse from right to the left, for find the LEFTMOST; 
+    for(int i = word.size()-1; i >=0; i--)
+    {
+        if(visited[word[i]])
+            result = i;
+        else
+            visited[word[i]] = true;
+    }
+    return result;
+}
+```
 
 ```
 int index_leftmost_repeating_char(string s)
@@ -41,22 +159,50 @@ int index_leftmost_repeating_char(string s)
 }
 ```
 
-## OR, NAIVE APPROACH
+## Leftmost NON repeating character
+
+* The **non** repeating character is a character with frequency =1; 
+
+Naive / easy solution; O(N^2)
 ```
-int index_leftmost_repeating_char(string s)
-{
-    int len = s.size();
-    for(int i=0; i < len-1; i++)
+int indexNonRepeatingChar (string word)
+{ 
+    int len = word.size();
+    for(int i =0; i < len; i++)
     {
-        for(int j = i+1; j< len; j++)
+        bool flag = false; 
+        for(int ij = 0; j < len; j++)
         {
-            if(s[i] == s[j])
-                return i; 
+            if( i!= j && word[i] == word[j])
+            {
+                flag = true;
+                break; 
+            }
         }
+        if(flag == false)
+            return i; 
     }
     return -1; 
 }
 ```
+Optimized Solution: O(N)
+```
+int GetIndeNonRepeatingChar (string word)
+{
+    cont int CHAR = 256;
+    int counter_frequency[CHAR] = {0};
+    int len = word.size(); 
+
+    for(int i =0; i < len; i++)
+        counter_frequency[word[i]]++;
+    for(int i =0; i < len; i++)
+        if(counter_frequency[word[i]] == 1)
+            return i; 
+    
+    return -1;
+}
+```
+
 
 ## Check if two string are the rotation of each other
 
@@ -75,6 +221,50 @@ bool areRotations(string str1, string str2)
 
 ```
 
+## Reverse words in the string (in space)
+This is a quite popular problem, where we have to reverse the order of the words in a sentence, without
+actually recerve the order of the characters of any word;
+Suppose to have the sentence: "This is Competitive Programming", the output will be: "Programming Competitive is This". Sometimes, you will also find a small variant of this problem, where each word will be divided by a dot '.';
+
+A first/naive approach is:
+1. Creat a stack 
+2. Iterate the string and push each word in a stack
+3. Pop each element from the stack and append it to an initially empty string (adding a whitespace after each pop);
+4. Print the result. 
+
+An other approach (more efficient) is to:
+1. Reverse all the single words inside the string 
+2. Reverse at the end ALL the string (and not just the subwords);
+```
+void reverse(char word[], int start, int end)
+{
+    while(start <= end)
+    {
+        swap(word[start], word[end]);
+        start++;
+        end--; 
+    }
+}
+
+void reverseSingleWords(char sentence[], int len)
+{
+    int start = 0; 
+    for(int end =0; end< len; end++)
+    {
+        if(sentence[end] != ' ')
+        {
+            reverse(sentence, start, end-1);
+            start = end +1;
+        }
+    }
+    // Reverse last word (because it does not have any whitespace)
+    reverse(sentence, start, len-1);
+    // Reverse ALL the full sentence
+    reverse(sentence, 0, len-1);
+}
+```
+
+### Pattern Searching
 
 * **Naive Pattern Searching:** we slide the pattern over text one by one and check for a match. If a match is found, then slides by 1 again to check for subsequent matches.
 
@@ -141,21 +331,26 @@ vector<int> search_with_naive(string word, string sub)
     return solution; 
 }
 ```
-
+### Rabin karp Algorithm
 * Rabin karp: same time complexity of the Naive Pattern search, but easier to implement. It uses the idea or rolling hash to optimize the algorithm. 
 
 It's worst case is N^2, but in general, Rabin Karp is faster than Naive search and allows us to save lots of tiem when we have a long sentence and a long substring to compare, too see if there  will be one or more occurrency of the same pattern.
 
-With Rabin Karp, we do not compare the characters one by one, we instead wait compare the has values betweent the currenct window(text slice) and the pattern. 
+Like the Naive algorithm it slide the pattern one by one, but instead to compare each character, the Rabin kARP 
+compare the has values of the two string windows, saving lots fo comparison, especially when we have long patterns.
+If the two hashes values matches, we compare the characteres otherwise, we skip to the next window. 
 
- If the two hashes values matches, we compare the characteres otherwise, we simply skip to the next window. 
+* **Spurius hit**: it's when the two substring have same hash value but do not match; 
+* **rolling hash**: means that we calculate the current hash value of our window based on the last hashvalue calculated. 
 
- It actually looks like that it has the same time complexity of Naive but it doesn't, because we save up time to calculate the has of a window string using also the past hashes (this is the concept of roll hashing).
-
-
+It actually looks like that it has the same time complexity of Naive but it doesn't, because we save up time to calculate the has of a window string using also the past hashes (this is the concept of roll hashing).
 
 * KMP : O(n). It is one of the most popular algorithm in computer Science.
 * Suffix tree : O(m). Suffix tree is not an algorithms but a data-structure. 
+
+ RK algorithm is also used not just to find in a specific substring exists in another string, but also used to 
+ get all the starting index where all the occurrencies of our pattern exists in the main string;
+
 
 
 
