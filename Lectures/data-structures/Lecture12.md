@@ -293,7 +293,6 @@ void deleteNode(struct Node **head_ref, int key)
 ## Source: Geeks for geeks
 ```
 ### Print reverse of the Linked LIST Without reverse the list
-
 ```
 /*
 printReverse(head):
@@ -360,7 +359,8 @@ void reverse(Node *head)
         // Move pointers one position ahead. 
         prev = current; 
         current = next; 
-    } 
+    }
+    // Prev is the new head (origianly the tail element of the linked list) 
     return prev; 
 } 
 ```
@@ -520,6 +520,75 @@ Node *pairswap(Node *head)
 
 This is a typical problem where, every node has two pointers, one the points to the next node and another node that points to a random node of the linked list. 
 
+By clloning we emean create a copy of the linked list, where nodes contains the same values, the nodes are in the same 
+order of the original linked list, including the random pointers.
+```
+struct Node{
+    int data;
+    Node *next;
+    Node *random;
+};
+```
+O(N) time and O(N) space.
+We use an hashtable to keep track the random pointers and next's pointers of each node;
+
+```
+Node* clone(Node *head) 
+{ 
+    unordered_map<Node*,Node*> mp;
+    for(Node *current=head;current!=NULL; current=current->next)
+        mp[current]=new Node(current->data);
+    
+    for(Node *current=head;current!=NULL; current=current->next){
+        Node *cloneCurrent=mp[current];
+        cloneCurrent->next=mp[current->next];
+        cloneCurrent->random=mp[current->random];
+    }
+    Node *head2=mp[head];
+    
+    return head2;
+}
+
+```
+O(N) time and O(1) space;
+We create a copy node for each node and we simply attach it (insert it) next to our current node;
+This means that, if I have a linked list: 5->10->15, the first step will trasform the linked list in 5->5->10->10->15->15;
+The second step is simply exploit the existing random pointers, setting also the next' random pointer of our duplicate/cone node, as the next random pointer node the original linked list. 
+```
+// Create duplicated node
+Node *current;
+for(current = head; current!= NULL;)
+{
+    // Store reference to the next node (that will be positionated after our duplicate)
+    Node *next = current->next;
+    // Create duplicate node
+    current->next = new Node(current->data);
+    // Link next' pointer of the duplicate to the next value in linked list.
+    current->next->next = next;
+    current = next;  
+}
+
+// Step 2
+for(current = head; current != nULL; current = current->next->next)
+    current->next->random = (current->random != NULL) ? (current->random->next) : NULL; 
+
+// Step 3
+//  Iterate again linked list, removing all the duplicates node and inserting them in our clone linked list. (we just change next pointer in this stage);
+     Node* original = head, *copy = head->next; 
+  
+    temp = copy; 
+  
+    while (original && copy) 
+    { 
+        original->next = original->next? original->next->next : original->next; 
+        copy->next = copy->next?copy->next->next:copy->next; 
+        original = original->next; 
+        copy = copy->next; 
+    } 
+
+    return temp; 
+```
+
 ## Merge two sorted linked list
 
 Suppose we have to linked list:
@@ -538,13 +607,16 @@ What we do is:
 // O(m+n)time and O(1) space
 Node *sortedMerge(Node *a, Node *b)
 {
+    // if first linked list is NULL
     if(a == NULL)
         return b;
+    // Check if second linked list is NULL; 
     if(b == NULL)
         return a;
     
-    Node *head = NULL, *tail = NULL;
 
+    Node *head = NULL, *tail = NULL;
+    // Creat head of the new linked list in according with the value of the heads of the two linked list
     if(a->data <= b->data)
     {
         head = tail = a;
@@ -561,17 +633,20 @@ Node *sortedMerge(Node *a, Node *b)
         if(a->data <= b->data)
         {
             tail->next =  a;
+            // We update the tail, considering that we have added a new node; 
             tail = a;
             a = a->next;
         }
         else
         {
+            // Add node
             tail->next = b;
+            // Update node
             tail = b;
             b = b->next;
         }
     }
-
+    // COntateneate remeaning nodes if the while loop has stopped because we reach the end of one or both linked list; 
     if(a == NULL)
         tail->next = b;
     else
@@ -583,11 +658,64 @@ Node *sortedMerge(Node *a, Node *b)
 
 ## Find intersection Point(intersaction node) of Two Linked List
 * **Naive Solution [Time O(m+n)]**:  We traverse the first list and mark all nodes as visited. Then we traverse the second list, if we see a visited node again, then there is an intersection point; 
+```
+int GetIntersactionpoint(Node *head1, Node* head2)
+{
+    // Create an unordere set
+    unordered_set<Node *>s;
+    Node *current = head1;
+    // Iterate all the list 1 and push it inside the unordered_set
+    while(current != NULL)
+    {
+        s.insert(current);
+        current = current->next; 
+    }
+    // Iterate list 2: if a node of the list 2 exists in the list 1, return its' value; 
+    current = head2;
+    while(current != NULL)
+    {
+        if(s.find(current) != s.end())
+            return current->data;
+        current = current->next; 
+    }
+    // There are No intersaction point
+    return -1; 
+}
+```
 
+Second option works in constant space O(1) space and O(N) time complexity; 
+1. We count number of nodes in both lists;
+2. We store the absolute difference betweent he length of the two linked list abs(counter1-counter2)
+3. We start to iterate from the **longest** linkedln, skipping N nodes, where N is the abs(counter1-counter2)
+4. After we have skipped N nodes, we iterate both linked list and if the nodes are equals, return the value->data;
+```
+int _getIntersection(int d, Node* head1, Node* head2) 
+{
+    // d: abs(number_nodes_list1 - number_nodes_list2)
+    // head1: longest linked list 
+    Node* current1 = head1; 
+    Node* current2 = head2; 
+    // Skip d nodes
+    for (int i = 0; i < d; i++) {
+        // If we reach the end, there is no interesaction point 
+        if (current1 == NULL) { 
+            return -1; 
+        } 
+        current1 = current1->next; 
+    } 
+    // compare now both pairs of nodes, if pointers are the same, return the value of the node. 
+    while (current1 != NULL && current2 != NULL) { 
+        if (current1 == current2) 
+            return current1->data; 
+        current1 = current1->next; 
+        current2 = current2->next; 
+    }  
+    return -1; 
+}
+```
 
 
 ## LRU Cache Design
-
 What is the Cache? It is a memory phisically located close to the processor that has small availability in terms of quantity of data that it can stores but extremely high access time. 
 
 When the cache is full and we need to store something new in it, the cache will delete the last element of the cache(the less used one).
@@ -607,8 +735,6 @@ XOR Linked list: is an Memory Efficient Implementation of Doubly Linked Lists. T
 [Doubly Linked List - Implementation](https://www.youtube.com/watch?v=VOQNf1VxU3Q)
 * [Cycle detection](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare)
 ##### Source: Interviewbit and mycodeschool
-
-
 
 
 ### Extra Exercises
