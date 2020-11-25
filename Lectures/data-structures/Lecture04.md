@@ -1,15 +1,26 @@
 # Math 
 
+## Count number of digits
+
+```
+//the time complexity of the solution is O(1).
+int number_of_digits = floor(log10(N) + 1);
+```
+
 ## Prime Number
 
 Is a number divisible just by 1 and itself. 
 Few prime numbers are: 2,3,5,7,11,13,17
 ```
+// Since we are traversing linearly from 2 to N-1, 
+// the time complexity of the above algorithm will be linear O(N).
 bool isPrime(int n)
 {
+    if(n < 2)
+        return false; 
     for(int i =2; i < n; i++)
     {
-        if(n% i == 0)
+        if(n % i == 0)
             return false;
     }
     return true; 
@@ -94,8 +105,6 @@ public:
 };
 
 ```
-
-
 
 ## Get name of the day week using Sakamoto's methods 
 ```
@@ -209,9 +218,6 @@ int main() {
 ## Arithmetic Progression
 
 * Sequence: is said Arithmetic Progression and the different between any of two consecutive terms is always the same. The next number in the series is calculated by adding a fixed number to the prevoups number in the series. 
-
-
-
 * **Arithmetic Progression**: difference bet
 
 ### Hottest topics
@@ -280,6 +286,8 @@ Modulari arithmetic rules:
 2. (a - b) mod M = ((a mod M) - (b mod M)) mod M.
 3. (a * b) mod M = ((a mod M) * (b mod M)) mod M.
 
+And for (a/b) mod M? There isn't any formula to calculate, we use **modular inverse**:
+a x ≡ 1 (mod M);
 
 ## Generate permutations
 
