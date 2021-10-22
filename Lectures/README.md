@@ -9,13 +9,13 @@
 |Sorting and Searching|[Lecture 03](data-structures/Lecture03.md)|
 |Comparison functions, operators and lower/upper bounds|[Lecture 03.1](data-structures/Lecture07.md)|
 |Math|[Lecture 04](data-structures/Lecture04.md)|
-|Geomety|[Lecture 05](data-structures/Lecture05.md)|
+|Geometry|[Lecture 05](data-structures/Lecture05.md)|
 |Strings|[Lecture 06](data-structures/Lecture06.md)|
 |Popular problems patterns|[Lecture 07](data-structures/Lecture09.md)|
 |Stack, queue,Deque, Heap and Fibonacci Heaps|[Lecture 08](data-structures/Lecture10.md)|
 |Set and Map|[Lecture 09](data-structures/Lecture11.md)|
 |Linked List, Double Linked List|[Lecture 10](data-structures/Lecture12.md)|
-|Tree - Binary Tree - Binary Indexed Tree(Fenwick)|[Lecture 11](data-structures/Lecture13.md)|
+|Tree - Binary Tree - Binary Indexed Tree|[Lecture 11](data-structures/Lecture13.md)|
 |Graph|[Lecture 12](data-structures/Lecture14.md)|
 |Counting|[Lecture 13](data-structures/Lecture15.md)|
 |Dynamic Programming|[Lecture 14](data-structures/Lecture16.md)|
@@ -28,8 +28,7 @@
 
 ## CS97SI Slides
 
-Contains all the slides used during the CS97 Algorithm and data structures at Standford University
-
+Contains all the slides used during the CS97 Algorithm and data structures at Stanford University
 
 # Algorithms
 
@@ -44,7 +43,7 @@ Contains all the slides used during the CS97 Algorithm and data structures at St
 |Min number of coins|[Know more](algorith/Lecture01.md)|
 |Min NUmber of platforms required for a Railway/Bus station|[Know more](algorith/Lecture01.md)|
 |Longest Palindromic substring |[Know more](algorith/Lecture01.md)|
-|Belman-Forsd for shortest pat |[Know more](algorith/Lecture01.md)|
+|Belman-Ford for shortest pat |[Know more](algorith/Lecture01.md)|
 |Optimal BST|[Know more](algorith/Lecture01.md)|
 |Count ways to reach nth stair |[Know more](algorith/Lecture01.md)|
 |Find the minimum cost to reach destination using a train
