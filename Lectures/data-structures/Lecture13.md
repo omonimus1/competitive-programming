@@ -811,6 +811,9 @@ struct node* deleteNode(struct node* root, int key)
 }
 ```
 
+## Definition of inorder successor
+* The inorder successor is the next node that would show in case of inorder
+travers of the tree.
 ### Left, right, Top and Bottom view of a Binary Tree
 
 ![tree-views](../../images/tree-views.png)
