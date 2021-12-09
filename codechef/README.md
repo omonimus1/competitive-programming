@@ -6,4 +6,5 @@ Any help for keep track of the index is appreciated.
 |    Name  |  Solution        |
 |----------|:----------------:|
 |ATM|[Python](atm.py)|
+|Black cells in a chessboard|[Python](blackcel.py)|
 ||[Python](.py)|
