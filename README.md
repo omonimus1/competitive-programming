@@ -17,18 +17,20 @@
 
 |Folder|Content|
 |-------|:------:|
-|Lectures|[Notes about Algorithm And Data Structures](Lectures/README.md)|
-|System Design|[System design interview preparation](system-design/README.md)|
-|Readings|[Free e-books about Competitive Programming](Reading/)|
-|Geeks For Geeks|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
-|HackerRank|[My own HackerRank coding solutions](HackerRank/README.md)|
-|Codingblock|[My own Codingblock coding solutions](codingblock/README.md)|
-|CodeSignal|[My own CodeSignal Solutions](codesignal/README.md)|
-|CodeChef | [My own Codechef coding solutions](codechef/)|
+|Lectures (Algorithm and data-structures)|[Notes about Algorithm And Data Structures](Lectures/README.md)|
+|Must know algorithms checklist|[Go to resources](MUST_KNOW_ALGORITHMS.md)|
+|System Design preparation|[System design interview preparation](system-design/README.md)|
+|Readings material|[Free e-books about Competitive Programming](Reading/)|
+|Geeks For Geeks solutions|[Geeks For GfG coding solutions](geeksforgeeks/README.md)|
+|HackerRank solutions |[My own HackerRank coding solutions](HackerRank/README.md)|
+|Codingblock solutions|[My own Codingblock coding solutions](codingblock/README.md)|
+|CodeSignal solutions|[My own CodeSignal Solutions](codesignal/README.md)|
+|CodeChef solutions| [My own Codechef coding solutions](codechef/)|
 |UVA|[My own UVA Online Judge solutions ](UVA/)|
 |InterviewBit|[My Interview Bit solutions ](interviewbit/README.md)|
-|Leetcode|[My Leetcode solutions ](interviewbit/README.md)|
+|Leetcode solutions|[My Leetcode solutions ](interviewbit/README.md)|
 |learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
+
 
 ## Best Platforms for training
 
