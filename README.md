@@ -8,10 +8,6 @@
 4. [How to contribute](#How-to-contribute)
 6. [Connect with me](#Connect-with-me)
 
-## Support me
-[Paypal Me](https://www.paypal.com/paypalme/davidepollicino7?locale.x=en_US)
-</br></br>
-<a href="https://www.buymeacoffee.com/omonimus1" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Structure of the Repository
 
@@ -68,10 +64,60 @@ If you have any questions about the solutions you can find here, feel free to co
 [![Github](https://img.shields.io/badge/-Github-000?style=flat&logo=Github&logoColor=white)](https://github.com/omonimus1)
 [![Linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/davidepollicino7/)
 
-## Support me to get more free materials like this
-
 ## Support me
 [Paypal Me](https://www.paypal.com/paypalme/davidepollicino7?locale.x=en_US)
 </br></br>
 <a href="https://www.buymeacoffee.com/omonimus1" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
+
+## Incoming Materials
+1. Prefix Sum
+2. Sliding Window Technique
+3. Binary search
+4. GCD of two numbers in LogN
+5. Sieve of Eratosthenes, Segmented Sieve
+6. Modular arithmetic
+7. Bit Manipulation
+8. Greedy Algorithms
+9. Two Pointers
+10. Kadane's Algorithm
+11. Meet in the Middle Algorithm
+12. Recursion
+13. Divide and Conquer
+14. Next Greater/Smaller Element using Stack
+15. Problems related to Parenthesis
+16. Backtracking
+17. Problems related to Constructive Algorithms
+18. Problems related to Heap
+19. Inclusion-Exclusion Principle
+20. Finding nCr and nPr for Queries
+21. Rabin Karp Algorithm
+22. Prefix Function
+23. KMP Algorithm
+24. Z-Function
+25. Manacher's Algorithm
+26. DFS/BFS Traversal in Graph/Tree
+27. Diameter of Tree
+28. Euler Tour of Tree
+29. Finding LCA using Euler Tour
+30. Finding LCA using Binary Lifting
+31. Distance between two nodes
+32. Subtree Problems
+33. Connected Components, Topological Sort, Cycle Detection, Bipartite Check-in Graph
+34. Dijkstra's Algorithm
+35. Bellman-Ford Algorithm
+36. Floyd Warshall Algorithm
+37. Bridges in Graph
+38. Prim's Algorithm
+39. 0/1 BFS
+40. Dynamic Programming, DP with Bitmask, DP on trees
+41. Disjoint Set
+42. Kruskal's Algorithm
+43. Fenwick Trees, Binary Lifting on Fenwick Tree
+44. Matrix Exponentiation
+45. Sqrt Exponentiation
+46. Segment Trees
+47. Lazy Propagation on Segment Trees
+48. Sprague/Grundy Theorem
+49. Heavy Light Decomposition
+50. FFT/NTT
