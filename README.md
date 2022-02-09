@@ -28,6 +28,8 @@
 |learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
 
 
+## PLEASE
+If you need more material like this, [nominate me as github start, to get help the project to gain more visibility and contributions](https://stars.github.com/program/)
 ## Best Platforms for training
 
  [![Hackerrank](https://img.shields.io/badge/-hackerrank-7cfc00?style=flat&labelColor=7cfc00&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/davidepollicino1)	
@@ -121,3 +123,5 @@ If you have any questions about the solutions you can find here, feel free to co
 48. Sprague/Grundy Theorem
 49. Heavy Light Decomposition
 50. FFT/NTT
+
+If you need more material like this, [nominate me as github start, to get help the project to gain more visibility and contributions](https://stars.github.com/program/)
