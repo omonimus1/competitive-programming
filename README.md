@@ -1,4 +1,5 @@
 # Competitive-programming
+![Lines_of_code](https://img.shields.io/tokei/lines/github/omonimus1/competitive-programming?label=LinesOfCode)
 
 ## Index of content
 
@@ -7,7 +8,6 @@
 3. [When contribute](#When-contribute)
 4. [How to contribute](#How-to-contribute)
 6. [Connect with me](#Connect-with-me)
-
 
 ## Structure of the Repository
 
