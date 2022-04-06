@@ -1,8 +1,14 @@
 # Competitive-programming
-![Lines_of_code](https://img.shields.io/tokei/lines/github/omonimus1/competitive-programming?label=LinesOfCode)
 
-## Index of content
+The current repository contains a set of learning resources, and coding challenges solutions that I have implemented as result of my training, to ace a Big Tech interview that allowed me to receive an offer at Microsoft for a SWE intern role. 
+NOT everything you may read in this repository is the overall knowledge requierd during an algorithms and data-structures round, but I have started from zero, just like you, and from zero to half-hero, almost everything produced or needed has been shared in this repository. 
 
+## Technologies used
+![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
+
+# Index of content
 1. [Structure of the repository](#Structure-of-the-Repository)
 2. [Platforms for Training](#Platforms-for-training)
 3. [When contribute](#When-contribute)
