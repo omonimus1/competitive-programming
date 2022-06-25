@@ -98,7 +98,7 @@ void bin (unsigned int number)
 }
 
 * [Brian Kerninghan's ALgorithm](https://www.geeksforgeeks.org/count-set-bits-in-an-integer/)
-* [Popular Cisco and Adove interview questions about count set bits of an integer ](https://www.geeksforgeeks.org/count-set-bits-integer-using-lookup-table/)
+* [Popular Cisco and Adobe interview questions about count set bits of an integer ](https://www.geeksforgeeks.org/count-set-bits-integer-using-lookup-table/)
 
 ## Count set bits in an interger
 
