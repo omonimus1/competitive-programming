@@ -8,6 +8,9 @@ NOT everything you may read in this repository is the overall knowledge requierd
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 
+## Get mentored by me
+<a href="https://mentorcruise.com/mentor/davidepollicino/"> <img src="https://cdn.mentorcruise.com/img/banner/navy-sm.svg" width="240" alt="MentorCruise"> </a>
+
 # Index of content
 1. [Structure of the repository](#Structure-of-the-Repository)
 2. [Platforms for Training](#Platforms-for-training)
