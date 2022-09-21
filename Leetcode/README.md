@@ -7,5 +7,5 @@ Note: Not all the solutions reported in this index are the coding challenges sol
 |-------|:------:|
 |Contains Duplicate|[Python](contains_duplicate.py)|
 |Two sum|[Python](two_sum.py)|
-||[Python]()|
+|Sort colors|[C++](sort_colors.cpp)|
 
