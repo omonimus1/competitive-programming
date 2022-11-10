@@ -1,7 +1,7 @@
-## Codechef
+## CodeChef
 
-* **Notice:** there could be more solutions listed within the folder itself than solutions categorized in this list. 
-Any help for k eep track of the index is appreciated. 
+* **Notice:** There could be more solutions listed within the folder itself than solutions categorized in this list. 
+Any help for keeping track of the index is appreciated. 
 
 |    Name  |  Solution        |
 |----------|:----------------:|
