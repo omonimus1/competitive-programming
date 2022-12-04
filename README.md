@@ -46,6 +46,7 @@ If you need more material like this, [nominate me as github start, to get help t
 [![GeeksForGeeks](https://img.shields.io/badge/geeksforfeeks-davidepollicino-green)](https://auth.geeksforgeeks.org/user/davidepollicino/practice/)	
 [![LeetCode](https://img.shields.io/badge/-LeetCode-ff8c00?style=flat&labelColor=ff8c00&logo=LeetCode&logoColor=white)](https://leetcode.com/omonimus1/)
 [![Codingblocs](https://img.shields.io/badge/-codingblocks-blue)](https://hack.codingblocks.com/app/users/242275)
+[![Codesignal](https://img.shields.io/badge/codesignal-blue.svg)](https://app.codesignal.com/profile/davide_p7)	
 [![Codechef](https://img.shields.io/badge/-Codechef-909090?style=flat&labelColor=909090&logo=Codechef&logoColor=white)](https://www.codechef.com/users/omonimus)
 [![CodeForces](https://img.shields.io/badge/-CodeForces-ec6161?style=flat&labelColor=ec6161&logo=CodeForces&logoColor=white)](https://codeforces.com/profile/Davide_Pollicino)	
 [![Hackerearth](https://img.shields.io/badge/hackerearth-purple.svg)](https://www.hackerearth.com/@davide12)	
