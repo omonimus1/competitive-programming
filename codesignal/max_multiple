@@ -1,0 +1,16 @@
+/*
+https://app.codesignal.com/arcade/code-arcade/intro-gates/HEsmEacHr2s9wahjr/solutions
+Given a divisor and a bound, find the largest integer N such that:
+
+N is divisible by divisor.
+N is less than or equal to bound.
+N is greater than 0.
+*/
+int solution(int divisor, int bound) {
+    for (int i = bound; i>=0; i--)
+    {
+        if(i % divisor ==0 || divisor %i ==0)
+            return i; 
+    }
+    return -1; 
+}
