@@ -152,9 +152,19 @@ Does not matter which language you are using, make sure that you know how to con
 * Int to string  
 ```  
 int i =12;
-string conversion = to_string(i);
+string conversion = to_string(i); // Output: conversion = "12"
 ```
-* String to int: 
+* String to int:
+```  
+string s = "21";
+string t = "67.456";
+string u = "6746 any";
+string v = "456 any684";
+int conversion_1 = stoi(s); // Output: Conversion_1 = 21
+int conversion_2 = stoi(t); // Output: Conversion_2 = 67
+int conversion_3 = stoi(u); // Output: Conversion_3 = 6746
+int conversion_4 = stoi(v); // Output: Conversion_4 = 456
+```
 
 ## Macros
 
