@@ -13,7 +13,7 @@ NOT everything you may read in this repository is the overall knowledge requierd
 
 # Index of content
 1. [Structure of the repository](#Structure-of-the-Repository)
-2. [Platforms for Training](#Platforms-for-training)
+2. [Platforms for Training](#Best-Platforms-for-training)
 3. [When contribute](#When-contribute)
 4. [How to contribute](#How-to-contribute)
 6. [Connect with me](#Connect-with-me)
