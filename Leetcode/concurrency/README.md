@@ -14,3 +14,25 @@ def hello():
 t = Timer(30.0, hello)
 t.start()  # after 30 seconds, "hello, world" will be printed
 ```
+## Repetitive timer, outside of the main thread, while waiting on another thread event:
+
+```
+import threading
+import time
+
+event = threading.Event()
+
+def hello():
+    event.wait()  # blocks until event is set
+    for _ in range(10):
+        print("hello, world")
+        time.sleep(30)
+
+def other_thread():
+    time.sleep(5)
+    print("other thread started")
+    event.set()  # signals hello thread to start
+
+threading.Thread(target=hello, daemon=True).start()
+threading.Thread(target=other_thread, daemon=True).start()
+```
