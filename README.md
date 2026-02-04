@@ -23,6 +23,7 @@ NOT everything you may read in this repository is the overall knowledge requierd
 |Folder|Content|
 |-------|:------:|
 |Lectures (Algorithm and data-structures)|[Notes about Algorithm And Data Structures](Lectures/README.md)|
+|OOP - fundamental knowledge |[See resource](https://github.com/ashishps1/awesome-low-level-design/tree/main)|
 |Must know algorithms checklist|[Go to resources](MUST_KNOW_ALGORITHMS.md)|
 |System Design preparation|[System design interview preparation](system-design/README.md)|
 |Readings material|[Free e-books about Competitive Programming](Reading/)|
