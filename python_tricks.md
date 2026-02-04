@@ -90,3 +90,72 @@ files = ["file10.txt", "file2.txt", "file1.txt"]
 files.sort(key=lambda x: int(x[4:-4]))
 print(files)
 ```
+## string
+```
+print(ord("a")) # ASCII value of 'a'
+```
+
+## queue
+```
+# Queues (double ended queue)
+from collections import deque
+
+queue = deque()
+queue.append(1)
+queue.append(2)
+print(queue)
+
+queue.popleft()
+print(queue)
+
+queue.appendleft(1)
+print(queue)
+
+queue.pop()
+print(queue)
+```
+
+## set
+```
+mySet = set()
+
+mySet.add(1)
+mySet.add(2)
+print(mySet)
+print(len(mySet))
+
+print(1 in mySet)
+print(2 in mySet)
+print(3 in mySet)
+
+mySet.remove(2)
+print(2 in mySet)
+
+# list to set
+print(set([1, 2, 3]))
+
+# Set comprehension
+mySet = { i for i in range(5) }
+print(mySet)
+```
+## Classes
+```
+class MyClass:
+    # Constructor
+    def __init__(self, nums):
+        # Create member variables
+        self.nums = nums
+        self.size = len(nums)
+    
+    # self key word required as param
+    def getLength(self):
+        return self.size
+
+    def getDoubleLength(self):
+        return 2 * self.getLength()
+
+myObj = MyClass([1, 2, 3])
+print(myObj.getLength())
+print(myObj.getDoubleLength())
+```
+
