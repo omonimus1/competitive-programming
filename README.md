@@ -33,7 +33,7 @@ The current repository contains a set of learning resources, and coding challeng
 |CodeChef solutions| [My own Codechef coding solutions](codechef/)|
 |UVA|[My own UVA Online Judge solutions ](UVA/)|
 |InterviewBit|[My Interview Bit solutions ](interviewbit/README.md)|
-|Leetcode solutions|[My Leetcode solutions ](interviewbit/README.md)|
+|Leetcode solutions|[My Leetcode solutions ](leetcode/)|
 |learn_data_structures|[ Warm App coding examples to learn Data Structures](learn_data_structures/)|
 
 
