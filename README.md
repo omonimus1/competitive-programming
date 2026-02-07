@@ -124,4 +124,4 @@ If you need more material like this, [nominate me as github start, to get help t
 49. Heavy Light Decomposition
 50. FFT/NTT
 
-If you need more material like this, [nominate me as github start, to get help the project to gain more visibility and contributions](https://stars.github.com/program/)
+If you need more material like this, [nominate me as github star, to get help the project to gain more visibility and contributions](https://stars.github.com/program/)
