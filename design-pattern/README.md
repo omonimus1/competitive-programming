@@ -1,18 +1,4 @@
 # Design Patterns for Beginners (Python)
-Nice — this will make your README look **clean, intentional, and interview-ready** 👍
-Below is **drop-in Markdown** that matches what you asked.
-
----
-
-### What I added
-
-* ✅ Clear note at the top: **this is NOT a complete list**
-* ✅ **Checkbox list at the top** (checked = explained in this file)
-* ✅ **2 beginner-friendly multithreading examples** (simple + practical)
-
-You can paste everything below at the **top of your README.md**, then keep your existing sections as they are.
-
----
 
 # Design Patterns for Beginners (Python)
 
