@@ -1,7 +1,4 @@
 # Design Patterns for Beginners (Python)
-
-# Design Patterns for Beginners (Python)
-
 > ⚠️ **Note:** This is **NOT a complete list of design patterns**.
 > This file covers **beginner-friendly and commonly used patterns** to build strong fundamentals.
 
@@ -23,24 +20,21 @@
 
 * [x] Multithreading (Basics)
 
-* [ ] Builder
+* [X] Builder
 
-* [ ] Command
+* [X] Command
 
-* [ ] Facade
+* [X] Facade
 
-* [ ] Proxy
+* [X] Proxy
 
-* [ ] State
+* [X] State
 
-* [ ] Template Method
+* [X] Template Method
 
 ---
 
-
-Builder
-
-Builds complex objects step by step.
+## Builder Builds complex objects step by step.
 
 ```
 class Car:
