@@ -1,0 +1,11 @@
+# https://leetcode.com/problems/classes-with-at-least-5-students/description/
+Write a solution to find all the classes that have at least five students.
+Return the result table in any order.
+
+```
+SELECT class
+from Courses
+GROUP BY class
+HAVING COUNT(Courses.class) >= 5
+
+```
